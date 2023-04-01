@@ -1,0 +1,187 @@
+﻿@page
+
+@model Bootstrap5OffCanvasExample.Pages.Index1Model
+@{
+    ViewData["Title"] = "Example 1";
+}
+
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col">
+            <div class="card shadow rounded-1">
+                <div class="card-body  bg-light">
+                    <p>Off Canvas left right and bottom example </p>
+                    <p>Press <kbd>CTRL</kbd>+<kbd>Q</kbd> to post </p>
+                    <p>Press <kbd>CTRL</kbd>+<kbd>1</kbd> for bottom canvas</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="container">
+        
+        <button class="btn btn-primary"     type="button" data-bs-toggle = "offcanvas" data-bs-target = "#offcanvasLeft">Open left</button>
+        <button class="btn btn-primary m-3" type="button" data-bs-toggle = "offcanvas" data-bs-target = "#offcanvasRight">Open Right</button>
+        <button class="btn btn-primary m-3" type="button" data-bs-toggle = "offcanvas" data-bs-target = "#offcanvasBottom">Open Bottom</button>
+        
+        @*
+            Lots of text for demoing off-canvas body scrolling for left side opening
+        *@
+
+        <div class="row mt-5">
+            
+            @{
+                foreach (var sentence in Model.Sentences)
+                {
+                    <div class="mt-5">@sentence</div>
+                }
+            }
+        </div>
+
+
+    </div>
+    
+    @* Allow page scrolling and do not dim background *@
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" id="offcanvasLeft">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">
+                This is the Default off-canvas with body scrolling
+            </h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Left placement</p>
+            <ul class="list-group">
+
+                @{
+                    int monthId = 1;
+                    foreach (var month in Model.Months)
+                    {
+                        if (DateTime.Now.ToString("MMMM") == month)
+                        {
+                            <li class="list-group-item active" id="@monthId">@month</li>
+                        }
+                        else
+                        {
+                            <li class="list-group-item" id="@monthId">@month</li>
+                        }
+
+                        monthId++;
+                    }
+                }
+
+            </ul>
+        </div>
+    </div>
+    
+    @* No page scrolling, dim body text*@
+    <form method="post">
+
+        <input hidden asp-for="@Model.SelectedDayIndex" id="selectedDay"/>
+
+        <div class="offcanvas offcanvas-end" id="offcanvasRight">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title">
+                    This is the Right off-canvas
+                </h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                
+                <ul class="list-group">
+                    @{
+
+                        int dayId = 1;
+                        foreach (var day in Model.Days)
+                        {
+
+                            if (day == Model.CurrentDay)
+                            {
+                                <a href="#" class="list-group-item active" id="@dayId">@day</a>
+                            }
+                            else
+                            {
+                                <a href="#" class="list-group-item" id="@dayId">@day</a>
+                            }
+
+                            dayId++;
+                        }
+                    }
+
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <button type="submit" class="btn btn-primary mt-5 mb-4 w-25" id="btn-submit" asp-page-handler="Button1">Post</button>
+            <div>
+                <kbd>CTRL</kbd>+<kbd>M</kbd> back to top
+            </div>
+            
+        </div>
+        
+    </form>
+
+    
+    <div class="offcanvas offcanvas-bottom" id="offcanvasBottom">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">
+                From bottom
+            </h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <a href="https://getbootstrap.com/docs/5.0/components/offcanvas/" target="_blank">
+                <img src="images/Bootstrap.png" width="293" height="221"/>
+            </a>
+            
+        </div>
+    </div>
+
+</div>
+@section Scripts
+{
+    <script>
+
+        var bottomCanvasItem = document.getElementById("offcanvasBottom");
+        var bottomCanvas ;
+        $(document).ready(function(e) {
+            bottomCanvas = new bootstrap.Offcanvas(document.getElementById("offcanvasBottom"));
+        });
+        
+        // update active item when clicked
+        jQuery("a.list-group-item").click(function (e) {
+            jQuery(this).addClass('active').siblings().removeClass('active');
+        });
+
+        // set the selected day for use in on post
+        $('form').submit(function (event) {
+            document.getElementById('selectedDay').value = document.getElementsByClassName("list-group-item active")[1].id;
+        });
+
+        // keyboard shortcut for setting focus to submit button by id
+        $(this).on('keydown', function (event) {
+            if (event.key === 'q' && event.ctrlKey) {
+                $("#btn-submit").focus();
+            }
+        });
+
+        // toggle bottom canvas show/hide
+        $(this).on('keydown', function (event) {
+            if (event.key === '1' && event.ctrlKey) {
+                bottomCanvas.toggle();
+            }
+        });
+
+        // keyboard shortcut for going back to top of page
+        $(this).on('keydown', function (event) {
+            if (event.key === 'm' && event.ctrlKey) {
+                // topOfPage is set in _Layout.cshtml on navigation
+                document.getElementById("topOfPage").scrollIntoView();
+            }
+        });
+    </script>
+}

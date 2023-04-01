@@ -1,0 +1,67 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="alert alert-primary" role="alert">
+    Code sample for a Bootstrap modal to ask a question centered <span class="badge rounded-pill bg-primary">vertically</span>
+</div>
+
+<div class="container">
+    <div class="row">
+        <button class="btn btn-primary w-25" id="btn-confirm">Confirm</button>
+    </div>
+</div>
+
+<form method="post" class="w-25">
+    <input type="hidden" asp-for="Confirmation" id="confirmationValue" />
+    <input type="submit" value="Post" role="button" class="btn btn-primary mt-2 w-100" />
+</form>
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="question-dialog" aria-hidden="true" id="mi-modal">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="question-dialog">Question</h4>
+            </div>
+            <div class="modal-body">
+                Would you care to continue?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="modal-btn-yes">Yes</button>
+                <button type="button" class="btn btn-primary" id="modal-btn-no">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script>
+        var modalConfirm = function (callback) {
+
+            $("#btn-confirm").on("click", function () {
+                $("#mi-modal").modal('show');
+            });
+
+            $("#modal-btn-yes").on("click", function () {
+                callback(true);
+                $("#mi-modal").modal('hide');
+            });
+
+            $("#modal-btn-no").on("click", function () {
+                callback(false);
+                $("#mi-modal").modal('hide');
+            });
+        };
+
+        modalConfirm(function (confirm) {
+            if (confirm) {
+                document.getElementById("confirmationValue").value = true;
+            } else {
+                document.getElementById("confirmationValue").value = false;
+            }
+        });
+    </script>
+}

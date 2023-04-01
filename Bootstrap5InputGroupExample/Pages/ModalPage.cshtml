@@ -1,0 +1,68 @@
+﻿@page
+@model Bootstrap5InputGroupExample.Pages.ModalPageModel
+@{
+}
+@*https://codepen.io/Adrek/pen/XVQvdG*@
+
+<div class="container">
+    <div class="row">
+        <button class="btn btn-primary w-25" id="btn-confirm">Confirm</button>
+    </div>
+</div>
+
+<form method="post" class="w-25">
+    <input type="hidden" asp-for="Confirmation" id="confirmationValue" />
+    <input type="submit" value="Save" role="button" class="btn btn-primary mt-2 w-100"/>
+</form>
+
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="question-dialog" aria-hidden="true" id="mi-modal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="question-dialog">Question</h4>
+            </div>
+            <div class="modal-body">
+                Would you care to continue?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="modal-btn-yes">Yes</button>
+                <button type="button" class="btn btn-primary" id="modal-btn-no">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="alert" role="alert" id="result"></div>
+
+@section Scripts
+    {
+    <script>
+        var modalConfirm = function(callback){
+  
+            $("#btn-confirm").on("click", function(){
+                $("#mi-modal").modal('show');
+            });
+
+            $("#modal-btn-yes").on("click", function(){
+                callback(true);
+                $("#mi-modal").modal('hide');
+            });
+  
+            $("#modal-btn-no").on("click", function(){
+                callback(false);
+                $("#mi-modal").modal('hide');
+            });
+        };
+
+        modalConfirm(function(confirm){
+            if(confirm){
+                $("#result").html("Continue");
+                document.getElementById("confirmationValue").value = true;
+            }else{
+                $("#result").html("Cancelled");
+                document.getElementById("confirmationValue").value = false;
+            }
+        });
+    </script>
+}

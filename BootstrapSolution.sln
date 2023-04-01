@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5OffCanvasExample", "Bootstrap5OffCanvasExample\Bootstrap5OffCanvasExample.csproj", "{9402D70E-A9C1-4727-A757-B22DC9F5FDA2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{66778063-1BD7-4F85-BF82-3C2D2DAD1AC2}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5PopoverExample", "Bootstrap5PopoverExample\Bootstrap5PopoverExample.csproj", "{1C059C28-6F86-44B8-8A32-158A1EA8EA1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5FloatingLabelsExample", "Bootstrap5FloatingLabelsExample\Bootstrap5FloatingLabelsExample.csproj", "{D32C5421-7115-4DE8-A922-A308139462C2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5ToolTipsExample", "Bootstrap5ToolTipsExample\Bootstrap5ToolTipsExample.csproj", "{29FF3E19-6752-4220-9F82-7FAD3CCBBC0A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5ToastExample", "Bootstrap5ToastExample\Bootstrap5ToastExample.csproj", "{D87F872F-2EB2-4A5D-AB12-77B42834CC45}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5SpinnersExample", "Bootstrap5SpinnersExample\Bootstrap5SpinnersExample.csproj", "{3B5579E5-13C4-4779-88A0-2A89A33BA1D4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5InputGroupExample", "Bootstrap5InputGroupExample\Bootstrap5InputGroupExample.csproj", "{557A7D5B-A083-40E5-BD53-ED944FB1A08A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrap5ModalExample", "Bootstrap5ModalExample\Bootstrap5ModalExample.csproj", "{63BC22E3-EB59-4716-BDCA-9069C41A38DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrap5ProgressBarExample", "Bootstrap5ProgressBarExample\Bootstrap5ProgressBarExample.csproj", "{35A29F2D-FC2F-40AF-9BBD-9E46E6D290F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrap5CheckBoxExample", "Bootstrap5CheckBoxExample\Bootstrap5CheckBoxExample.csproj", "{AA91F06B-7724-40EA-ABE7-CA5459D3C6FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9402D70E-A9C1-4727-A757-B22DC9F5FDA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9402D70E-A9C1-4727-A757-B22DC9F5FDA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9402D70E-A9C1-4727-A757-B22DC9F5FDA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9402D70E-A9C1-4727-A757-B22DC9F5FDA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C059C28-6F86-44B8-8A32-158A1EA8EA1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C059C28-6F86-44B8-8A32-158A1EA8EA1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C059C28-6F86-44B8-8A32-158A1EA8EA1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C059C28-6F86-44B8-8A32-158A1EA8EA1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D32C5421-7115-4DE8-A922-A308139462C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D32C5421-7115-4DE8-A922-A308139462C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D32C5421-7115-4DE8-A922-A308139462C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D32C5421-7115-4DE8-A922-A308139462C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29FF3E19-6752-4220-9F82-7FAD3CCBBC0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29FF3E19-6752-4220-9F82-7FAD3CCBBC0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29FF3E19-6752-4220-9F82-7FAD3CCBBC0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29FF3E19-6752-4220-9F82-7FAD3CCBBC0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D87F872F-2EB2-4A5D-AB12-77B42834CC45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D87F872F-2EB2-4A5D-AB12-77B42834CC45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D87F872F-2EB2-4A5D-AB12-77B42834CC45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D87F872F-2EB2-4A5D-AB12-77B42834CC45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B5579E5-13C4-4779-88A0-2A89A33BA1D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B5579E5-13C4-4779-88A0-2A89A33BA1D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B5579E5-13C4-4779-88A0-2A89A33BA1D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B5579E5-13C4-4779-88A0-2A89A33BA1D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{557A7D5B-A083-40E5-BD53-ED944FB1A08A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{557A7D5B-A083-40E5-BD53-ED944FB1A08A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{557A7D5B-A083-40E5-BD53-ED944FB1A08A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{557A7D5B-A083-40E5-BD53-ED944FB1A08A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63BC22E3-EB59-4716-BDCA-9069C41A38DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63BC22E3-EB59-4716-BDCA-9069C41A38DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63BC22E3-EB59-4716-BDCA-9069C41A38DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63BC22E3-EB59-4716-BDCA-9069C41A38DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35A29F2D-FC2F-40AF-9BBD-9E46E6D290F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35A29F2D-FC2F-40AF-9BBD-9E46E6D290F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35A29F2D-FC2F-40AF-9BBD-9E46E6D290F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35A29F2D-FC2F-40AF-9BBD-9E46E6D290F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA91F06B-7724-40EA-ABE7-CA5459D3C6FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA91F06B-7724-40EA-ABE7-CA5459D3C6FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA91F06B-7724-40EA-ABE7-CA5459D3C6FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA91F06B-7724-40EA-ABE7-CA5459D3C6FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F0318FB3-B59C-40D8-960F-3AA6B46573A5}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,76 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+
+    <h3>Toast Example</h3>
+
+    <p>In this example, we use a button to show the toast message.</p>
+
+    <button type="button" class="btn btn-primary" id="toastButton1">Show Toast</button>
+    
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+
+        <div class="toast" id="toast1">
+            <div class="toast-header">
+                <strong class="me-auto">Toast Header</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body">
+                <p>Some text inside the toast body</p>
+            </div>
+        </div>
+
+    </div>
+    
+    
+    <form method="post" class="form-group">
+        
+        <div class="form-group">
+            <label for="topToast" class="col-sm-2">Top toast</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control w-50" autocomplete="off" value="@Model.TopToast" name="topToast" id="topToast" placeholder="First name">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="bottomToast" class="col-sm-2">Bottom toast</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control w-50" autocomplete="off" value="@Model.BottomToast" name="bottomToast" id="bottomToast" placeholder="First name">
+            </div>
+        </div>
+
+
+        <div class="form-group mt-2">
+            <div class="col-sm-10">
+
+                <button
+                    type="submit"
+                    id="btn-submit"
+                    class="btn btn-outline-dark">
+                    Enter
+                </button>
+
+            </div>
+        </div>
+    </form>
+
+</div>
+
+
+
+@section Scripts
+{
+    <script>
+
+        $(document).ready(function(){
+            $("#toastButton1").click(function(){
+                $("#toast1").toast("show");
+            });
+        });
+
+    </script>
+}

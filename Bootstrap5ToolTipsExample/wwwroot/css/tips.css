@@ -1,0 +1,19 @@
+﻿.tooltip-inner {
+    min-width: 14em;
+}
+
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: gainsboro;
+}
+
+.tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+    border-bottom-color: gainsboro;
+}
+
+.tooltip.bs-tooltip-start .tooltip-arrow::before {
+    border-left-color: gainsboro;
+}
+
+.tooltip.bs-tooltip-end .tooltip-arrow::before {
+    border-right-color: gainsboro;
+}

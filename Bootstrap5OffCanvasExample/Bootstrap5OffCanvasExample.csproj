@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<Nullable>disable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Remove="wwwroot\js\ClaimsProgressbar.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="readme.md" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <_ContentIncludedByDefault Remove="wwwroot\js\ClaimsProgressbar.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="readme.md" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="wwwroot\js\ClaimsProgressbar.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="SeriLogThemesLibrary" Version="1.0.0.1" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="assets\" />
+	</ItemGroup>
+</Project>

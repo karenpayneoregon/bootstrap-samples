@@ -1,0 +1,53 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+    .stop {
+        animation-name: none !important;
+        -webkit-animation-name: none !important;
+    }
+</style>
+
+<div class="alert alert-primary" role="alert">
+    Click - does five second spin
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <button class="btn btn-primary w-25" type="button">
+            <span class="d-none spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Click me...
+        </button>
+    </div>
+
+    <div class="row">
+        <button class="btn btn-primary w-25 mt-2" type="button">
+            <span class="d-none spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            Click me...
+        </button>
+    </div>
+
+</div>
+
+
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $(() => {
+                $('button').on('click',
+                    e => {
+                        let spinner = $(e.currentTarget).find('span');
+                        spinner.removeClass('d-none');
+                        setTimeout(_ => spinner.addClass('d-none'), 5000);
+                    });
+            });
+
+        });
+    </script>
+}

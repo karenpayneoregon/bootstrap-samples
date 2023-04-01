@@ -1,0 +1,98 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Popover home page";
+}
+
+
+@*
+    - list of buttons when focus is lost the pop over goes away
+    - the last button pop over stays until the button is clicked a second time
+    - skip-link class is defined in css/site.css
+*@
+
+
+<a
+    class="skip-link btn btn-outline-primary mb-4"
+    asp-fragment="button1"
+    aria-label="Skip to content">
+    Skip to content
+</a>
+
+<div class="container">
+
+    <div class="alert alert-primary" role="alert">
+        Bootstrap 5 popover
+    </div>
+
+    <div style="height: 2em"></div>
+    
+
+    
+    <div id="main-content">
+        @{
+            int identifier = 1;
+            string value = $"button{identifier}";
+            foreach (var container in Model.PopContainer)
+            {
+                <div class="row mb-5">
+                    <div class="col-md-2">
+                        <button
+                            type="button"
+                            id="@value"
+                            class="btn btn-lg @container.ButtonForeColor w-100"
+                            data-bs-toggle="popover"
+                            data-bs-trigger="focus"
+                            html="true"
+                            title="@container.Title"
+                            data-bs-placement="@container.Placement"
+                            data-bs-content="@container.Content">
+                            @container.Text
+                        </button>
+                    </div>
+                
+                </div>
+
+                identifier++;
+            }
+
+
+        }
+
+        <div class="row">
+            <div class="col-md-2">
+
+                <button
+                    type="button"
+                    class="btn btn-lg btn-danger w-100"
+                    id="specialPopOver" data-toggle="popover">
+                    With style
+                </button>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-2">
+                <input class="form-control" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="focus" title="Instructions" data-bs-content="Enter your first and last name" />
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function(e) {
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+            var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl);
+            });
+
+            $("#specialPopOver").popover({
+                title: '<h4 class="custom-title"><i class="bi-info-circle-fill"></i> Popover info</h4>',
+                content: '<p>..This is a <em>simple example</em> demonstrating how to insert HTML code inside <strong>Bootstrap</strong> 5 popover.</p>',
+                html: true
+            }); 
+        });
+    </script>
+}

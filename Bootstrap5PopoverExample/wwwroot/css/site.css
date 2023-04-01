@@ -1,0 +1,39 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.skip-link {
+    position: absolute;
+    left: -999px;
+    width: 1px;
+    height: 1px;
+    top: auto;
+}
+
+.skip-link:active, .skip-link:focus {
+    color: #000;
+    display: inline-block;
+    height: auto;
+    width: auto;
+    position: static;
+    margin: auto
+}

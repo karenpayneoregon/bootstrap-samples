@@ -1,0 +1,42 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Badges";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-6">
+            <button type="button" class="btn btn-primary position-relative" id="btnNotifications">
+                Inbox
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="lblIncrement">
+                    @Model.MailCount
+                    <span class="visually-hidden">unread messages</span>
+                </span>
+            </button>
+        </div>
+    </div>
+    
+    <div class="row mt-5">
+        <div class="col-6">
+            <button type="button" class="btn btn-primary position-relative">
+                Profile
+                <span class="position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle">
+                    <span class="visually-hidden">New alerts</span>
+                </span>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts
+    {
+        <script>
+            $('#btnNotifications').click(function () {
+                var value = parseInt($('#lblIncrement').text());
+                $('#lblIncrement').text(value + 1);
+            });
+        </script>
+}

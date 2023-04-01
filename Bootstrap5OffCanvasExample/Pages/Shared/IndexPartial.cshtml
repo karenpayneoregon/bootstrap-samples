@@ -1,0 +1,53 @@
+﻿@*
+    This is a partial view to Pages\Index.cshtml which is connected via await Html.RenderPartialAsync("IndexPartial");
+    Although the two pages are in different folders, the framework searches by walking up the directory tree from the
+    location of the calling page looking for the file name that you pass in as long as you do not include the file extension,
+    until it reaches the root Pages folder
+*@
+@{
+}
+
+
+<div class="row">
+
+    <div class="mt-2">
+
+        <button 
+            class="btn btn-primary" 
+            style="width: 226px" 
+            type="button" 
+            data-bs-toggle="offcanvas" 
+            data-bs-target="#offcanvasMain" 
+            aria-label="Open the about page"
+            aria-controls="offcanvasMain">
+            About
+        </button>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMain" aria-labelledby="offcanvasMainLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasMainLabel">About</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <img src="images/earth.png"/>
+                <div class="mt-3">
+                    <strong>Frank Borman - One World</strong><br/><br/>
+                    The view of the earth from the moon fascinated me - a small disk, 240,000 miles away. It was hard to think that that
+                    little thing held so many problems, so many frustrations. <br/><br/>
+                    Raging nationalistic interests, famines, wars,
+                    pestilence don't show from that distance. I'm convinced that some wayward stranger in a space-craft, coming
+                    from some other part of the heavens, could look at earth and never know that it was inhabited at all. But the
+                    same wayward stranger would certainly know instinctively that if the earth were inhabited, then the destinies of all
+                    who lived on it must inevitably be interwoven and joined. We are one hunk of ground, water, air, clouds, floating around in space.
+                    From out there it really is 'one world'.
+                </div>
+                <div class="row mt-4">
+                    <button type="submit" class="btn btn-primary" asp-page-handler="Button1">Go to About page</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

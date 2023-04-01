@@ -1,0 +1,21 @@
+﻿@page
+@model Bootstrap5CheckBoxExample.Pages.AboutModel
+@{
+}
+
+<div id="main-content">
+    <p>This code sample main focus is on <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-checked" target="_blank">aria-checked</a> Knowing how to use <mark>aria-checked</mark> is part of making a site accessible.</p>
+    <p>Also included is how to use <a href="https://webaim.org/techniques/skipnav/" target="_blank">skip-links</a> which in this case pressing <kbd>ALT</kbd> + <kbd>0</kbd> provides a window to skip passed navigation</p>
+    <p>Note that when changing pages, the current page link is highlighted</p>
+</div>
+
+@section Scripts
+{
+    <script>
+        $(this).on('keydown', function (event) {
+            if (event.key === '0' && event.altKey) {
+                $("#skipper").focus();
+            }
+        });
+    </script>
+}

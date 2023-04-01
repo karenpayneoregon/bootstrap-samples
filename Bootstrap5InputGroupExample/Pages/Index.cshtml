@@ -1,0 +1,136 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <div class="alert alert-primary" role="alert">
+        <span class="badge rounded-pill bg-primary">@Model.BadgeText</span>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post" role="form">
+                
+                <input type="hidden" asp-for="Person.AgreeToTerms" id="agreeValue" />
+
+                <div asp-validation-summary="ModelOnly" class="text-secondary"></div>
+
+                <input type="hidden" asp-for="Person.PersonId"/>
+
+                <div class="form-group">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <label asp-for="Person.FirstName" class="required"></label>
+                        </div>
+                        <div>
+                            <span class="text-muted">Required</span>
+                        </div>
+                    </div>
+                    <input asp-for="Person.FirstName" class="form-control mb-2" placeholder="Enter first name" aria-label="First name" required/>
+                    <span asp-validation-for="Person.FirstName" class="text-bg-dark fw-bold"></span>
+                </div>
+
+                <div class="form-group">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <label asp-for="Person.LastName" class="required"></label>
+                        </div>
+                        <div>
+                            <span class="text-muted">Required</span>
+                        </div>
+                    </div>
+                    <input asp-for="Person.LastName" class="form-control mb-2" placeholder="Enter last name" aria-label="Last name" required/>
+                    <span asp-validation-for="Person.LastName" class="text-bg-dark fw-bold"></span>
+                </div>
+
+                <div class="form-group">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <label asp-for="Person.EmailAddress" class="required"></label>
+                        </div>
+                        <div>
+                            <span class="text-muted">Required</span>
+                        </div>
+                    </div>
+                    <input asp-for="Person.EmailAddress" class="form-control" placeholder="Enter your email address" aria-label="Email address" required/>
+                    <span asp-validation-for="Person.EmailAddress" class="text-bg-dark fw-bold"></span>
+                </div>
+
+                <div class="form-group  mt-2">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <label asp-for="Person.UserName" class="required"></label>
+                        </div>
+                        <div>
+                            <span class="text-muted">Required</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1"> @Html.Raw("@")</span>
+                        <input asp-for="Person.UserName" class="form-control" placeholder="Enter your email address" aria-label="Email address" required/>
+                    </div>
+                    <span asp-validation-for="Person.EmailAddress" class="text-bg-dark fw-bold"></span>
+                </div>
+
+                <div>
+
+                </div>
+
+
+                <div class="form-group  mt-2">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <label asp-for="Person.AgreeToTerms" class="required"></label>
+                        </div>
+                        <div>
+                            <span class="text-muted">Required</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            <input asp-for="Person.AgreeToTerms"
+                                   name="agreeToTerms"
+                                   id="agreeToTerms"
+                                   class="form-check-input mt-0"
+                                   type="checkbox"
+                                   value=""
+                                   aria-label="Checkbox for following text input">
+                        </div>
+                        <input asp-for="Person.Signature"
+                               type="text"
+                               class="form-control"
+                               aria-label="Agree to terms with your initials"
+                               placeholder="Agree to terms with your initials">
+                    </div>
+                </div>
+                
+                <div class="form-group mt-2">
+                    <input type="submit" value="Save" role="button" class="btn btn-primary mt-2"/>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+    
+
+</div>
+
+@section Scripts
+{
+    <script>
+        $('#btnNotifications').click(function () {
+            var value = parseInt($('#lblIncrement').text());
+            $('#lblIncrement').text(value + 1);
+        });
+        $('form').submit(function (e) {
+            document.getElementById("agreeValue").value = 
+                document.getElementById("agreeToTerms").checked;
+        });
+    </script>
+}

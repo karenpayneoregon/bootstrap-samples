@@ -1,0 +1,91 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+
+    <div class="alert alert-info bg-warning bg-opacity-25 alert-dismissible fade show w-50" role="alert">
+        <strong>aria-checked</strong> example using Javascript for Bootstrap 5
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <form method="post" class="border border-dark rounded-top border-2 w-50 p-2 bg-light" id="main-content">
+        <input type="hidden" asp-for="SugarCheckbox" id="sugarCheckedValue" />
+        <input type="hidden" asp-for="CremeCheckbox" id="cremeCheckedValue" />
+        <div class="form-check">
+
+            <input class="form-check-input"
+                   name="coffeeToppings"
+                   type="checkbox"
+                   value=""
+                   id="addSugar"
+                   aria-checked="false">
+
+            <label class="form-check-label" id="chk1-label" for="addSugar">Sugar</label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input"
+                   type="checkbox"
+                   value=""
+                   name="coffeeToppings"
+                   id="addCreme"
+                   aria-checked="True">
+
+            <label class="form-check-label" for="addCreme">Creme</label>
+        </div>
+        <div class="row">
+            <button id="btn-submit" class="w-25 btn btn-primary m-2" type="submit">Submit</button>
+        </div>
+    </form>
+
+</div>
+
+
+@section scripts{
+        <script>
+
+            $(this).on('keydown', function (event) {
+                if (event.key === '0' && event.altKey) {
+                    $("#skipper").focus();
+                }
+            });
+
+
+            // check the 2nd check box
+            $(document).ready(function(e) {
+                document.getElementById("addCreme").checked = true;
+                document.getElementById("addCreme").setAttribute('aria-checked', 'true');;
+            });
+
+            /*
+             * The following code should be placed into a script file but for
+             * learning we leave it here.
+             */
+
+            // get all check boxes by bootstrap class
+            var checkboxes = document.getElementsByClassName("form-check-input");
+
+            // setup logic to toggle aria-checked
+            for(let index = 0;index < checkboxes.length;index++){
+
+                checkboxes[index].onclick = function(){
+
+                    if (checkboxes[index].getAttribute('aria-checked') === 'true') {
+                        checkboxes[index].setAttribute('aria-checked', 'false');
+                    } else {
+                        checkboxes[index].setAttribute('aria-checked', 'true');
+                    }
+                };
+            }
+
+            // Assign checked aria checked to page properties
+            $('form').submit(function (e) {
+                document.getElementById("sugarCheckedValue").value = document.getElementById("addSugar").ariaChecked;
+                document.getElementById("cremeCheckedValue").value = document.getElementById("addCreme").checked;
+            });
+
+        </script>
+}

@@ -1,0 +1,88 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@* uncomment to see changing the arrow style
+<link rel="stylesheet" href="css/tips.css"/>
+*@
+
+
+
+<div class="container">
+    <div style="margin-left: 30em">
+        <div class="row w-25 mt-lg-5">
+            <button type="button" 
+                    class="btn btn-primary mb-2" 
+                    data-color="primary" data-bs-toggle="tooltip" 
+                    data-bs-placement="top" 
+                    title="Tooltip on top">
+                Tooltip on top
+            </button>
+        </div>
+
+        <div class="row w-25">
+            <button type="button" 
+                    class="btn btn-secondary mb-2" 
+                    data-color="secondary" 
+                    data-bs-toggle="tooltip" 
+                    data-bs-placement="right" 
+                    title="Tooltip on right">
+                Tooltip on right
+            </button>
+        </div>
+
+        <div class="row w-25 mb-5">
+            <button type="button" 
+                    class="btn btn-success" 
+                    data-color="success" 
+                    data-bs-toggle="tooltip" 
+                    data-bs-placement="bottom" 
+                    title="Tooltip on bottom">
+                Tooltip on bottom
+            </button>
+        </div>
+
+        <div class="row w-25">
+            <button type="button" 
+                    class="btn btn-warning" 
+                    data-color="warning" 
+                    data-bs-toggle="tooltip" 
+                    data-bs-placement="left" 
+                    title="Tooltip on left">
+                Tooltip on left
+            </button>
+        </div>
+        
+        <div class="row w-25 mt-2">
+            <input class="form-control" 
+                   type="text" 
+                   data-color="primary" 
+                   data-bs-toggle="tooltip" 
+                   data-bs-placement="left" 
+                   title="Enter something" />
+        </div>
+    </div>
+
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        // init tool-tips
+        // change tool-tip color using data-color
+        (function (window, document, $, undefined) {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+
+            $("button, input").hover(function () {
+                $(".tooltip-inner").css({ "background-color": "var(--bs-" + $(this).data("color") + ")" });
+            });
+
+        })(window, document, jQuery);
+
+    </script>
+}
