@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Input focus color</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="lib/css/site.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="position-absolute top-50 start-50 translate-middle">
+
+        <form method="post"  role="main" class="p-3 shadow" >
+
+            <fieldset class="border border-secondary p-3">
+                
+                <legend class="float-none w-auto fs-6">Focus color</legend>
+
+                <label for="giveName">Name</label>
+                <input type="text"
+                       class="form-control w-50"
+                       name="giveName"
+                       aria-description="enter your first name"
+                       id="giveName"
+                       placeholder="First name">
+
+
+                    <label for="SurName">Sur name</label>
+                    <input type="text"
+                           class="form-control w-50"
+                           name="Surname"
+                           aria-description="enter your last name"
+                           id="SurName"
+                           placeholder="Last name">
+
+
+                <label for="Age">Age</label>
+                <input type="number"
+                       class="form-control"
+                       style="width: 8em"
+                       name="Age"
+                       aria-description="enter your age"
+                       id="Age"
+                       placeholder="Your age">
+
+                <label for="City">City</label>
+                <input type="text"
+                       class="form-control w-50"
+                       name="City"
+                       aria-description="enter your city"
+                       id="City"
+                       placeholder="City">
+
+                <div class="text-end">
+                    <button type="submit"
+                            class="btn btn-success"
+                            aria-description="submit">
+                        Post
+                    </button>
+
+                </div>
+            </fieldset>
+            
+        </form>
+    </div>
+
+    <script>
+        var form = document.querySelector('form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>

@@ -22,11 +22,33 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5SpinnersExample",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5InputGroupExample", "Bootstrap5InputGroupExample\Bootstrap5InputGroupExample.csproj", "{557A7D5B-A083-40E5-BD53-ED944FB1A08A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrap5ModalExample", "Bootstrap5ModalExample\Bootstrap5ModalExample.csproj", "{63BC22E3-EB59-4716-BDCA-9069C41A38DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5ModalExample", "Bootstrap5ModalExample\Bootstrap5ModalExample.csproj", "{63BC22E3-EB59-4716-BDCA-9069C41A38DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrap5ProgressBarExample", "Bootstrap5ProgressBarExample\Bootstrap5ProgressBarExample.csproj", "{35A29F2D-FC2F-40AF-9BBD-9E46E6D290F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5ProgressBarExample", "Bootstrap5ProgressBarExample\Bootstrap5ProgressBarExample.csproj", "{35A29F2D-FC2F-40AF-9BBD-9E46E6D290F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrap5CheckBoxExample", "Bootstrap5CheckBoxExample\Bootstrap5CheckBoxExample.csproj", "{AA91F06B-7724-40EA-ABE7-CA5459D3C6FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5CheckBoxExample", "Bootstrap5CheckBoxExample\Bootstrap5CheckBoxExample.csproj", "{AA91F06B-7724-40EA-ABE7-CA5459D3C6FB}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Bootstrap5FormFocusStyling", "Bootstrap5FormFocusStyling\", "{E4E55780-84EC-4FBF-A176-66C6CC07871C}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_60912"
+		Debug.AspNetCompiler.PhysicalPath = "Bootstrap5FormFocusStyling\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60912\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_60912"
+		Release.AspNetCompiler.PhysicalPath = "Bootstrap5FormFocusStyling\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60912\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "60912"
+		SlnRelativePath = "Bootstrap5FormFocusStyling\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,6 +96,10 @@ Global
 		{AA91F06B-7724-40EA-ABE7-CA5459D3C6FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA91F06B-7724-40EA-ABE7-CA5459D3C6FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA91F06B-7724-40EA-ABE7-CA5459D3C6FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4E55780-84EC-4FBF-A176-66C6CC07871C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4E55780-84EC-4FBF-A176-66C6CC07871C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4E55780-84EC-4FBF-A176-66C6CC07871C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4E55780-84EC-4FBF-A176-66C6CC07871C}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
