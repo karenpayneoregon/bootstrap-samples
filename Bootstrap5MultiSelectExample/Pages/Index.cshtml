@@ -8,37 +8,37 @@
 
 <div class="container">
     <div class="position-absolute top-50 start-50 translate-middle">
+        <form method="post">
 
-        <fieldset class="border border-danger border-opacity-25 p-3 text-primary">
+            <input type="hidden" asp-for="PizzaToppings" id="PizzaToppingsValue"/>
 
-            <legend class="float-none w-auto fs-6">Pizza tops</legend>
+            <fieldset class="border border-danger border-opacity-25 p-3 text-primary">
 
-            <select id="select-tops-options" multiple="multiple">
-                <option value="cheese">Cheese</option>
-                <option value="tomatoes">Tomatoes</option>
-                <option value="mozarella">Mozzarella</option>
-                <option value="mushrooms">Mushrooms</option>
-                <option value="anchovies" disabled>anchovies</option>
-                <option value="pepperoni">Pepperoni</option>
-                <option value="onions">Onions</option>
-            </select>
+                <legend class="float-none w-auto fs-6">Pizza tops</legend>
 
-            <div>
-                <button id="resultsButton" class="btn btn-primary mt-3 w-100">Get selected</button>
-            </div>
+                <select id="select-tops-options" multiple="multiple">
+                    <option value="1">Cheese</option>
+                    <option value="2">Tomatoes</option>
+                    <option value="3">Mozzarella</option>
+                    <option value="4">Mushrooms</option>
+                    <option value="5">anchovies</option>
+                    <option value="6">Pepperoni</option>
+                    <option value="7">Onions</option>
+                </select>
 
-        </fieldset>
+                <div>
+                    <button id="resultsButton" class="btn btn-primary mt-3 w-100">Get selected</button>
+                </div>
+
+            </fieldset>
+
+        </form>
 
 
     </div>
     
-
-
 </div>
 
-@*
-    https://davidstutz.github.io/bootstrap-multiselect/index.html#getting-started
-*@
 
 @section Scripts
 {
@@ -54,8 +54,16 @@
                     numberDisplayed: 5,
                     buttonWidth: '18em',
                     includeSelectAllOption: true,
-                    includeResetOption: true,
-                    selectAllName: 'select-all-name',
+                    //includeResetOption: true,
+                    //selectAllName: 'select-all-name',
+                    onChange: function(element, checked) {
+                        var toppings = $('#select-tops-options option:selected');
+                        var selected = [];
+                        $(toppings).each(function(index, brand){
+                            selected.push([$(this).val()]);
+                        });
+                        document.getElementById("PizzaToppingsValue").value = selected.join(',');
+                    },
                     templates: {
                         button: 
                             '<button type="button" class="multiselect dropdown-toggle" ' +
@@ -66,25 +74,38 @@
 
             });
 
-        document.getElementById("resultsButton").addEventListener("click",
-            function() {
+        //document.getElementById("resultsButton").addEventListener("click",
+        //    function() {
 
-                //document.getElementsByClassName("multiselect-selected-text")[0].innerHTML.split(',').map(i => { return i; }).join(', ')
+        //        //document.getElementsByClassName("multiselect-selected-text")[0].innerHTML.split(',').map(i => { return i; }).join(', ')
 
-                if (document.getElementsByClassName("multiselect-selected-text")[0].innerHTML !== 'Select toppings') {
-                    var items = $('#select-tops-options option:selected').map(function(a, item) { return item.value; });
+        //        if (document.getElementsByClassName("multiselect-selected-text")[0].innerHTML !== 'Select toppings') {
+        //            var items = $('#select-tops-options option:selected').map(function(a, item) { return item.value; });
 
-                    for (var index = 0; index < items.length; index++) {
-                        console.log(items[index]);
-                    }
+        //            for (var index = 0; index < items.length; index++) {
+        //                console.log(items[index]);
+        //            }
 
-                    document.getElementById("foot").innerHTML = `<strong>Selected</strong><span class='text-danger'>
-                                ${document.getElementsByClassName("multiselect")[0].title}</span>`;                    
-                } else {
-                    document.getElementById("foot").innerHTML = "<span class='text-danger fw-bold'>Please make your selections</span>";
-                }
+        //            document.getElementById("foot").innerHTML = `<strong>Selected</strong><span class='text-danger'>
+        //                        ${document.getElementsByClassName("multiselect")[0].title}</span>`;                    
+        //        } else {
+        //            document.getElementById("foot").innerHTML = "<span class='text-danger fw-bold'>Please make your selections</span>";
+        //        }
 
-            });
+        //    });
+
+        $('form').submit(function (e) {
+
+            if (document.getElementsByClassName("multiselect-selected-text")[0].innerHTML !== 'Select toppings') {
+                document.getElementById("foot").innerHTML = `<strong>Selected</strong><span class='text-danger'>
+                            ${document.getElementsByClassName("multiselect")[0].title}</span>`;                    
+            } else {
+                document.getElementById("foot").innerHTML = "<span class='text-danger fw-bold'>Please make your selections</span>";
+            }
+            
+
+        });
+
 
     </script>
 }
