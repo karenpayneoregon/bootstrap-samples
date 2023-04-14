@@ -1,0 +1,90 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+
+<div class="container">
+    <div class="position-absolute top-50 start-50 translate-middle">
+
+        <fieldset class="border border-danger border-opacity-25 p-3 text-primary">
+
+            <legend class="float-none w-auto fs-6">Pizza tops</legend>
+
+            <select id="select-tops-options" multiple="multiple">
+                <option value="cheese">Cheese</option>
+                <option value="tomatoes">Tomatoes</option>
+                <option value="mozarella">Mozzarella</option>
+                <option value="mushrooms">Mushrooms</option>
+                <option value="anchovies" disabled>anchovies</option>
+                <option value="pepperoni">Pepperoni</option>
+                <option value="onions">Onions</option>
+            </select>
+
+            <div>
+                <button id="resultsButton" class="btn btn-primary mt-3 w-100">Get selected</button>
+            </div>
+
+        </fieldset>
+
+
+    </div>
+    
+
+
+</div>
+
+@*
+    https://davidstutz.github.io/bootstrap-multiselect/index.html#getting-started
+*@
+
+@section Scripts
+{
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded",
+            () => {
+
+                $('#select-tops-options').multiselect({
+                    buttonClass: 'form-select',
+                    nonSelectedText: 'Select toppings',
+                    numberDisplayed: 5,
+                    buttonWidth: '18em',
+                    includeSelectAllOption: true,
+                    includeResetOption: true,
+                    selectAllName: 'select-all-name',
+                    templates: {
+                        button: 
+                            '<button type="button" class="multiselect dropdown-toggle" ' +
+                            'data-bs-toggle="dropdown"><span class="multiselect-selected-text"></span></button>',
+                        resetButton: '<div class="multiselect-reset text-center p-2"><button type="button" class="btn btn-sm btn-danger"></button></div>'
+                    }
+                });
+
+            });
+
+        document.getElementById("resultsButton").addEventListener("click",
+            function() {
+
+                //document.getElementsByClassName("multiselect-selected-text")[0].innerHTML.split(',').map(i => { return i; }).join(', ')
+
+                if (document.getElementsByClassName("multiselect-selected-text")[0].innerHTML !== 'Select toppings') {
+                    var items = $('#select-tops-options option:selected').map(function(a, item) { return item.value; });
+
+                    for (var index = 0; index < items.length; index++) {
+                        console.log(items[index]);
+                    }
+
+                    document.getElementById("foot").innerHTML = `<strong>Selected</strong><span class='text-danger'>
+                                ${document.getElementsByClassName("multiselect")[0].title}</span>`;                    
+                } else {
+                    document.getElementById("foot").innerHTML = "<span class='text-danger fw-bold'>Please make your selections</span>";
+                }
+
+            });
+
+    </script>
+}

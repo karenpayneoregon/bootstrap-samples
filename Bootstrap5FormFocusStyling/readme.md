@@ -5,3 +5,9 @@ Example for changing focus color when an element gains focus, override Bootstrap
 :eight_spoked_asterisk: `site.css` has the styles
 
 [jsfiddle](https://jsfiddle.net/karenpayneoregon/m8ykLtxd/3/)
+
+```javascript
+[...form.elements].forEach((item) => {
+  console.log(item.id);
+});
+```

@@ -4,14 +4,14 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="container">
+<div class="position-absolute top-50 start-50 translate-middle">
 
-    <div class="alert alert-info bg-warning bg-opacity-25 alert-dismissible fade show w-50" role="alert">
+    <div class="alert alert-info bg-warning bg-opacity-25 alert-dismissible fade show" role="alert">
         <strong>aria-checked</strong> example using Javascript for Bootstrap 5
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 
-    <form method="post" class="border border-dark rounded-top border-2 w-50 p-2 bg-light" id="main-content">
+    <form method="post" class="border border-dark rounded-top border-2 p-2 bg-light" id="main-content">
         <input type="hidden" asp-for="SugarCheckbox" id="sugarCheckedValue" />
         <input type="hidden" asp-for="CremeCheckbox" id="cremeCheckedValue" />
         <div class="form-check">

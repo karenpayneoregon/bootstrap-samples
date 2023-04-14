@@ -9,70 +9,115 @@
     <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="lib/css/site.css" rel="stylesheet" />
 
+    <style>
+        .resizeable {
+            resize: both;
+            overflow: auto;
+            border: 2px solid black;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding-top: .6em;
+            text-align: center;
+        }
+
+
+    </style>
 </head>
 
-<body>
-    <div class="position-absolute top-50 start-50 translate-middle">
+<body class="bg-dark  bg-opacity-25">
+<h1 class="fs-6 bg-light p-2 text-center">Resize and centering</h1>
+<div class="position-absolute top-50 start-50 translate-middle bg-light">
 
-        <form method="post"  role="main" class="p-3 shadow" >
+    <form method="post"
+          id="main"
+          role="main"
+          class="p-3
+              shadow
+              resizeable"
+          style="min-height: 419px; min-width: 325px;">
 
-            <fieldset class="border border-secondary p-3">
-                
-                <legend class="float-none w-auto fs-6">Focus color</legend>
+        <fieldset id="fieldSet" class="border border-secondary p-3" style="height: 100%">
 
-                <label for="giveName">Name</label>
-                <input type="text"
-                       class="form-control w-50"
-                       name="giveName"
-                       aria-description="enter your first name"
-                       id="giveName"
-                       placeholder="First name">
+            <legend class="float-none w-auto fs-6">Focus color</legend>
 
-
-                    <label for="SurName">Sur name</label>
-                    <input type="text"
-                           class="form-control w-50"
-                           name="Surname"
-                           aria-description="enter your last name"
-                           id="SurName"
-                           placeholder="Last name">
+            <label for="giveName">Name</label>
+            <input type="text"
+                   class="form-control w-50"
+                   name="giveName"
+                   aria-description="enter your first name"
+                   id="giveName"
+                   placeholder="First name">
 
 
-                <label for="Age">Age</label>
-                <input type="number"
-                       class="form-control"
-                       style="width: 8em"
-                       name="Age"
-                       aria-description="enter your age"
-                       id="Age"
-                       placeholder="Your age">
+            <label for="SurName">Sur name</label>
+            <input type="text"
+                   class="form-control w-50"
+                   name="Surname"
+                   aria-description="enter your last name"
+                   id="SurName"
+                   placeholder="Last name">
 
-                <label for="City">City</label>
-                <input type="text"
-                       class="form-control w-50"
-                       name="City"
-                       aria-description="enter your city"
-                       id="City"
-                       placeholder="City">
 
-                <div class="text-end">
-                    <button type="submit"
-                            class="btn btn-success"
-                            aria-description="submit">
-                        Post
-                    </button>
+            <label for="Age">Age</label>
+            <input type="number"
+                   class="form-control"
+                   style="width: 8em"
+                   name="Age"
+                   aria-description="enter your age"
+                   id="Age"
+                   placeholder="Your age">
 
-                </div>
-            </fieldset>
-            
-        </form>
-    </div>
+            <label for="City">City</label>
+            <input type="text"
+                   class="form-control w-75"
+                   name="City"
+                   aria-description="enter your city"
+                   id="City"
+                   placeholder="City">
 
-    <script>
-        var form = document.querySelector('form');
-        form.addEventListener('submit', function(event) {
+
+            <button type="submit"
+                    id="submitButton"
+                    class="btn btn-success"
+                    aria-description="submit">
+                Post
+            </button>
+
+        </fieldset>
+
+    </form>
+</div>
+
+<div class="footer">
+    <p id="foot">Footer</p>
+</div>
+
+<script>
+
+    var form = document.querySelector('form');
+    form.addEventListener('submit',
+        function(event) {
             event.preventDefault();
         });
-    </script>
+
+    /*
+     * Provides resizing and displays dimensions in console window
+     */
+    const observer = new ResizeObserver(mutations => {
+        document.getElementById('foot').innerHTML = `
+                    ${Math.floor(mutations[0].contentRect.width)} x
+                    ${Math.floor(mutations[0].contentRect.height)}`;
+
+    });
+
+    observer.observe(main);
+
+</script>
 </body>
 </html>
