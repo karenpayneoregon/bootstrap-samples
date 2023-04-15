@@ -1,3 +1,5 @@
+using Bootstrap5MultiSelectExample.Classes;
+
 namespace Bootstrap5MultiSelectExample;
 
 public class Program
@@ -6,6 +8,7 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        SetupLogging.Development();
         // Add services to the container.
         builder.Services.AddRazorPages();
 
