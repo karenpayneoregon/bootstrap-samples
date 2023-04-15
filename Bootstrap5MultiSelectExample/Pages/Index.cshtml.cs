@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Serilog;
 using System.Text.Json;
 using Bootstrap5MultiSelectExample.Classes;
-using Bootstrap5MultiSelectExample.Models;
 
 #pragma warning disable CS8618
 
