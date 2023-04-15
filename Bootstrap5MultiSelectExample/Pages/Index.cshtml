@@ -7,17 +7,21 @@
 }
 
 <div class="container">
+
     <div class="position-absolute top-50 start-50 translate-middle">
+
         <form method="post">
 
             <input type="hidden" asp-for="PizzaToppings" id="PizzaToppingsValue"/>
-            <input type="hidden" asp-for="AllCondimentSelected" id="areAllSelected" />
+            <input type="hidden" asp-for="AllCondimentSelected" id="areAllSelected"/>
 
             <fieldset class="border border-danger border-opacity-25 p-3 text-primary">
 
                 <legend class="float-none w-auto fs-6">Pizza tops</legend>
-
-                <select id="select-tops-options" multiple="multiple">
+                @*
+                required
+                *@
+                <select id="select-tops-options" required multiple="multiple">
                     @{
                         foreach (var condiment in MockedData.Condiments())
                         {
@@ -36,7 +40,7 @@
 
 
     </div>
-    
+
 </div>
 
 

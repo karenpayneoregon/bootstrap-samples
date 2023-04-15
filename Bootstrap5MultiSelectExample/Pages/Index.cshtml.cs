@@ -29,8 +29,6 @@ public class IndexModel : PageModel
     /// get user selected toppings
     ///
     /// Pass selected to result page
-    ///
-    /// If no selections stay on index page
     /// </summary>
     /// <returns></returns>
     public IActionResult OnPost()
@@ -43,6 +41,7 @@ public class IndexModel : PageModel
             {
                 value.Selected = true;
             }
+
             return RedirectToPage("ResultsPage", new
             {
                 condiments = JsonSerializer.Serialize(data, 
@@ -76,10 +75,8 @@ public class IndexModel : PageModel
                         })
                 });
             }
-            else
-            {
-                return Redirect("Index");
-            }
+
+            return Redirect("Index"); // never reached
         }
 
     }

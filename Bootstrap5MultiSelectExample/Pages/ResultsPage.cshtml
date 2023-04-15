@@ -1,7 +1,19 @@
 ﻿@page
 @model Bootstrap5MultiSelectExample.Pages.ResultsPageModel
 @{
+    ViewData["Title"] = "Results page";
 }
-<div class="alert alert-primary" role="alert">
-    Results
+
+<div class="container">
+    <div class="border w-50 bg-success text-white ps-3">Selected toppings</div>
+    <ul class="list-group w-50">
+
+        @{
+            foreach (var condiment in Model.Condiments)
+            {
+                <li class="list-group-item list-group-item-success">@condiment.Name</li>
+            }
+        }
+    </ul>
+
 </div>
