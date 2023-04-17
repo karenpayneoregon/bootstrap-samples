@@ -16,3 +16,4 @@ When running, check the console window on post for each page.
 # See also
 
 The project `Bootstrap5MultiSelectExample` for a modal with a callback.
+
