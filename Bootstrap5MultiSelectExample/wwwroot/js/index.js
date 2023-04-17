@@ -18,18 +18,26 @@
             },
             //includeResetOption: true,
             //selectAllName: 'select-all-name',
-            onChange: function (option, checked, select) {
-                //console.log(select);
-                $(option[0])[0].ariaChecked = checked;
-                console.log(option.val());
+            onChange: function (option, checked) {
+                /*
+                 * Not there yet
+                 */
+                if (checked) {
+                    document.querySelectorAll(`[value="${$(option[0])[0].value}"]`)[1].ariaChecked = "true";
+                    document.querySelectorAll(`[value="${$(option[0])[0].value}"]`)[0].ariaChecked = "true";
+                } else {
+                    document.querySelectorAll(`[value="${$(option[0])[0].value}"]`)[1].ariaChecked = "false";
+                    document.querySelectorAll(`[value="${$(option[0])[0].value}"]`)[0].ariaChecked = "false";
+                }
+                
                 //$("#select-tops-options").multiselect('deselect', '1');
                 var toppings = $('#select-tops-options option:selected');
 
                 var selected = [];
                 $(toppings).each(function (index, item) {
                     selected.push([$(this).val()]);
-                    console.log([$(this).val()]);
                 });
+
                 document.getElementById("PizzaToppingsValue").value = selected.join(',');
             },
             templates: {

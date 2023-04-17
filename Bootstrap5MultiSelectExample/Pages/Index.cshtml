@@ -8,7 +8,7 @@
 
 <link href="~/lib/limonte-sweetalert2/sweetalert2.min.css" rel="stylesheet" />
 <script src="~/lib/limonte-sweetalert2/sweetalert2.min.js"></script>
-<link rel="stylesheet" href="css/index.css"/>
+<link rel="stylesheet" href="css/index.css" />
 
 <div class="container">
 
@@ -16,17 +16,17 @@
 
         <form method="post">
 
-            <input type="hidden" asp-for="PizzaToppings" id="PizzaToppingsValue"/>
-            <input type="hidden" asp-for="AllCondimentSelected" id="areAllSelected"/>
+            <input type="hidden" asp-for="PizzaToppings" id="PizzaToppingsValue" />
+            <input type="hidden" asp-for="AllCondimentSelected" id="areAllSelected" />
 
             <fieldset class="border border-danger border-opacity-25 p-3 text-primary">
 
                 <legend class="float-none w-auto fs-6">Pizza tops</legend>
                 @*
-                    required attribute will counter form post and present a message
-                    indicating at least one option must be selected
+                required attribute will counter form post and present a message
+                indicating at least one option must be selected
                 *@
-                <select id="select-tops-options" required multiple="multiple">
+                <select id="select-tops-options" name="toppings" required multiple="multiple">
                     @{
                         foreach (var condiment in MockedData.Condiments())
                         {
@@ -42,7 +42,7 @@
             </fieldset>
 
         </form>
-        
+
     </div>
 
 </div>
@@ -50,12 +50,13 @@
 
 @section Scripts
 {
+
     <script src="js/index.js"></script>
+
     @if (ViewData["message"] != null)
     {
         <script type="text/javascript">
             window.onload = function () {
-
 
                 const toast = Swal.mixin({
                     toast: true,
