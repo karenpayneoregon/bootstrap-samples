@@ -12,3 +12,7 @@ When running, check the console window on post for each page.
 
 ![Figure2](assets/figure2.png)
 
+
+# See also
+
+The project `Bootstrap5MultiSelectExample` for a modal with a callback.
