@@ -56,12 +56,22 @@
         <script type="text/javascript">
             window.onload = function () {
 
-                Swal.fire({
-                    icon: 'info',
-                    title: '@ViewData["message"]',
-                    customClass: 'swal-sm',
+
+                const toast = Swal.mixin({
+                    toast: true,
+                    position: 'bottom-end',
+                    background: 'yellow',
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer);
+                        toast.addEventListener('mouseleave', Swal.resumeTimer);
+                    }
+                });
+                toast.fire({
+                    icon: 'success',
+                    title: '@ViewData["message"]'
                 });
             };
         </script>
