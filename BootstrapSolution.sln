@@ -50,7 +50,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Bootstrap5FormFocusStyling"
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrap5MultiSelectExample", "Bootstrap5MultiSelectExample\Bootstrap5MultiSelectExample.csproj", "{7C8BF804-08F4-470B-8C5A-A734CF0981A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5MultiSelectExample", "Bootstrap5MultiSelectExample\Bootstrap5MultiSelectExample.csproj", "{7C8BF804-08F4-470B-8C5A-A734CF0981A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

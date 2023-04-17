@@ -10,8 +10,8 @@ Shown in a fieldset
 Shown with options
 
 - Select all, check to toggle check and and un-check all
-- Reset, un-check all
+- ~~Reset, un-check all~~
 
-One would not normally use both `Select all` and `Reset`, both are shown to show what is possible.
+One would not normally use both `Select all` and `Reset`, both are shown to show what is possible but decided to exclude reset from the code sample, seemed like to much..
 
 ![Figure2](assets/figure2.png)

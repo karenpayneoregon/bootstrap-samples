@@ -1,0 +1,84 @@
+﻿@page
+@using Bootstrap5MultiSelectExample.Classes
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Dialog1Model
+@{
+}
+
+<div class="position-absolute top-50 start-50 translate-middle">
+    <div class="row">
+        <button class="btn btn-primary btn-lg" id="btn-confirm">Select toppings</button>
+    </div>
+</div>
+
+<div class="modal fade" id="mi-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Available toppings</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <form method="post">
+
+                    <input type="hidden" asp-for="PizzaToppings" id="PizzaToppingsValue"/>
+                    <input type="hidden" asp-for="AllCondimentSelected" id="areAllSelected"/>
+
+                    <fieldset class="border border-secondary border-opacity-25 p-3">
+
+                        <legend class="float-none w-auto fs-6">Pizza tops</legend>
+                        <select id="select-tops-options" required multiple="multiple">
+                            @{
+                                foreach (var condiment in MockedData.Condiments())
+                                {
+                                    <option id="@condiment.Value" value="@condiment.Value" aria-checked="false">@condiment.Name</option>
+                                }
+                            }
+                        </select>
+
+                        <div class="mt-2">
+                            <button type="button" class="btn btn-secondary float-end" id="modal-btn-no">Close</button>
+                            <button id="resultsButton" class="btn btn-primary float-end me-2">Select</button>
+                        </div>
+
+                    </fieldset>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts
+{
+    <script src="js/modalPage.js"></script>
+
+    <script>
+    
+        $(document).ready(function() {
+            $('#example-modal').multiselect();
+        });
+        var modalConfirm = function (callback) {
+
+            $("#btn-confirm").on("click", function () {
+                $("#mi-modal").modal('show');
+            });
+
+            $("#modal-btn-no").on("click", function () {
+                callback(false);
+                $("#mi-modal").modal('hide');
+            });
+        };
+
+        modalConfirm(function (confirm) {
+            // for any other processing e.g. user cancelled
+        });
+    </script>
+}

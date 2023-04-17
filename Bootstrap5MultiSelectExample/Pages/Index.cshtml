@@ -6,6 +6,12 @@
     ViewData["Title"] = "Home page";
 }
 
+<style type="text/css">
+    #select-tops-options-container .multiselect-selected .form-check-label {
+        color: seagreen;
+        font-weight: bold
+    }
+</style>
 <div class="container">
 
     <div class="position-absolute top-50 start-50 translate-middle">
@@ -19,13 +25,14 @@
 
                 <legend class="float-none w-auto fs-6">Pizza tops</legend>
                 @*
-                required
+                    required attribute will counter form post and present a message
+                    indicating at least one option must be selected
                 *@
                 <select id="select-tops-options" required multiple="multiple">
                     @{
                         foreach (var condiment in MockedData.Condiments())
                         {
-                            <option value="@condiment.Value">@condiment.Name</option>
+                            <option id="@condiment.Value" value="@condiment.Value" aria-checked="false">@condiment.Name</option>
                         }
                     }
                 </select>
@@ -37,8 +44,7 @@
             </fieldset>
 
         </form>
-
-
+        
     </div>
 
 </div>
