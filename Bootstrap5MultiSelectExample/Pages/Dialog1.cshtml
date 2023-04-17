@@ -5,6 +5,7 @@
 @{
 }
 
+
 <div class="position-absolute top-50 start-50 translate-middle">
     <div class="row">
         <button class="btn btn-primary btn-lg" id="btn-confirm">Select toppings</button>
@@ -34,11 +35,12 @@
 
                     <input type="hidden" asp-for="PizzaToppings" id="PizzaToppingsValue"/>
                     <input type="hidden" asp-for="AllCondimentSelected" id="areAllSelected"/>
+                    <input type="hidden" asp-for="UserCancelled" id="userCancelled"/>
 
                     <fieldset class="border border-secondary border-opacity-25 p-3">
 
                         <legend class="float-none w-auto fs-6">Pizza tops</legend>
-                        <select id="select-tops-options" required multiple="multiple">
+                        <select id="select-tops-options" multiple="multiple">
                             @{
                                 foreach (var condiment in MockedData.Condiments())
                                 {
@@ -48,8 +50,8 @@
                         </select>
 
                         <div class="mt-2">
-                            <button type="button" class="btn btn-secondary float-end" id="modal-btn-no">Close</button>
-                            <button id="resultsButton" class="btn btn-primary float-end me-2">Select</button>
+                            <button type="submit" class="btn btn-secondary float-end" id="modal-btn-no" asp-page-handler="CloseButton">Close</button>
+                            <button type="submit" id="resultsButton" class="btn btn-primary float-end me-2" asp-page-handler="ConfirmButton">Select</button>
                         </div>
 
                     </fieldset>
@@ -70,6 +72,7 @@
     
         $(document).ready(function() {
             $('#example-modal').multiselect();
+
         });
         var modalConfirm = function (callback) {
 
@@ -84,7 +87,11 @@
         };
 
         modalConfirm(function (confirm) {
-            // for any other processing e.g. user cancelled
+            if (confirm) {
+                document.getElementById("userCancelled").value = false;
+            } else {
+                document.getElementById("userCancelled").value = true;
+            }
         });
     </script>
 }

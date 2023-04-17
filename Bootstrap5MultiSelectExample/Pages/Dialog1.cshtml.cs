@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text.Json;
 using Bootstrap5MultiSelectExample.Classes;
+using Serilog;
 
 #pragma warning disable CS8618
 
@@ -17,8 +18,15 @@ public class Dialog1Model : PageModel
 
     [BindProperty]
     public int[] ToppingsSelected { get; set; }
+    [BindProperty]
+    public bool UserCancelled { get; set; }
 
-    public IActionResult OnPost()
+    public IActionResult OnPostCloseButton(IFormCollection data)
+    {
+        Log.Information($"User cancelled selecting any toppings");
+        return RedirectToPage("Index",new {message = "No toppings for me"});
+    }
+    public IActionResult OnPostConfirmButton(IFormCollection formCollection)
     {
         if (AllCondimentSelected)
         {

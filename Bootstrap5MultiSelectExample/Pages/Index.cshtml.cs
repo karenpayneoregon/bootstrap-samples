@@ -17,9 +17,14 @@ public class IndexModel : PageModel
     [BindProperty]
     public int[] ToppingsSelected { get; set; }
 
-    public void OnGet()
-    {
 
+
+    public void OnGet(string message)
+    {
+        if (!string.IsNullOrWhiteSpace(message))
+        {
+            ViewData["message"] = message;
+        }
     }
 
     /// <summary>

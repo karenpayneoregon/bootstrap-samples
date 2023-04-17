@@ -6,12 +6,10 @@
     ViewData["Title"] = "Home page";
 }
 
-<style type="text/css">
-    #select-tops-options-container .multiselect-selected .form-check-label {
-        color: seagreen;
-        font-weight: bold
-    }
-</style>
+<link href="~/lib/limonte-sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/lib/limonte-sweetalert2/sweetalert2.min.js"></script>
+<link rel="stylesheet" href="css/index.css"/>
+
 <div class="container">
 
     <div class="position-absolute top-50 start-50 translate-middle">
@@ -53,4 +51,19 @@
 @section Scripts
 {
     <script src="js/index.js"></script>
+    @if (ViewData["message"] != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+
+                Swal.fire({
+                    icon: 'info',
+                    title: '@ViewData["message"]',
+                    customClass: 'swal-sm',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            };
+        </script>
+    }
 }

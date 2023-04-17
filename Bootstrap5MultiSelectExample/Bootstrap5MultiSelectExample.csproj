@@ -19,6 +19,11 @@
 	<ItemGroup>
 		<Folder Include="assets\" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="wwwroot\lib\theme-bootstrap-4\bootstrap-4.scss" />
+	  <None Include="wwwroot\lib\theme-bootstrap-4\README.md" />
+	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
 		<PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />

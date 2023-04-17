@@ -1,6 +1,7 @@
 ﻿document.addEventListener("DOMContentLoaded",
     () => {
 
+
         $('#select-tops-options').multiselect({
             buttonClass: 'form-select',
             nonSelectedText: 'Select toppings',
