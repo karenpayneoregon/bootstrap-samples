@@ -5,4 +5,24 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div>
+    <button class="btn btn-primary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseExample"
+            aria-expanded="false"
+            aria-label="Example"
+            aria-description="for Bootstrap collapse to provide a read more functionality"
+            aria-controls="collapseExample">
+        Read more
+    </button>
+</div>
+
+<div class="collapse" id="collapseExample">
+    <div class="card card-body w-50 bg-light">
+        <div>
+            <a target="_blank" href="https://getbootstrap.com/docs/5.2/components/collapse/">collapse component</a> 
+            this panel is hidden by default but revealed when the user activates the relevant trigger.
+        </div>
+    </div>
+</div>
