@@ -10,7 +10,7 @@ public class IndexModel : PageModel
     [BindProperty]
     public Person Person { get; set; } = default!;
 
-    public string BadgeText { get; set; } = "Code samples";
+    public string BadgeText { get; set; } = "Code sample";
 
     public void OnPost()
     {

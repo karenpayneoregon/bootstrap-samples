@@ -1,4 +1,5 @@
 ﻿using Bogus;
+#pragma warning disable CS8618
 
 namespace Bootstrap5FloatingLabelsExample.Models;
 

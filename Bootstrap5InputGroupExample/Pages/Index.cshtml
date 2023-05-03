@@ -5,9 +5,12 @@
 }
 
 <div class="container">
-    <div class="alert alert-primary" role="alert">
-        <span class="badge rounded-pill bg-primary">@Model.BadgeText</span>
+    <div class="alert alert-primary" style="width: 33em" role="alert">
+        
+        <h1 class="fs-5"><span class="badge rounded-pill bg-primary">@Model.BadgeText</span></h1>
     </div>
+    
+    
 
     <div class="row">
         <div class="col-md-4">
@@ -19,7 +22,7 @@
 
                 <input type="hidden" asp-for="Person.PersonId"/>
 
-                <div class="form-group">
+                <div>
                     <div class="d-flex justify-content-between">
                         <div>
                             <label asp-for="Person.FirstName" class="required"></label>
@@ -32,7 +35,7 @@
                     <span asp-validation-for="Person.FirstName" class="text-bg-dark fw-bold"></span>
                 </div>
 
-                <div class="form-group">
+                <div>
                     <div class="d-flex justify-content-between">
                         <div>
                             <label asp-for="Person.LastName" class="required"></label>
@@ -45,7 +48,7 @@
                     <span asp-validation-for="Person.LastName" class="text-bg-dark fw-bold"></span>
                 </div>
 
-                <div class="form-group">
+                <div>
                     <div class="d-flex justify-content-between">
                         <div>
                             <label asp-for="Person.EmailAddress" class="required"></label>
@@ -58,7 +61,7 @@
                     <span asp-validation-for="Person.EmailAddress" class="text-bg-dark fw-bold"></span>
                 </div>
 
-                <div class="form-group  mt-2">
+                <div class="mt-2">
                     <div class="d-flex justify-content-between">
                         <div>
                             <label asp-for="Person.UserName" class="required"></label>
@@ -80,10 +83,10 @@
                 </div>
 
 
-                <div class="form-group  mt-2">
+                <div class="mt-2">
                     <div class="d-flex justify-content-between">
                         <div>
-                            <label asp-for="Person.AgreeToTerms" class="required"></label>
+                            <label for="agreeToTerms" class="required">Agree to terms</label>
                         </div>
                         <div>
                             <span class="text-muted">Required</span>
@@ -102,13 +105,14 @@
                         </div>
                         <input asp-for="Person.Signature"
                                type="text"
+                               id="signature"
                                class="form-control"
                                aria-label="Agree to terms with your initials"
                                placeholder="Agree to terms with your initials">
                     </div>
                 </div>
                 
-                <div class="form-group mt-2">
+                <div class="mt-2">
                     <input type="submit" value="Save" role="button" class="btn btn-primary mt-2"/>
                 </div>
             </form>

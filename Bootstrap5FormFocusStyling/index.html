@@ -8,6 +8,10 @@
 
     <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="lib/css/site.css" rel="stylesheet" />
+    <script src="lib/js/consoleHelpers.js"></script>
+
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
 
     <style>
         .resizeable {
@@ -25,8 +29,6 @@
             padding-top: .6em;
             text-align: center;
         }
-
-
     </style>
 </head>
 
@@ -109,15 +111,49 @@
     /*
      * Provides resizing and displays dimensions in console window
      */
-    const observer = new ResizeObserver(mutations => {
-        document.getElementById('foot').innerHTML = `
-                    ${Math.floor(mutations[0].contentRect.width)} x
-                    ${Math.floor(mutations[0].contentRect.height)}`;
+    //const observer = new ResizeObserver(mutations => {
+    //    console.log(`${Math.floor(mutations[0].contentRect.width)} x ${Math.floor(mutations[0].contentRect.height)}`);
 
+    //    document.getElementById('foot').innerHTML = `
+    //                ${Math.floor(mutations[0].contentRect.width)} x
+    //                ${Math.floor(mutations[0].contentRect.height)}`;
+
+    //});
+
+    //observer.observe(main);
+    var styles = [
+        'background: linear-gradient(#D33106, #571402)'
+        , 'border: 1px solid #3E0E02'
+        , 'color: white'
+        , 'display: block'
+        , 'text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3)'
+        , 'box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 5px 3px -5px rgba(0, 0, 0, 0.5), 0 -13px 5px -10px rgba(255, 255, 255, 0.4) inset'
+        , 'line-height: 40px'
+        , 'text-align: center'
+        , 'font-size: 30px'
+        , 'font-weight: bold'
+    ].join(';');
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        reportWindowSize();
+
+        $consoleHelpers.success(' document loaded ');
     });
 
-    observer.observe(main);
+    function reportWindowSize() {
 
+        document.getElementById('foot').innerHTML = `
+                    ${window.innerWidth} x
+                    ${window.innerHeight}`;
+
+    }
+
+    window.onresize = reportWindowSize;
+
+    window.addEventListener("error", function (e) {
+        console.error(e.message);
+    });
 </script>
 </body>
 </html>

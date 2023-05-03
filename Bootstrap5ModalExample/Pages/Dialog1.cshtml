@@ -5,15 +5,14 @@
 
 <div class="container">
     <div class="row">
-        <button class="btn btn-primary w-25" id="btn-confirm">Confirm</button>
+        <button class="btn btn-primary w-25" id="btn-confirm">Send message</button>
     </div>
 </div>
 
-<form method="post" class="w-25">
+<form method="post" class="w-25" id="messageForm">
     <input type="hidden" asp-for="Recipient" id="recipientName" />
     <input type="hidden" asp-for="Message" id="messageText" />
     <input type="hidden" asp-for="Accepted" id="acceptedFlag" />
-    <input type="submit" value="Post" role="button" class="btn btn-primary mt-2 w-100"/>
 </form>
 
 <div class="modal fade" id="mi-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -28,11 +27,15 @@
                 <form>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Recipient:</label>
-                        <input type="text" class="form-control" id="recipient-name">
+                        <input type="text" class="form-control" id="recipient-name" value="Mary">
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">Message:</label>
-                        <textarea class="form-control" id="message-text"></textarea>
+                        <textarea class="form-control" id="message-text">
+Now is the winter of our discontent.
+Made glorious summer by this sun of York;
+                        
+</textarea>
                     </div>
                 </form>
             </div>
@@ -75,6 +78,9 @@
             } else {
                 document.getElementById("acceptedFlag").value = false;
             }
+
+            $('#messageForm').submit();
         });
+
     </script>
 }

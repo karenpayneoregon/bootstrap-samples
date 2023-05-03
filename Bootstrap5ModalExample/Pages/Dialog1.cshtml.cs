@@ -1,3 +1,4 @@
+using System.Diagnostics.Eventing.Reader;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Serilog;
@@ -21,7 +22,7 @@ public class Dialog1Model : PageModel
         {
             if (!string.IsNullOrWhiteSpace(Recipient) && !string.IsNullOrWhiteSpace(Message))
             {
-                Log.Information("Send to {P1} Message: {P2}",
+                Log.Information("\nSend to {P1} Message: \n{P2}",
                     Recipient,
                     Message);
             }

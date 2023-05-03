@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+#pragma warning disable CS8618
 
 namespace Bootstrap5FloatingLabelsExample.Models;
 
