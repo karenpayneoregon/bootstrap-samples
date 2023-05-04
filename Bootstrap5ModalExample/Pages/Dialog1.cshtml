@@ -15,7 +15,7 @@
     <input type="hidden" asp-for="Accepted" id="acceptedFlag" />
 </form>
 
-<div class="modal fade" id="mi-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="mi-modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -70,11 +70,9 @@ Made glorious summer by this sun of York;
 
         modalConfirm(function (confirm) {
             if (confirm) {
-
                 document.getElementById("recipientName").value = document.getElementById("recipient-name").value;
                 document.getElementById("messageText").value = document.getElementById("message-text").value;
                 document.getElementById("acceptedFlag").value = true;
-
             } else {
                 document.getElementById("acceptedFlag").value = false;
             }
