@@ -1,0 +1,103 @@
+﻿@page
+@model Bootstrap5ModalExample.Pages.Login1Model
+@{
+}
+<div class="container">
+
+    <div class="container">
+        <h1 class="fs-5">Log In Demo</h1>
+        <button type='button' id="btn-confirm" class="btn btn-primary" data-toggle="modal" >Open Log In Window</button>
+  
+        <div class="modal" id="mi-modal" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+@*                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>*@
+                    </div>
+
+                    <div class="modal-body">
+                        <form role="form">
+                            
+                                <div class="">
+                                    <label class="form-label" for="userName">User name</label>
+                                    <div class="input-group mb-3">
+                                        <input class="form-control" id="userName" class="mt-1" type="text" name="userName" value="billybob" required />
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <label class="form-label" for="password">Password</label>
+                                    <div class="input-group">
+                                        <input class="form-control password w-75" id="password" class="mt-1" type="password" name="password" value="secret!" required/>
+                                        <span class="input-group-text togglePassword" id="">
+                                            <i data-feather="eye" style="cursor: pointer"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="modal-btn-no">Cancel</button>
+                        <button id="modal-btn-yes" class="btn btn-primary">Log In</button>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+</div>
+
+@section Scripts
+{
+    <script src="lib/feather.min.js"></script>
+    <script>
+        var modalConfirm = function (callback) {
+
+            $("#btn-confirm").on("click", function () {
+                $("#mi-modal").modal('show');
+            });
+
+            $("#modal-btn-yes").on("click", function () {
+                callback(true);
+                $("#mi-modal").modal('hide');
+            });
+
+            $("#modal-btn-no").on("click", function () {
+                callback(false);
+                $("#mi-modal").modal('hide');
+            });
+        };
+
+        modalConfirm(function (confirm) {
+            if (confirm) {
+                console.log(document.getElementById("userName").value);
+                console.log(document.getElementById("password").value);
+            } else {
+            }
+
+            //document.getElementById("messageForm").submit();
+
+        });
+
+        feather.replace({ 'aria-hidden': 'true' });
+
+        $(".togglePassword").click(function (e) {
+            e.preventDefault();
+            var type = $(this).parent().parent().find(".password").attr("type");
+            console.log(type);
+            if(type === "password"){
+                $("svg.feather.feather-eye").replaceWith(feather.icons["eye-off"].toSvg());
+                $(this).parent().parent().find(".password").attr("type","text");
+            }else if(type === "text"){
+                $("svg.feather.feather-eye-off").replaceWith(feather.icons["eye"].toSvg());
+                $(this).parent().parent().find(".password").attr("type","password");
+            }
+        });
+
+    </script>
+}
