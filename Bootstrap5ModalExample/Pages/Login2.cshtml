@@ -1,0 +1,158 @@
+﻿@page
+@model Bootstrap5ModalExample.Pages.Login2Model
+@{
+}
+
+<link rel="stylesheet" href="css/pinLogin.css" />
+
+
+
+<div class="container" id="main-content">
+
+    <h1 class="fs-5">Log In with pin</h1>
+
+    <button type='button' id="btn-confirm" class="btn btn-primary" data-toggle="modal">Open Log In Window</button>
+
+    <div class="modal" id="mi-modal" data-bs-backdrop="static" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h2 class="modal-title fw-bold" id="loginModalLabel">Enter your credentials</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form role="form" autocomplete="off">
+
+                        <div class="">
+                            <label class="form-label" for="userName">User name</label>
+                            <div class="input-group mb-3" id="userGroup">
+                                <input class="form-control"
+                                       id="userName"
+                                       class="mt-1"
+                                       type="text"
+                                       name="userName"
+                                       value=""
+                                       autocomplete="off"
+                                       required />
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <label class="form-label" for="password">Pin</label>
+                            @*
+                            Toggle show/hide pin
+                            numbers only
+                            max length is 4
+                            *@
+                            <div class="input-group" id="pinGroup" style="width: 8em">
+                                <input class="form-control password input-numeral"
+                                       id="password"
+                                       class="mt-1"
+                                       type="password"
+                                       name="password"
+                                       value=""
+                                       maxlength="4"
+                                       aria-describedby="pinHelp"
+                                       required />
+                                <span class="input-group-text togglePassword" id="">
+                                    <i data-feather="eye" style="cursor: pointer"></i>
+                                </span>
+                            </div>
+                            <div id="pinHelp" class="form-text mt-2">Press <kbd>alt</kbd> + <kbd>s</kbd> to toggle pin visible </div>
+
+                        </div>
+
+                        <div class="mt-2">
+                            <a asp-area="" asp-page="/PinRecorvery">[ *I don't know my PIN ]</a>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="modal-btn-no">Cancel</button>
+                    <button id="modal-btn-yes" class="btn btn-primary">Log In</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Scripts
+    {
+
+    <script src="lib/feather.min.js"></script>
+    <script src="lib/cleave.js"></script>
+
+    <script>
+        //document.getElementById('password').click();
+        var modalConfirm = function (callback) {
+
+            $("#btn-confirm").on("click", function () {
+                $("#mi-modal").modal('show');
+            });
+
+            $("#modal-btn-yes").on("click", function () {
+                callback(true);
+                $("#mi-modal").modal('hide');
+            });
+
+            $("#modal-btn-no").on("click", function () {
+                callback(false);
+                $("#mi-modal").modal('hide');
+            });
+        };
+
+        modalConfirm(function (confirm) {
+            if (confirm) {
+                console.log(document.getElementById("userName").value);
+                console.log(document.getElementById("password").value);
+            } else {
+                console.log('cancelled');
+            }
+
+            //document.getElementById("messageForm").submit();
+
+        });
+
+        $("#mi-modal").on("hidden.bs.modal", function () {
+            console.log('cancelled via close X button');
+        });
+
+        feather.replace({ 'aria-hidden': 'true' });
+
+        $(".togglePassword").click(function (e) {
+            e.preventDefault();
+
+            var type = $(this).parent().parent().find(".password").attr("type");
+
+            if (type === "password") {
+                $("svg.feather.feather-eye").replaceWith(feather.icons["eye-off"].toSvg());
+                $(this).parent().parent().find(".password").attr("type", "text");
+            } else if (type === "text") {
+                $("svg.feather.feather-eye-off").replaceWith(feather.icons["eye"].toSvg());
+                $(this).parent().parent().find(".password").attr("type", "password");
+            }
+        });
+
+
+
+        $(this).on('keydown', function (event) {
+            if (event.key === 's' && event.altKey) {
+                $(".togglePassword").click();
+            }
+        });
+
+        var cleaveNumeral = new Cleave('.input-numeral', {
+            numeral: true,
+            numeralThousandsGroupStyle: 'none'
+        });
+
+    </script>
+}
