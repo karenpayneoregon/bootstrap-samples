@@ -8,3 +8,5 @@ Each project name begins with the version of Bootstrap as time goes by there wil
 
 > **Note**
 > In some cases I did minimal amount of coding that is non Bootstrap to get things done like using Request.Form rather than proper methods to get at data. The main focus is Bootstrap.
+
+DEV.IO [article](https://dev.to/karenpayneoregon/bootstrap-5-and-razor-pages-4521)
