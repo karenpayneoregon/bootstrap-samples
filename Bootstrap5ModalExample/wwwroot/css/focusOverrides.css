@@ -1,0 +1,47 @@
+﻿.num {
+    position: relative;
+
+}
+
+.number {
+    position: absolute;
+    
+}
+
+.value {
+    position: absolute;
+    top: 0;
+    color: transparent !important;
+    background: transparent;
+    border: none;
+}
+
+a:focus,
+.form-control:focus,
+input[type=radio]:focus,
+.btn:focus {
+    outline-color: #0d6efd;
+    outline-width: 1px;
+    outline-style: solid;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #0d6efd;
+    outline: 0 none;
+}

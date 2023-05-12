@@ -12,7 +12,6 @@
     "https": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "SocialSecurityPage",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

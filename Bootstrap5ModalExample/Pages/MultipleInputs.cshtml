@@ -1,0 +1,125 @@
+﻿@page
+@model Bootstrap5ModalExample.Pages.MultipleInputsModel
+@{
+}
+<button type="button" id="btn-confirm" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mi-modal">
+    Open
+</button>
+
+<form method="post" class="w-25" id="form1">
+    <input type="hidden" asp-for="Process" id="process" />
+    <input type="hidden" asp-for="UserData.Line1" id="line1" />
+    <input type="hidden" asp-for="UserData.Line2" id="line2" />
+    <input type="hidden" asp-for="UserData.Line3" id="line3" />
+    <input type="hidden" asp-for="UserData.Line4" id="line4" />
+    <input type="hidden" asp-for="UserData.Line5" id="line5" />
+    <input type="hidden" asp-for="UserData.Line6" id="line6" />
+    <input type="hidden" asp-for="UserData.Line7" id="line7" />
+    <input type="hidden" asp-for="UserData.Line8" id="line8" />
+    <input type="hidden" asp-for="UserData.Line9" id="line9" />
+</form>
+
+
+<div class="modal fade" id="mi-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="mi-modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mi-modalLabel">Data entry</h5>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="item1" class="form-label">Input 1</label>
+                        <input type="text" class="form-control" id="item1" 
+                               value="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+                    </div>
+                    <div class="mb-3">
+                        <label for="item2" class="form-label">Input 2</label>
+                        <input type="text" class="form-control" id="item2" 
+                               value="Integer nec odio. Praesent libero.">
+                    </div>
+                    <div class="mb-3">
+                        <label for="item3" class="form-label">Input 3</label>
+                        <input type="text" class="form-control" id="item3" 
+                               value="Sed cursus ante dapibus diam.">
+                    </div>
+                    <div class="mb-3">
+                        <label for="item4" class="form-label">Input 4</label>
+                        <input type="text" class="form-control" id="item4" 
+                               value="Sed nisi.">
+                    </div>
+                    <div class="mb-3">
+                        <label for="item5" class="form-label">Input 5</label>
+                        <input type="text" class="form-control" id="item5" 
+                               value="Nulla quis sem at nibh elementum imperdiet.">
+                    </div>
+                    <div class="mb-3">
+                        <label for="item6" class="form-label">Input 6</label>
+                        <input type="text" class="form-control" id="item6">
+                    </div>
+                    <div class="mb-3">
+                        <label for="item7" class="form-label">Input 7</label>
+                        <input type="text" class="form-control" id="item7" 
+                               value="Duis sagittis ipsum.">
+                    </div>
+                    <div class="mb-3">
+                        <label for="item8" class="form-label">Input 8</label>
+                        <input type="text" class="form-control" id="item8">
+                    </div>
+                    <div class="mb-3">
+                        <label for="item9" class="form-label">Input 9</label>
+                        <input type="text" class="form-control" id="item9" 
+                               value="Fusce nec tellus sed augue semper porta.">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="modal-btn-no" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="modal-btn-yes" class="btn btn-success">Okay</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+                        
+@section Scripts
+    {
+    <script src="lib/feather.min.js"></script>
+    <script>
+        var modalConfirm = function (callback) {
+
+            $("#btn-confirm").on("click", function () {
+                $("#mi-modal").modal('show');
+            });
+
+            $("#modal-btn-yes").on("click", function () {
+                callback(true);
+                $("#mi-modal").modal('hide');
+            });
+
+            $("#modal-btn-no").on("click", function () {
+                callback(false);
+                $("#mi-modal").modal('hide');
+            });
+        };
+
+        modalConfirm(function (confirm) {
+            if (confirm) {
+                document.getElementById("process").value = true;
+                document.getElementById("line1").value = document.getElementById("item1").value;
+                document.getElementById("line2").value = document.getElementById("item2").value;
+                document.getElementById("line3").value = document.getElementById("item3").value;
+                document.getElementById("line4").value = document.getElementById("item4").value;
+                document.getElementById("line5").value = document.getElementById("item5").value;
+                document.getElementById("line6").value = document.getElementById("item6").value;
+                document.getElementById("line7").value = document.getElementById("item7").value;
+                document.getElementById("line8").value = document.getElementById("item8").value;
+                document.getElementById("line9").value = document.getElementById("item9").value;
+            } else {
+                document.getElementById("process").value = false;
+            }
+
+            document.getElementById("form1").submit();
+        });
+    </script>
+}

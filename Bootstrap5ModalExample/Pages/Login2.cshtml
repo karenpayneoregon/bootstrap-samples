@@ -21,7 +21,7 @@
                     <h2 class="modal-title fw-bold" id="loginModalLabel">Enter your credentials</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-
+                
                 <div class="modal-body">
                     <form role="form" autocomplete="off">
 
@@ -60,18 +60,17 @@
                                     <i data-feather="eye" style="cursor: pointer"></i>
                                 </span>
                             </div>
-                            <div id="pinHelp" class="form-text mt-2">Press <kbd>alt</kbd> + <kbd>s</kbd> to toggle pin visible </div>
+                            <div id="pinHelp" class="form-text mt-2">Press <kbd>alt</kbd> + <kbd>v</kbd> to toggle pin visible </div>
 
                         </div>
-
-                        <div class="mt-2">
-                            <a asp-area="" asp-page="/PinRecorvery">[ *I don't know my PIN ]</a>
-                        </div>
-
+                        
                     </form>
                 </div>
 
                 <div class="modal-footer">
+                    <div class="flex-grow-1">
+                        <a asp-area="" asp-page="/PinRecorvery" aria-label="Click to recover pin">I don't know my PIN</a>
+                    </div>
                     <button type="button" class="btn btn-secondary" id="modal-btn-no">Cancel</button>
                     <button id="modal-btn-yes" class="btn btn-primary">Log In</button>
                 </div>
@@ -144,7 +143,7 @@
 
 
         $(this).on('keydown', function (event) {
-            if (event.key === 's' && event.altKey) {
+            if (event.key === 'v' && event.altKey) {
                 $(".togglePassword").click();
             }
         });
