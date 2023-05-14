@@ -1,0 +1,30 @@
+﻿@page
+@model Bootstrap5ProgressBarExample.Pages.RealPageModel
+@{
+}
+
+<div class="container">
+    <div class="bg-light mb-3 border p-2">
+        This example unlike the other samples does not use JavaScript
+    </div>
+
+    <div class="progress w-50">
+
+        <div class="progress-bar  progress-bar-striped progress-bar-animated bg-success"
+             role="progressbar"
+             style="width: @ViewData["Percentage"]%;"
+             aria-valuenow="@ViewData["Percentage"]"
+             aria-valuemin="0"
+             aria-valuemax="100">
+            @ViewData["Percentage"] %
+        </div>
+
+    </div>
+
+    <form method="post" class="mt-2">
+        <input type="hidden" asp-for="Current"/>
+        <input type="submit" value="Increment" class="btn btn-sm btn-primary" asp-page-handler="UpdateProgress"/>
+    </form>
+
+</div>
+
