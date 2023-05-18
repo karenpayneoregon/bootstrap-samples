@@ -37,7 +37,7 @@
     
     <div class="row mt-2">
         <div class="col-8">
-            <button class="btn btn-primary mt-2" onclick="IncrementProgressbar()">Increment progress bar</button>
+            <button class="btn btn-primary mt-2" id="incrementButton">Increment progress bar</button>
         </div>
     </div>
 
@@ -54,6 +54,19 @@
             $ClaimsProgressbar.init($("en").val());
             $ClaimsProgressbar.Increment("#progressbar1", 0);
             $ClaimsProgressbar.Show('#progressStatus');
+        });
+        document.getElementById("incrementButton").addEventListener("click", function () {
+            IncrementProgressbar();
+        });
+        $(this).on('keydown', function (event) {
+            if (event.key === '1' && event.ctrlKey) {
+                IncrementProgressbar();
+            }
+        });
+        $(this).on('keydown', function (event) {
+            if (event.key === '2' && event.ctrlKey) {
+                $ClaimsProgressbar.reset();
+            }
         });
     </script>
 }

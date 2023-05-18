@@ -20,7 +20,7 @@ $ClaimsProgressbar = function () {
     };
 
     // Increments or decrements the progress bar on all pages
-    var Increment = function (identifier, newValue) {
+    var increment = function (identifier, newValue) {
         var currentValue = parseInt(newValue);
 
         if (currentValue > 100) {
@@ -28,19 +28,30 @@ $ClaimsProgressbar = function () {
             currentValue = 0;
         }
 
-        $(assertPoundSymbol(identifier)).css("width", currentValue + "%").attr("aria-valuenow", currentValue).text(currentValue + "% " + progressWord);
+        $(assertPoundSymbol(identifier))
+            .css("width", currentValue + "%")
+            .attr("aria-valuenow", currentValue)
+            .text(currentValue + "% " + progressWord);
+        
 
         return currentValue;
     };
 
-    var CurrentValue = function (identifier) {
+    var currentValue = function (identifier) {
         return parseInt($(identifier).attr("aria-valuenow"));
+    };
+
+    var reset = function(identifier) {
+
+        console.log('dsss');
+        $('#progressStatus').hide();
+        $('#progressStatus').show();
     };
     //
     // Show progressbar by id e.g.
     //    $ClaimsProgressbar.Show('#progressStatus')
     //
-    var Show = function (identifier) {
+    var show = function (identifier) {
         $(assertPoundSymbol(identifier)).show();
     };
 
@@ -49,16 +60,17 @@ $ClaimsProgressbar = function () {
     // Hide progressbar by id e.g.
     //    $ClaimsProgressbar.Hide('#progressStatus')
     //    
-    var Hide = function (identifier) {
+    var hide = function (identifier) {
         $(assertPoundSymbol(identifier)).hide();
     };
 
     return {
         init: init,
-        CurrentValue: CurrentValue,
-        Increment: Increment,
-        Show: Show,
-        Hide: Hide
+        CurrentValue: currentValue,
+        Increment: increment,
+        Show: show,
+        Hide: hide,
+        reset: reset
 
     };
 }();
