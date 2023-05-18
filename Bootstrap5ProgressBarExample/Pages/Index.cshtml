@@ -36,8 +36,11 @@
     </div>
     
     <div class="row mt-2">
-        <div class="col-8">
-            <button class="btn btn-primary mt-2" id="incrementButton">Increment progress bar</button>
+        <div>
+            <kbd>CTRL</kbd> + <kbd>1</kbd> increment
+        </div>
+        <div>
+            <kbd>CTRL</kbd> + <kbd>2</kbd> reset
         </div>
     </div>
 
@@ -50,22 +53,26 @@
             var current = $ClaimsProgressbar.CurrentValue("#progressbar1");
             $ClaimsProgressbar.Increment("#progressbar1", current + 10);
         }
-        $(document).ready(function () {
-            $ClaimsProgressbar.init($("en").val());
-            $ClaimsProgressbar.Increment("#progressbar1", 0);
-            $ClaimsProgressbar.Show('#progressStatus');
-        });
-        document.getElementById("incrementButton").addEventListener("click", function () {
-            IncrementProgressbar();
-        });
+
+        document.addEventListener("DOMContentLoaded",
+            () => {
+                $ClaimsProgressbar.init('#progressStatus');
+                $ClaimsProgressbar.init($("en").val());
+                $ClaimsProgressbar.Increment("#progressbar1", 0);
+                $ClaimsProgressbar.Show('#progressStatus');
+            });
+
+
+
         $(this).on('keydown', function (event) {
             if (event.key === '1' && event.ctrlKey) {
                 IncrementProgressbar();
             }
         });
+
         $(this).on('keydown', function (event) {
             if (event.key === '2' && event.ctrlKey) {
-                $ClaimsProgressbar.reset();
+                $ClaimsProgressbar.reset('progressbar1');
             }
         });
     </script>
