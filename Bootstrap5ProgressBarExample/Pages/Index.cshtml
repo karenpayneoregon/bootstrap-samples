@@ -10,17 +10,17 @@
     <div class="row">
         <div class="col-6">
             <div class="card shadow rounded-1">
-                <div class="card-body  bg-light">
-                    Progress bar
+                <div class="card-body bg-primary text-white bg-opacity-75">
+                    <h1 class="fs-6">Progress bar</h1>
                 </div>
             </div>
         </div>
     </div>
 
-    
+
     <div class="row mt-2">
         <div class="col-8">
-            <div class="progress mt-2" style="height: 19px;" id="progressStatus">
+            <div class="progress mt-2 w-75" style="height: 19px;" id="progressStatus">
 
                 <div class="progress-bar" id="progressbar1"
                      role="progressbar"
@@ -34,7 +34,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="row mt-2">
         <div>
             <kbd>CTRL</kbd> + <kbd>1</kbd> increment
@@ -49,31 +49,34 @@
 
 @section scripts{
     <script>
+
         function IncrementProgressbar() {
             var current = $ClaimsProgressbar.CurrentValue("#progressbar1");
             $ClaimsProgressbar.Increment("#progressbar1", current + 10);
         }
 
-        document.addEventListener("DOMContentLoaded",
-            () => {
-                $ClaimsProgressbar.init('#progressStatus');
-                $ClaimsProgressbar.init($("en").val());
-                $ClaimsProgressbar.Increment("#progressbar1", 0);
-                $ClaimsProgressbar.Show('#progressStatus');
-            });
+        document.addEventListener("DOMContentLoaded", () => {
+            $ClaimsProgressbar.init('#progressStatus');
+            $ClaimsProgressbar.init($("en").val());
+            $ClaimsProgressbar.Increment("#progressbar1", 0);
+            $ClaimsProgressbar.Show('#progressStatus');
+        });
 
-
-
+        /*
+         * For interacting with progressbar without buttons
+         */
         $(this).on('keydown', function (event) {
+
             if (event.key === '1' && event.ctrlKey) {
                 IncrementProgressbar();
             }
-        });
 
-        $(this).on('keydown', function (event) {
             if (event.key === '2' && event.ctrlKey) {
                 $ClaimsProgressbar.reset('progressbar1');
             }
+
         });
+
+
     </script>
 }
