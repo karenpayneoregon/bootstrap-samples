@@ -1,11 +1,14 @@
-﻿var $ClaimsProgressbar = $ClaimsProgressbar || {};
-$ClaimsProgressbar = function () {
+﻿var $appProgressbar = $appProgressbar || {};
+$appProgressbar = function () {
+
+    // TODO refactor progressbar identifier
+    var progressbarIdentifier;
 
     var progressWord = "Progress";
     var parentContainer;
 
-    var init = function (option) {
-        parentContainer = option;
+    var init = function (parent, progressbarIdentifier) {
+        parentContainer = parent;
         console.log(parentContainer);
     };
 
@@ -22,8 +25,9 @@ $ClaimsProgressbar = function () {
         return value;
     };
 
-    // Increments or decrements the progress bar on all pages
+    // Increments or decrements the progress bar
     var increment = function (identifier, newValue) {
+
         var currentValue = parseInt(newValue);
 
         if (currentValue > 100) {
@@ -36,8 +40,8 @@ $ClaimsProgressbar = function () {
             .attr("aria-valuenow", currentValue)
             .text(currentValue + "% " + progressWord);
         
-
         return currentValue;
+
     };
 
     var currentValue = function (identifier) {
@@ -61,6 +65,7 @@ $ClaimsProgressbar = function () {
         var element, index;
 
         elements = elements.length ? elements : [elements];
+
         for (index = 0; index < elements.length; index++) {
             element = elements[index];
 
@@ -83,7 +88,7 @@ $ClaimsProgressbar = function () {
     }
     //
     // Show progressbar by id e.g.
-    //    $ClaimsProgressbar.Show('#progressStatus')
+    //    $appProgressbar.Show('#progressStatus')
     //
     var show = function (identifier) {
         $(assertPoundSymbol(identifier)).show();
@@ -91,7 +96,7 @@ $ClaimsProgressbar = function () {
 
     //
     // Hide progressbar by id e.g.
-    //    $ClaimsProgressbar.Hide('#progressStatus')
+    //    $appProgressbar.Hide('#progressStatus')
     //    
     var hide = function (identifier) {
         $(assertPoundSymbol(identifier)).hide();

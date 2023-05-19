@@ -4,7 +4,7 @@
     ViewData["Title"] = "Home page";
 }
 
-<script src="js/ClaimsProgressbar.js"></script>
+<script src="js/appProgressbar.js"></script>
 
 <div class="container">
     <div class="row">
@@ -20,7 +20,7 @@
 
     <div class="row mt-2">
         <div class="col-8">
-            <div class="progress mt-2 w-75" style="height: 19px;" id="progressStatus">
+            <div class="progress mt-2 w-75 bg-info bg-opacity-50" style="height: 19px;" id="progressStatus">
 
                 <div class="progress-bar" id="progressbar1"
                      role="progressbar"
@@ -51,15 +51,15 @@
     <script>
 
         function IncrementProgressbar() {
-            var current = $ClaimsProgressbar.CurrentValue("#progressbar1");
-            $ClaimsProgressbar.Increment("#progressbar1", current + 10);
+            var current = $appProgressbar.CurrentValue("#progressbar1");
+            $appProgressbar.Increment("#progressbar1", current + 10);
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            $ClaimsProgressbar.init('#progressStatus');
-            $ClaimsProgressbar.init($("en").val());
-            $ClaimsProgressbar.Increment("#progressbar1", 0);
-            $ClaimsProgressbar.Show('#progressStatus');
+            $appProgressbar.init('#progressStatus');
+            $appProgressbar.init($("en").val());
+            $appProgressbar.Increment("#progressbar1", 0);
+            $appProgressbar.Show('#progressStatus');
         });
 
         /*
@@ -67,12 +67,14 @@
          */
         $(this).on('keydown', function (event) {
 
+            // increment progressbar
             if (event.key === '1' && event.ctrlKey) {
                 IncrementProgressbar();
             }
 
+            // reset progressbar with retracting to 0
             if (event.key === '2' && event.ctrlKey) {
-                $ClaimsProgressbar.reset('progressbar1');
+                $appProgressbar.reset('progressbar1');
             }
 
         });
