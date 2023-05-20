@@ -41,20 +41,24 @@
         document.getElementById("btn-confirm").addEventListener("click", function () {
             $("#myModal").modal('show');
 
+            // close dialog in 12 seconds
             setTimeout(function() {
                 $('#myModal').modal('toggle');
             }, 12000);
 
+            // TODO convert from JQuery to JS
             var element = document.getElementById("progress");
             var width = 1;
             var identity = setInterval(performWork, 100);
 
             function performWork() {
+
                 if (width >= 100) {
                     clearInterval(identity);
-
                 } else {
+
                     width++; 
+
                     $("#progress")
                         .css("width", width + "%")
                         .attr("aria-valuenow", width)
@@ -63,20 +67,5 @@
             }
         });
 
-        $("#modal-btn-no").on("click", function () {
-            $('#myModal .hide,#myModal .in').toggleClass('hide in');
-            $("#myModal").modal('hide');
-        });
-
-        $('#myModal').on('hidden.bs.modal', function () {
-            // reset modal
-
-            if ($('#myModal').data('reenable')) {
-                $(this).removeData();
-                $('#myModal').modal({
-                    show: true
-                });
-            }
-        });
     </script>
 }
