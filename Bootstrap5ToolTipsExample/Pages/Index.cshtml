@@ -8,68 +8,102 @@
 <link rel="stylesheet" href="css/tips.css"/>
 *@
 
-
+<style>
+    .ms-n1 {
+        padding-left: -0.75rem !important;
+    }
+</style>
 
 <div class="container">
-    <div style="margin-left: 30em">
+    <div style="margin-left: 25em">
         <div class="row w-25 mt-lg-5">
-            <button type="button" 
-                    class="btn btn-primary mb-2" 
-                    data-color="primary" data-bs-toggle="tooltip" 
-                    data-bs-placement="top" 
-                    title="Tooltip on top">
-                Tooltip on top
-            </button>
+            <div class="col-6">
+                <button type="button"
+                        class="btn btn-primary mb-2"
+                        style="width: 200px;"
+                        data-color="primary" data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="Tooltip on top">
+                    Tooltip on top
+                </button></div>
         </div>
 
         <div class="row w-25">
-            <button type="button" 
-                    class="btn btn-secondary mb-2" 
-                    data-color="secondary" 
-                    data-bs-toggle="tooltip" 
-                    data-bs-placement="right" 
-                    title="Tooltip on right">
-                Tooltip on right
-            </button>
+            <div class="col-6">
+                <button type="button"
+                        class="btn btn-secondary mb-2"
+                        style="width: 200px;"
+                        data-color="secondary"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="right"
+                        title="Tooltip on right">
+                    Tooltip on right
+                </button></div>
         </div>
 
         <div class="row w-25 mb-5">
-            <button type="button" 
-                    class="btn btn-success" 
-                    data-color="success" 
-                    data-bs-toggle="tooltip" 
-                    data-bs-placement="bottom" 
-                    title="Tooltip on bottom">
-                Tooltip on bottom
-            </button>
+            <div class="col-6">
+                <button type="button"
+                        class="btn btn-success"
+                        style="width: 200px;"
+                        data-color="success"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        title="Tooltip on bottom">
+                    Tooltip on bottom
+                </button></div>
         </div>
 
         <div class="row w-25">
-            <button type="button" 
-                    class="btn btn-warning" 
-                    data-color="warning" 
-                    data-bs-toggle="tooltip" 
-                    data-bs-placement="left" 
-                    title="Tooltip on left">
-                Tooltip on left
-            </button>
+            <div class="col-6">
+                <button type="button"
+                        class="btn btn-warning"
+                        style="width: 200px;"
+                        data-color="warning"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        title="Tooltip on left">
+                    Tooltip on left
+                </button></div>
         </div>
-        
-        <div class="row w-25 mt-2">
-            <input class="form-control" 
-                   type="text" 
-                   data-color="primary" 
-                   data-bs-toggle="tooltip" 
-                   data-bs-placement="left" 
-                   title="Enter something" />
+
+        <div class="row w-75 mt-2" style="width: 500px;">
+            <div class="col-5">
+                <input class="form-control"
+                       style="width: 200px"
+                       id="targetInput"
+                       type="text"
+                       data-color="primary"
+                       data-bs-toggle="tooltip"
+                       data-bs-placement="left"
+                       title="Enter something"/>
+            </div>
+
+            <div class="col-2 mt-0">
+                <button type="button"
+                        id="disableButton"
+                        class="btn btn-secondary"
+                        title="Tooltip on left">
+                    Disable
+                </button>
+            </div>
+            <div class="col mt-0">
+                <button type="button"
+                        id="enableButton"
+                        class="btn btn-success"
+                        title="Tooltip on left">
+                    Enable
+                </button>
+            </div>
         </div>
     </div>
 
 </div>
 
 @section Scripts
-{
+    {
     <script type="text/javascript">
+        var tooltip;
         // init tool-tips
         // change tool-tip color using data-color
         (function (window, document, $, undefined) {
@@ -82,7 +116,16 @@
                 $(".tooltip-inner").css({ "background-color": "var(--bs-" + $(this).data("color") + ")" });
             });
 
+            tooltip = new bootstrap.Tooltip(document.getElementById('targetInput'));
         })(window, document, jQuery);
+        
+        document.getElementById("disableButton").addEventListener("click", function () {
+            tooltip.disable();
+        });
+
+        document.getElementById("enableButton").addEventListener("click", function () {
+            tooltip.enable();
+        });
 
     </script>
 }
