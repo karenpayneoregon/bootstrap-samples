@@ -29,14 +29,14 @@
         <div class="col-md-4">
             <label for="validationCustomUsername" class="form-label">Username</label>
             <div class="input-group has-validation">
-                
+
                 <span class="input-group-text" id="inputGroupPrepend">@@</span>
 
-                <input type="text" 
-                       class="form-control" 
-                       id="validationCustomUsername" 
-                       aria-describedby="inputGroupPrepend" 
-                       value="karenoregon" 
+                <input type="text"
+                       class="form-control"
+                       id="validationCustomUsername"
+                       aria-describedby="inputGroupPrepend"
+                       value="karenoregon"
                        required>
 
                 <div class="invalid-feedback">
@@ -88,58 +88,32 @@
                 <div class="vr"></div>
                 <button class="btn float-end" id="btnSubmit" type="submit">Submit form</button>
             </div>
-            
+
         </div>
     </form>
 
 
 </div>
 
-@*
-    All scripting below will be refactored into a class
-*@
 
 @section Scripts
     {
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            if (localStorage.getItem("theme") === null) {
-                localStorage.setItem('theme', 'light');
-            } else {
-                var theme = localStorage.getItem("theme");
-                document.documentElement.setAttribute('data-bs-theme', theme);
-                if (theme === 'dark') {
-                    document.getElementById("lightSwitch").checked = true;
-                } else {
-                    document.getElementById("lightSwitch").checked = false;
-                }
-
-            }
-
+            $themeHelper.setDocument(document);
+            $themeHelper.changeMode();
             toggleMode();
-
         });
 
         document.getElementById("lightSwitch").addEventListener("click", function () {
-
-            if (document.getElementById("lightSwitch").checked) {
-                document.documentElement.setAttribute('data-bs-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-bs-theme', 'light');
-                localStorage.setItem('theme', 'light');
-            }
-
+            $themeHelper.lightSwitchHandler();
             toggleMode();
-
         });
 
         function toggleMode() {
-            
-            $themeHelper.setDocument(document);
             $themeHelper.doNavigation();
-            $themeHelper.configureSubmitButton();
+            $themeHelper.indexPage();
         }
 
     </script>

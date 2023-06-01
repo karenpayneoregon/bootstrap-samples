@@ -20,53 +20,24 @@
     </div>
 </div>
 
-@*
-    All scripting below will be refactored into a class
-*@
-
 @section Scripts
     {
 
-
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            if (localStorage.getItem("theme") === null) {
-                localStorage.setItem('theme', 'light');
-            } else {
-                var theme = localStorage.getItem("theme");
-                document.documentElement.setAttribute('data-bs-theme', theme);
-                if (theme === 'dark') {
-                    document.getElementById("lightSwitch").checked = true;
-                } else {
-                    document.getElementById("lightSwitch").checked = false;
-                }
-
-            }
-
+            $themeHelper.setDocument(document);
+            $themeHelper.changeMode();
             toggleMode();
-
         });
 
         document.getElementById("lightSwitch").addEventListener("click", function () {
-
-            if (document.getElementById("lightSwitch").checked) {
-                document.documentElement.setAttribute('data-bs-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-bs-theme', 'light');
-                localStorage.setItem('theme', 'light');
-            }
-
+            $themeHelper.lightSwitchHandler();
             toggleMode();
-
         });
 
         function toggleMode() {
-
-            $themeHelper.setDocument(document);
             $themeHelper.doNavigation();
-            $themeHelper.configureWithSubmitButtonAndAlert();
-
+            $themeHelper.aboutPage();
         }
 
     </script>

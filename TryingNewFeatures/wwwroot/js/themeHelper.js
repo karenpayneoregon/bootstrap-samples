@@ -1,7 +1,9 @@
 ﻿var $themeHelper = $themeHelper || {};
 $themeHelper = function() {
 
+    // ReSharper disable once InconsistentNaming
     var _document;
+
     var setDocument = function (doc) {
         _document = doc;
     }
@@ -13,7 +15,7 @@ $themeHelper = function() {
         if (submitButton) {
             submitButton.classList.remove('btn-primary');
             submitButton.classList.remove('btn-secondary');
-            var currentTheme = localStorage.getItem("theme");
+            var currentTheme = localStorage.getItem('theme');
 
             if (currentTheme !== null) {
                 if (currentTheme === 'light') {
@@ -38,7 +40,7 @@ $themeHelper = function() {
             alert.classList.remove('alert-primary');
             alert.classList.remove('alert-dark');
 
-            var currentTheme = localStorage.getItem("theme");
+            var currentTheme = localStorage.getItem('theme');
 
             if (currentTheme !== null) {
                 if (currentTheme === 'light') {
@@ -52,10 +54,40 @@ $themeHelper = function() {
         }
     }
 
+    // change dark mode
+    var changeMode =  function()
+    {
+        if (localStorage.getItem("theme") === null) {
+            localStorage.setItem('theme', 'light');
+        } else {
+            var theme = localStorage.getItem('theme');
+            _document.documentElement.setAttribute('data-bs-theme', theme);
+            if (theme === 'dark') {
+                _document.getElementById('lightSwitch').checked = true;
+            } else {
+                _document.getElementById('lightSwitch').checked = false;
+            }
+
+        }
+    }
+
+    // handles check box for switching dark mode
+    var lightSwitchHandler = function() {
+        if (_document.getElementById("lightSwitch").checked) {
+            _document.documentElement.setAttribute('data-bs-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            _document.documentElement.setAttribute('data-bs-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        }
+    }
+
+
     var doNavigation = function() {
 
         var borderColor = '';
-        var currentTheme = localStorage.getItem("theme");
+        var currentTheme = localStorage.getItem('theme');
+
         if (currentTheme !== null) {
             if (currentTheme === 'light') {
                 borderColor = 'border-black';
@@ -85,7 +117,9 @@ $themeHelper = function() {
     return {
         setDocument: setDocument,
         doNavigation: doNavigation,
-        configureSubmitButton: indexPage,
-        configureWithSubmitButtonAndAlert: aboutPage
+        indexPage: indexPage,
+        changeMode: changeMode,
+        lightSwitchHandler: lightSwitchHandler,
+        aboutPage: aboutPage
     };
 }();
