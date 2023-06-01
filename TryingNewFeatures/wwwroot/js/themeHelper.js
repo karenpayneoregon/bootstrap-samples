@@ -1,4 +1,8 @@
-﻿var $themeHelper = $themeHelper || {};
+﻿/*
+ * There are methods for the two existing pages to handle specific elements but
+ * will work on figuring out better methods.
+ */
+var $themeHelper = $themeHelper || {};
 $themeHelper = function() {
 
     // ReSharper disable once InconsistentNaming
