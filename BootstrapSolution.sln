@@ -52,6 +52,10 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Bootstrap5FormFocusStyling"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5MultiSelectExample", "Bootstrap5MultiSelectExample\Bootstrap5MultiSelectExample.csproj", "{7C8BF804-08F4-470B-8C5A-A734CF0981A9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.3.0", "5.3.0", "{A7D3512F-51FF-449C-83E4-76C248528D36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryingNewFeatures", "TryingNewFeatures\TryingNewFeatures.csproj", "{A8005322-4372-4E85-B98A-19610D3CB516}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -106,9 +110,16 @@ Global
 		{7C8BF804-08F4-470B-8C5A-A734CF0981A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C8BF804-08F4-470B-8C5A-A734CF0981A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C8BF804-08F4-470B-8C5A-A734CF0981A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8005322-4372-4E85-B98A-19610D3CB516}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8005322-4372-4E85-B98A-19610D3CB516}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8005322-4372-4E85-B98A-19610D3CB516}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8005322-4372-4E85-B98A-19610D3CB516}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A8005322-4372-4E85-B98A-19610D3CB516} = {A7D3512F-51FF-449C-83E4-76C248528D36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0318FB3-B59C-40D8-960F-3AA6B46573A5}

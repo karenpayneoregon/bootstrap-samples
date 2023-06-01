@@ -36,16 +36,16 @@ $appProgressbar = function () {
         }
 
         $(assertPoundSymbol(identifier))
-            .css("width", currentValue + "%")
-            .attr("aria-valuenow", currentValue)
-            .text(currentValue + "% " + progressWord);
+            .css('width', currentValue + '%')
+            .attr('aria-valuenow', currentValue)
+            .text(currentValue + '% ' + progressWord);
         
         return currentValue;
 
     };
 
     var currentValue = function (identifier) {
-        return parseInt($(identifier).attr("aria-valuenow"));
+        return parseInt($(identifier).attr('aria-valuenow'));
     };
 
     /*

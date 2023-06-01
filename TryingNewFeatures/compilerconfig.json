@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "wwwroot/lib/bootstrap/scss/_variables-dark.css",
+    "inputFile": "wwwroot/lib/bootstrap/scss/_variables-dark.scss"
+  },
+  {
+    "outputFile": "wwwroot/lib/bootstrap/scss/_variables.css",
+    "inputFile": "wwwroot/lib/bootstrap/scss/_variables.scss"
+  },
+  {
+    "outputFile": "wwwroot/lib/bootstrap/scss/karen.css",
+    "inputFile": "wwwroot/lib/bootstrap/scss/karen.scss"
+  }
+]
