@@ -61,7 +61,7 @@ $themeHelper = function() {
     // change dark mode
     var changeMode =  function()
     {
-        if (localStorage.getItem("theme") === null) {
+        if (localStorage.getItem('theme') === null) {
             localStorage.setItem('theme', 'light');
         } else {
             var theme = localStorage.getItem('theme');
