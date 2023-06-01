@@ -1,5 +1,73 @@
 ﻿@page
 @model TryingNewFeatures.Pages.AboutModel
 @{
+    ViewData["Title"] = "About";
 }
-TODO
+<div class="container">
+    @{
+        await Html.RenderPartialAsync("_lightSwitchPage");
+    }
+    <div class="alert" role="alert" id="mainAlert">
+        A simple primary alert—check it out!
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <button class="btn" id="btnSubmit">OK</button>
+        </div>
+    </div>
+</div>
+
+@*
+    All scripting below will be refactored into a class
+*@
+
+@section Scripts
+    {
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (localStorage.getItem("theme") === null) {
+                localStorage.setItem('theme', 'light');
+            } else {
+                var theme = localStorage.getItem("theme");
+                document.documentElement.setAttribute('data-bs-theme', theme);
+                if (theme === 'dark') {
+                    document.getElementById("lightSwitch").checked = true;
+                } else {
+                    document.getElementById("lightSwitch").checked = false;
+                }
+
+            }
+
+            toggleMode();
+
+        });
+
+        document.getElementById("lightSwitch").addEventListener("click", function () {
+
+            if (document.getElementById("lightSwitch").checked) {
+                document.documentElement.setAttribute('data-bs-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-bs-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+
+            toggleMode();
+
+        });
+
+        function toggleMode() {
+
+            $themeHelper.setDocument(document);
+            $themeHelper.doNavigation();
+            $themeHelper.configureWithSubmitButtonAndAlert();
+
+        }
+
+    </script>
+}

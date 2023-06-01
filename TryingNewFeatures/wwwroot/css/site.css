@@ -20,3 +20,11 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+hr {
+    margin: 1.2rem 0;
+    color: inherit;
+    background-color: currentColor;
+    border: 0;
+    opacity: 0.25;
+}

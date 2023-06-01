@@ -54,7 +54,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5MultiSelectExampl
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.3.0", "5.3.0", "{A7D3512F-51FF-449C-83E4-76C248528D36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryingNewFeatures", "TryingNewFeatures\TryingNewFeatures.csproj", "{A8005322-4372-4E85-B98A-19610D3CB516}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TryingNewFeatures", "TryingNewFeatures\TryingNewFeatures.csproj", "{A8005322-4372-4E85-B98A-19610D3CB516}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
