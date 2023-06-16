@@ -11,25 +11,27 @@ using System.Text.Json;
 namespace Bootstrap5ToastExample.Pages;
 public class PrivacyModel : PageModel
 {
+
     [BindProperty]
-    public string TopMessage { get; set; }
-    [BindProperty]
-    public string BottomMessage { get; set; }
+    public MessageContainer MessageContainer { get; set; }
+
+    //public List<string> Animals = new List<string>();
     public void OnGet(string containers)
     {
+        MessageContainer = new MessageContainer();
+
         if (!string.IsNullOrWhiteSpace(containers))
         {
             List<ToastContainer>? data = JsonSerializer.Deserialize<List<ToastContainer>>(containers);
-            TopMessage = data.FirstOrDefault(x => x.Name == "Top").Body;
-            BottomMessage = data.FirstOrDefault(x => x.Name == "Bottom").Body;
+
+            MessageContainer.Top = data.FirstOrDefault(x => x.Name == "Top").Body;
+            MessageContainer.Bottom = data.FirstOrDefault(x => x.Name == "Bottom").Body;
         }
         else
         {
-            TopMessage = "Top message";
-            BottomMessage = "Bottom message";
+            MessageContainer.Top = "Top message";
+            MessageContainer.Bottom = "Bottom message";
         }
     }
-
-
 }
 
