@@ -11,11 +11,12 @@ using System.Text.Json;
 namespace Bootstrap5ToastExample.Pages;
 public class PrivacyModel : PageModel
 {
-
+    /// <summary>
+    /// Container for toast messages
+    /// </summary>
     [BindProperty]
     public MessageContainer MessageContainer { get; set; }
 
-    //public List<string> Animals = new List<string>();
     public void OnGet(string containers)
     {
         MessageContainer = new MessageContainer();
