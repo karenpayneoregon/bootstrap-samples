@@ -1,8 +1,4 @@
-﻿/*
- * There are methods for the two existing pages to handle specific elements but
- * will work on figuring out better methods.
- */
-var $themeHelper = $themeHelper || {};
+﻿var $themeHelper = $themeHelper || {};
 $themeHelper = function() {
 
     // ReSharper disable once InconsistentNaming
@@ -30,8 +26,7 @@ $themeHelper = function() {
             }
         }
     }
-
-
+    
     var aboutPage = function () {
 
         var submitButton = _document.getElementById('btnSubmit');
@@ -58,7 +53,7 @@ $themeHelper = function() {
         }
     }
 
-    // change dark mode
+    // change mode
     var changeMode =  function()
     {
         if (localStorage.getItem('theme') === null) {
@@ -86,7 +81,22 @@ $themeHelper = function() {
         }
     }
 
+    /*
+     * Handle individual pages
+     */
+    var toggleMode = function() {
+        if (window.location.pathname === '/') {
+            this.doNavigation();
+            indexPage();
+        } else if (window.location.pathname === '/About') {
+            this.doNavigation();
+            aboutPage();
+        }
+    }
 
+    /*
+     * Make current page in navigations
+     */
     var doNavigation = function() {
 
         var borderColor = '';
@@ -121,6 +131,7 @@ $themeHelper = function() {
     return {
         setDocument: setDocument,
         doNavigation: doNavigation,
+        toggleMode: toggleMode,
         indexPage: indexPage,
         changeMode: changeMode,
         lightSwitchHandler: lightSwitchHandler,

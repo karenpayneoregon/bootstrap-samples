@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{66778063-1BD7-4F85-BF82-3C2D2DAD1AC2}"
 	ProjectSection(SolutionItems) = preProject
 		readme.md = readme.md
+		updateBootstrap.md = updateBootstrap.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5PopoverExample", "Bootstrap5PopoverExample\Bootstrap5PopoverExample.csproj", "{1C059C28-6F86-44B8-8A32-158A1EA8EA1C}"

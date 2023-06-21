@@ -100,21 +100,17 @@
     {
 
     <script>
+
         document.addEventListener("DOMContentLoaded", () => {
             $themeHelper.setDocument(document);
             $themeHelper.changeMode();
-            toggleMode();
+            $themeHelper.toggleMode();
         });
 
         document.getElementById("lightSwitch").addEventListener("click", function () {
             $themeHelper.lightSwitchHandler();
-            toggleMode();
+            $themeHelper.toggleMode();
         });
-
-        function toggleMode() {
-            $themeHelper.doNavigation();
-            $themeHelper.indexPage();
-        }
 
     </script>
 }
