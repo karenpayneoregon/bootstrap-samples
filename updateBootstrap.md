@@ -46,3 +46,4 @@ When installing from Visual Studio the libman interface allows selective install
 
 - [Use LibMan with ASP.NET Core in Visual Studio](https://learn.microsoft.com/en-us/aspnet/core/client-side/libman/libman-vs?view=aspnetcore-7.0)
 - [Use the LibMan CLI with ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/client-side/libman/libman-cli?view=aspnetcore-7.0)
+- cdnjs [Bootstrap](https://cdnjs.com/libraries/bootstrap)

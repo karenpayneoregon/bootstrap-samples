@@ -1,0 +1,59 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <div class="alert alert-primary" role="alert">
+        <h1 class="fs-5">Code sample</h1>
+    </div>
+    <form class="row g-3 needs-validation" method="post" novalidate>
+        <div class="col-md-6">
+            <div class="input-group has-validation">
+
+                <span class="input-group-text inputGroupSpan">First and last name</span>
+
+                <input type="text" 
+                       name="FirstName"
+                       asp-for="FirstName"
+                       aria-label="First name" 
+                       class="form-control" required>
+
+                <input type="text" 
+                       name="LastName"
+                       asp-for="LastName"
+                       aria-label="Last name" 
+                       class="form-control" required>
+
+                <div class="invalid-feedback">
+                    up to 5 alphanumeric char only
+                </div>
+
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    (() => {
+        'use strict';
+
+        const forms = document.querySelectorAll('.needs-validation');
+
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit',
+                event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                },
+                false);
+        });
+    })()
+</script>

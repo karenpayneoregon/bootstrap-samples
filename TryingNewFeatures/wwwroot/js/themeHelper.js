@@ -13,9 +13,12 @@ $themeHelper = function() {
         var submitButton = _document.getElementById('btnSubmit');
 
         if (submitButton) {
+
             submitButton.classList.remove('btn-primary');
             submitButton.classList.remove('btn-secondary');
+
             var currentTheme = localStorage.getItem('theme');
+
 
             if (currentTheme !== null) {
                 if (currentTheme === 'light') {
@@ -33,6 +36,7 @@ $themeHelper = function() {
         var alert = _document.getElementById('mainAlert');
 
         if (submitButton && alert) {
+
             submitButton.classList.remove('btn-primary');
             submitButton.classList.remove('btn-secondary');
 
@@ -86,11 +90,15 @@ $themeHelper = function() {
      */
     var toggleMode = function() {
         if (window.location.pathname === '/') {
-            this.doNavigation();
             indexPage();
-        } else if (window.location.pathname === '/About') {
             this.doNavigation();
+        } else if (window.location.pathname === '/About') {
             aboutPage();
+            this.doNavigation();
+        } else if (window.location.pathname === '/Privacy') {
+            this.doNavigation();
+            var theme = localStorage.getItem('theme');
+            _document.documentElement.setAttribute('data-bs-theme', theme);
         }
     }
 
@@ -98,7 +106,7 @@ $themeHelper = function() {
      * Make current page in navigations
      */
     var doNavigation = function() {
-
+        
         var borderColor = '';
         var currentTheme = localStorage.getItem('theme');
 
@@ -110,11 +118,16 @@ $themeHelper = function() {
             }
         }
 
-        _document.querySelectorAll('.nav-link').forEach(link => {
 
+        _document.querySelectorAll('.nav-link').forEach(link => {
             link.classList.remove('border-bottom');
             link.classList.remove('border-top');
             link.classList.remove('border-white');
+        });
+
+        _document.querySelectorAll('.nav-link').forEach(link => {
+
+
 
             if (link.getAttribute('href').toLowerCase() === location.pathname.toLowerCase()) {
 

@@ -57,6 +57,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.3.0", "5.3.0", "{A7D3512F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TryingNewFeatures", "TryingNewFeatures\TryingNewFeatures.csproj", "{A8005322-4372-4E85-B98A-19610D3CB516}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootstrapInputGroupValidateExample", "BootstrapInputGroupValidateExample\BootstrapInputGroupValidateExample.csproj", "{104DE394-CC0D-4EDC-B0AD-9D36325DB20F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,12 +117,17 @@ Global
 		{A8005322-4372-4E85-B98A-19610D3CB516}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8005322-4372-4E85-B98A-19610D3CB516}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8005322-4372-4E85-B98A-19610D3CB516}.Release|Any CPU.Build.0 = Release|Any CPU
+		{104DE394-CC0D-4EDC-B0AD-9D36325DB20F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{104DE394-CC0D-4EDC-B0AD-9D36325DB20F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{104DE394-CC0D-4EDC-B0AD-9D36325DB20F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{104DE394-CC0D-4EDC-B0AD-9D36325DB20F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A8005322-4372-4E85-B98A-19610D3CB516} = {A7D3512F-51FF-449C-83E4-76C248528D36}
+		{104DE394-CC0D-4EDC-B0AD-9D36325DB20F} = {A7D3512F-51FF-449C-83E4-76C248528D36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0318FB3-B59C-40D8-960F-3AA6B46573A5}
