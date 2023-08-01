@@ -8,6 +8,7 @@
 
 	<ItemGroup>
 	  <Content Remove="C:\Users\paynek\.nuget\packages\serilogthemeslibrary\1.0.0.1\contentFiles\any\net7.0\readme.md" />
+	  <Content Remove="compilerconfig.json" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -24,5 +25,8 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="wwwroot\images\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="compilerconfig.json" />
 	</ItemGroup>
 </Project>

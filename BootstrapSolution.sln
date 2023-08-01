@@ -47,6 +47,25 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Bootstrap5FormFocusStyling"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "60912"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_60912"
+		Debug.AspNetCompiler.PhysicalPath = "Bootstrap5FormFocusStyling\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60912\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_60912"
+		Release.AspNetCompiler.PhysicalPath = "Bootstrap5FormFocusStyling\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60912\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "60912"
 		SlnRelativePath = "Bootstrap5FormFocusStyling\"
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
@@ -61,7 +80,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootstrapInputGroupValidate
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.3.1", "5.3.1", "{F8E94B9D-2139-463C-8143-DB40CB0B5DBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrap5ColumnsExamples", "Bootstrap5ColumnsExamples\Bootstrap5ColumnsExamples.csproj", "{89AD644B-947E-4576-897A-FB8948986EC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5ColumnsExamples", "Bootstrap5ColumnsExamples\Bootstrap5ColumnsExamples.csproj", "{89AD644B-947E-4576-897A-FB8948986EC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

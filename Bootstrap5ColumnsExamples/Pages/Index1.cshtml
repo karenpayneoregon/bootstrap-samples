@@ -1,0 +1,74 @@
+﻿@page
+@model Bootstrap5ColumnsExamples.Pages.Index1Model
+@{
+}
+<style>
+
+    #here li {
+        color: blue;
+    }
+
+    ul {
+        list-style-type: '⇨ ';
+        
+    }
+    #here a {
+        /* first two colors for hover and last normal */
+        background-image: linear-gradient( to right, darkgreen, darkgreen 50%, blue 50% );
+        background-size: 200% 100%;
+        background-position: -100%;
+        display: inline-block;
+        padding: 5px 0;
+        position: relative;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.3s ease-in-out;
+    }
+
+
+
+    #here a:before {
+        content: '';
+        background: #54b3d6;
+        display: block;
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #here a:hover {
+        background-position: 0;
+    }
+
+    #here a:hover::before {
+        width: 100%;
+    }
+</style>
+
+<div role="main" class="container">
+
+    <div class="row">
+        <div class=" col-6">
+
+            <span class="fw-bold ms-3">IT Service Desk Request Examples</span>
+
+            <ul id="here">
+                <li><a href="#">Application Development</a></li>
+                <li><a href="#">Business Intelligence (BI) Changes</a></li>
+                <li><a href="#">Database Changes</a></li>
+                <li><a href="#">EDweb Application, Page, and Link Updates</a></li>
+                <li><a href="#">Mainframe Online and Batch Changes</a></li>
+                <li><a href="#">Mass Mailings to Claimants, Employers, or Jobseekers</a></li>
+                <li><a href="#">Section Number Changes</a></li>
+                <li><a href="#">Systems for Public, Partners, and/or Staff</a></li>
+                <li><a href="#">Website Domain Name Requests</a></li>
+            </ul>
+
+        </div>
+    </div>
+
+
+</div>
