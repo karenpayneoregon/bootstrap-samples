@@ -15,11 +15,6 @@ public class IndexModel : PageModel
     [BindProperty]
     public string LastName { get; set; }
 
-    public IndexModel()
-    {
-        
-    }
-
     public void OnGet()
     {
         Person = new Person();
