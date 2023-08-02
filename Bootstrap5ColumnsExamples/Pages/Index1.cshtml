@@ -4,15 +4,16 @@
 }
 <style>
 
-    #here li {
+    #menu-main li {
         color: blue;
     }
 
-    ul {
+/*    ul {
         list-style-type: '⇨ ';
         
-    }
-    #here a {
+    }*/
+
+    #menu-main a {
         /* first two colors for hover and last normal */
         background-image: linear-gradient( to right, darkgreen, darkgreen 50%, blue 50% );
         background-size: 200% 100%;
@@ -25,9 +26,7 @@
         transition: all 0.3s ease-in-out;
     }
 
-
-
-    #here a:before {
+    #menu-main a:before {
         content: '';
         background: #54b3d6;
         display: block;
@@ -39,11 +38,11 @@
         transition: all 0.3s ease-in-out;
     }
 
-    #here a:hover {
+    #menu-main a:hover {
         background-position: 0;
     }
 
-    #here a:hover::before {
+    #menu-main a:hover::before {
         width: 100%;
     }
 </style>
@@ -55,7 +54,8 @@
 
             <span class="fw-bold ms-3">IT Service Desk Request Examples</span>
 
-            <ul id="here">
+            <ul id="menu-main">
+
                 <li><a href="#">Application Development</a></li>
                 <li><a href="#">Business Intelligence (BI) Changes</a></li>
                 <li><a href="#">Database Changes</a></li>
@@ -65,6 +65,7 @@
                 <li><a href="#">Section Number Changes</a></li>
                 <li><a href="#">Systems for Public, Partners, and/or Staff</a></li>
                 <li><a href="#">Website Domain Name Requests</a></li>
+
             </ul>
 
         </div>
