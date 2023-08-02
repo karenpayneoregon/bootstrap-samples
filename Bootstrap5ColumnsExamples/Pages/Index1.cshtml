@@ -8,7 +8,7 @@
         color: blue;
     }
 
-/*    ul {
+    /*    ul {
         list-style-type: '⇨ ';
         
     }*/
@@ -47,29 +47,39 @@
     }
 </style>
 
+@*
+Notes
+    accesskey will be an alert with web accessibility tools which is fine to use if they
+    do not conflict with other shortcuts.
+*@
+
 <div role="main" class="container">
+    
+    <h1 class="fs-5">Menu example</h1>
 
     <div class="row">
-        <div class=" col-6">
+        <div class="col-auto">
+            
+            <fieldset class="border border-dark ps-2 pe-2 pb-0">
 
-            <span class="fw-bold ms-3">IT Service Desk Request Examples</span>
+                <legend class="float-none w-auto fs-6 form-group">
+                    IT Service Desk Request
+                </legend>
 
-            <ul id="menu-main">
+                <ul id="menu-main">
 
-                <li><a href="#">Application Development</a></li>
-                <li><a href="#">Business Intelligence (BI) Changes</a></li>
-                <li><a href="#">Database Changes</a></li>
-                <li><a href="#">EDweb Application, Page, and Link Updates</a></li>
-                <li><a href="#">Mainframe Online and Batch Changes</a></li>
-                <li><a href="#">Mass Mailings to Claimants, Employers, or Jobseekers</a></li>
-                <li><a href="#">Section Number Changes</a></li>
-                <li><a href="#">Systems for Public, Partners, and/or Staff</a></li>
-                <li><a href="#">Website Domain Name Requests</a></li>
+                    <li><a href="#" accesskey="1">Application Development</a></li>
+                    <li><a href="#" accesskey="2">Business Intelligence (BI) Changes</a></li>
+                    <li><a href="#" accesskey="3">Database Changes</a></li>
+                    <li><a href="#" accesskey="4">Website Domain Name Requests</a></li>
 
-            </ul>
+                </ul>
 
+            </fieldset>
+            
         </div>
     </div>
-
+    
+    <p style="color:burlywood">color contrast issue</p>
 
 </div>
