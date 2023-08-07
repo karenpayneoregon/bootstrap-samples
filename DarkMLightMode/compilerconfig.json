@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "lib/bootstrap/dist/css/Normalize.css",
+    "inputFile": "lib/bootstrap/dist/css/Normalize.sass"
+  },
+  {
+    "outputFile": "lib/bootstrap/dist/css/normalized.css",
+    "inputFile": "lib/bootstrap/dist/css/normalized.sass"
+  }
+]

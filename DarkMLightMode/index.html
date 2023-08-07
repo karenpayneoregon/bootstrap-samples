@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="indexPage">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="lib/common.css" rel="stylesheet" />
+    <link rel="stylesheet" href="lib/light.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="lib/dark.css" media="(prefers-color-scheme: dark)">
+    <script type="module" src="https://googlechromelabs.github.io/dark-mode-toggle/src/dark-mode-toggle.mjs"></script>
+</head>
+<body>
+
+
+<aside>
+    <dark-mode-toggle id="dark-mode-toggle-1"
+                      legend="Theme Switcher"
+                      appearance="switch"
+                      dark="Dark"
+                      light="Light"
+                      remember="Remember this"></dark-mode-toggle>
+</aside>
+
+<div>
+    <form id="content">
+        <fieldset>
+            <legend>Demo</legend>
+            <div>
+                <select>
+                    <option>First</option>
+                    <option>Second</option>
+                </select>
+            </div>
+            <div>
+                <button type="button"  class="special">Go</button>
+            </div>
+            <div>
+                <label>
+                    <input type="text" value="Karen"/>
+                    First name
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="search" value="Payne"/>
+                    Last name
+                </label>
+            </div>
+            <div>
+                <label><input checked type="checkbox"/> Yes</label>
+                <label><input type="checkbox"/> No</label>
+            </div>
+            <div>
+                <label><input checked name="foo" type="radio"/> Coffee</label>
+                <label><input name="foo" type="radio"/> Tea</label>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+</body>
+</html>
