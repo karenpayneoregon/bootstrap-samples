@@ -5,21 +5,31 @@
     color: var(--color-two);
 }
 
-:root.posts {
-    --color-one: green;
-    --color-two: yellow;
-    background-color: var(--color-one);
-    color: var(--color-two);
-}
+    :root.posts {
+        --color-one: black;
+        --color-two: yellow;
+        background-color: var(--color-one);
+        color: var(--color-two);
+    }
 
-.special {
-    color: #f0f;
-    font-style: italic;
-}
+    :root.anotherPage {
+        --color-one: Tomato;
+        --color-two: green;
+        background-color: var(--color-one);
+        color: var(--color-two);
+        font-weight: bolder;
+    }
 
-:root.posts .special {
-    color: #f90;
-    font-style: normal;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-}
+
+    :root.posts .special {
+        color: wheat;
+        font-style: normal;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    :root.anotherPage .special {
+        color: black;
+        font-style: normal;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    }

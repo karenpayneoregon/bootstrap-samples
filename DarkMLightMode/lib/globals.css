@@ -1,0 +1,36 @@
+﻿:root {
+    --heading-color: red;
+    --color-one: yellow;
+    --color-two: green;
+    background-color: var(--color-one);
+    color: var(--color-two);
+}
+
+:root.claims {
+    --color-one: black;
+    --color-two: yellow;
+    background-color: var(--color-one);
+    color: var(--color-two);
+}
+
+:root.tic2 {
+    --color-one: Tomato;
+    --color-two: green;
+    background-color: var(--color-one);
+    color: var(--color-two);
+    font-weight: bolder;
+}
+
+
+:root.claims form {
+    color: wheat;
+    font-style: normal;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+:root.tic2 form {
+    color: black;
+    font-style: normal;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}

@@ -102,8 +102,8 @@ dark-mode-toggle {
 }
 
 #dark-mode-toggle-1 {
-    --dark-mode-toggle-dark-icon: url("sun.png");
-    --dark-mode-toggle-light-icon: url("moon.png");
+    --dark-mode-toggle-dark-icon: url("moon.png");
+    --dark-mode-toggle-light-icon: url("sun.png");
 }
 
 #dark-mode-toggle-2 {

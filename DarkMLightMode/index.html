@@ -2,7 +2,7 @@
 <html lang="en" class="indexPage">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Dark mode</title>
     <link href="lib/common.css" rel="stylesheet" />
     <link rel="stylesheet" href="lib/light.css" media="(prefers-color-scheme: light)">
     <link rel="stylesheet" href="lib/dark.css" media="(prefers-color-scheme: dark)">
@@ -15,23 +15,27 @@
     <dark-mode-toggle id="dark-mode-toggle-1"
                       legend="Theme Switcher"
                       appearance="switch"
+                      light="Light "
                       dark="Dark"
-                      light="Light"
-                      remember="Remember this"></dark-mode-toggle>
+                      remember="Remember this">
+
+    </dark-mode-toggle>
 </aside>
 
-<div>
+<div role="main">
+    <h1 class="fs-6">Dark mode</h1>
     <form id="content">
         <fieldset>
             <legend>Demo</legend>
             <div>
-                <select>
+                <select id="dummy">
                     <option>First</option>
                     <option>Second</option>
                 </select>
+                <label for="dummy">Options</label>
             </div>
             <div>
-                <button type="button"  class="special">Go</button>
+                <button type="button" class="special">Go</button>
             </div>
             <div>
                 <label>
