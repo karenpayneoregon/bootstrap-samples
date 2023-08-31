@@ -19,7 +19,7 @@ $appProgressbar = function () {
     var assertPoundSymbol = function (value) {
 
         if (value.charAt(0) !== "#") {
-            value = "#" + value;
+            value = '#' + value;
         }
 
         return value;

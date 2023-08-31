@@ -37,10 +37,13 @@
 
     <div class="row mt-2">
         <div>
-            <kbd>CTRL</kbd> + <kbd>1</kbd> increment
+            <kbd>CTRL</kbd> + <kbd>1</kbd> Increment
         </div>
         <div>
-            <kbd>CTRL</kbd> + <kbd>2</kbd> reset
+            <kbd>CTRL</kbd> + <kbd>2</kbd> Decrement
+        </div>
+        <div>
+            <kbd>CTRL</kbd> + <kbd>3</kbd> reset
         </div>
     </div>
 
@@ -53,6 +56,15 @@
         function IncrementProgressbar() {
             var current = $appProgressbar.CurrentValue("#progressbar1");
             $appProgressbar.Increment("#progressbar1", current + 10);
+        }
+
+        function DecrementProgressbar() {
+            var current = parseInt($appProgressbar.CurrentValue("#progressbar1"));
+            
+            if (current >= 10) {
+                $appProgressbar.Increment("#progressbar1", current - 10);    
+            }
+            
         }
 
         document.addEventListener("DOMContentLoaded", () => {
@@ -72,8 +84,12 @@
                 IncrementProgressbar();
             }
 
-            // reset progressbar with retracting to 0
             if (event.key === '2' && event.ctrlKey) {
+                DecrementProgressbar();
+            }
+
+            // reset progressbar with retracting to 0
+            if (event.key === '3' && event.ctrlKey) {
                 $appProgressbar.reset('progressbar1');
             }
 
