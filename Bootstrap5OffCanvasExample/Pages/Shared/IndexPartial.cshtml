@@ -14,7 +14,8 @@
 
         <button 
             class="btn btn-primary" 
-            style="width: 226px" 
+            id="aboutButton"
+            style="width: 96px" 
             type="button" 
             data-bs-toggle="offcanvas" 
             data-bs-target="#offcanvasMain" 
@@ -42,6 +43,20 @@
                     who lived on it must inevitably be interwoven and joined. We are one hunk of ground, water, air, clouds, floating around in space.
                     From out there it really is 'one world'.
                 </div>
+                <div class="row mt-4">
+                    <button type="submit" class="btn btn-primary" asp-page-handler="Button1">Go to About page</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMain1" aria-labelledby="offcanvasMainLabel">
+            <div class="offcanvas-header">
+                <h2 class="offcanvas-title" id="offcanvasMainLabe1l">About</h2>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body">
+
                 <div class="row mt-4">
                     <button type="submit" class="btn btn-primary" asp-page-handler="Button1">Go to About page</button>
                 </div>

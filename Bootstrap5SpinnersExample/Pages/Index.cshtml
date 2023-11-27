@@ -9,8 +9,14 @@
         animation-name: none !important;
         -webkit-animation-name: none !important;
     }
-    #spinner { display:none; } 
-    body.busy .spinner { display:block !important; }
+
+    #spinner {
+        display: none;
+    }
+
+    body.busy .spinner {
+        display: block !important;
+    }
 </style>
 
 <div class="alert alert-primary" role="alert">
@@ -32,14 +38,8 @@
             Click me...
         </button>
     </div>
-    
-    <div class="row">
-        <div class="col-6">
-            <button type="button" name="btn-enviar" class="btn btn-primary w-100">
-                <span class="spinner spinner-border spinner-border-sm mr-3" id="spinner" role="status" aria-hidden="true">
-                </span>Enviar</button>
-        </div>
-    </div>
+
+
 </div>
 
 
@@ -47,7 +47,7 @@
 @section Scripts
 {
     <script>
-        $(document).ready(function () {
+        document.addEventListener("DOMContentLoaded", () => {
             $(() => {
                 $('button').on('click',
                     e => {
@@ -56,7 +56,6 @@
                         setTimeout(_ => spinner.addClass('d-none'), 5000);
                     });
             });
-
         });
     </script>
 }

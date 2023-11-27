@@ -21,12 +21,13 @@
 
             <div class="card shadow rounded-1">
                 <div class="card-body  bg-light">
-                    <H1 class="fs-6">Bootstrap off canvas and progress bar (toggle and button are not synchronized)</H1!>
+                    <H1 class="fs-6">Bootstrap off canvas and progress bar (toggle and button are not synchronized)</H1>
+                    <p>Skip link opens left side off-canvas</p>
                 </div>
             </div>
 
         </div>
-        
+
     </div>
 
     <div class="row mt-3">
@@ -60,7 +61,27 @@
 
 @* code for toggle *@
 @section scripts{
+
     <script src="js/sidebar.js"></script>
+
+    <script>
+        /*
+         * For left side off-canvas shown as a skip-link
+         * On close of the off-canvas, hide the skip-link element
+         * and set focus to the about button.
+         *
+         * The above is for experimental purposes.
+         *
+         */
+        var leftSideOffCanvas = document.getElementById("offcanvasMain1");
+        var aboutButton = document.getElementById("aboutButton");
+        var link = document.getElementById('skipper');
+        leftSideOffCanvas.addEventListener("hidden.bs.offcanvas", function (e) {
+            console.log(e);
+            link.style.display = 'none';
+            aboutButton.focus();
+        });
+    </script>
 }
 
 
