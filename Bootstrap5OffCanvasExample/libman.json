@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "enquire.js@2.1.6",
+      "destination": "wwwroot/lib/enquire.js/"
+    }
+  ]
+}

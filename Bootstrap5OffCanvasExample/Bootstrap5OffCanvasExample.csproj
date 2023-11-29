@@ -27,6 +27,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Bogus" Version="34.0.2" />
 		<PackageReference Include="SeriLogThemesLibrary" Version="1.0.0.1" />
 	</ItemGroup>
 	<ItemGroup>

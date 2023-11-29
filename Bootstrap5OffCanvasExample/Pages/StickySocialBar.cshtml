@@ -1,0 +1,111 @@
+﻿@page
+@model Bootstrap5OffCanvasExample.Pages.StickySocialBarModel
+@{
+    ViewData["Title"] = "Sticky";
+}
+
+@* <script type="text/javascript" src="lib/enquire.js/enquire.min.js"></script> *@
+
+<style>
+
+    div.sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+    .custom-button {
+        align-self: center;
+        background-color: #fff;
+        background-image: none;
+        background-position: 0 90%;
+        background-repeat: repeat no-repeat;
+        background-size: 4px 3px;
+        border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+        border-style: solid;
+        border-width: 2px;
+        box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+        box-sizing: border-box;
+        color: #41403e;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Neucha, sans-serif;
+        font-size: 1rem;
+        line-height: 23px;
+        outline: none;
+        padding: .75rem;
+        text-decoration: none;
+        transition: all 235ms ease-in-out;
+        border-bottom-left-radius: 15px 255px;
+        border-bottom-right-radius: 225px 15px;
+        border-top-left-radius: 255px 15px;
+        border-top-right-radius: 15px 225px;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    .custom-button:hover {
+        box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+        transform: translate3d(0, 2px, 0);
+    }
+
+    .custom-button:focus {
+        box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+    }
+</style>
+
+<div class="bg-white sticky">
+
+    <aside id="navAside">
+        <div class="border p-3 text-center rounded shadow" style="background-color: #fbf6a8">
+            <button class="custom-button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasBottom">
+                Important Agency notices
+            </button>
+        </div>
+    </aside>
+
+</div>
+
+
+<div class="container">
+
+    <h1 class="fs-3">Respond to Benefit</h1>
+
+    @{
+        foreach (var sentence in Model.MainSentences)
+        {
+            <p>@sentence.ToString()</p>
+        }
+    }
+</div>
+
+
+<div class="offcanvas offcanvas-bottom"
+     id="offcanvasBottom"
+     data-bs-scroll="true"
+     data-bs-backdrop="false">
+
+    <div class="offcanvas-header"
+         style="background-color: #fbf6a8">
+
+        <button type="button"
+                class="btn-close text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close">
+        </button>
+
+    </div>
+
+    <div class="offcanvas-body border" style="background-color: #fbf6a8">
+        @{
+            foreach (var sentence in Model.NoticeSentences)
+            {
+                <p>@sentence.ToString()</p>
+            }
+        }
+    </div>
+</div>
+
