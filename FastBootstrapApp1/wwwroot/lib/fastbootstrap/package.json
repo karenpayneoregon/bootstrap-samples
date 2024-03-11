@@ -1,0 +1,66 @@
+{
+  "name": "fastbootstrap",
+  "version": "2.1.0",
+  "description": "Free Bootstrap components & plugins with Atlassian Design for your next project quickly get start.",
+  "homepage": "https://fastbootstrap.com/",
+  "author": "FastBootstrap",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fastbootstrap/atlassian-design-for-bootstrap.git"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web",
+    "bootstrap",
+    "atlassian-design"
+  ],
+  "main": "dist/js/fastbootstrap.js",
+  "sass": "src/scss/fastbootstrap.scss",
+  "style": "dist/css/fastbootstrap.css",
+  "scripts": {
+    "css": "npm-run-all css-compile css-prefix css-rtl css-minify",
+    "css-compile": "sass --load-path=node_modules --style expanded --source-map --embed-sources --no-error-css src/scss/:dist/css/",
+    "css-rtl": "cross-env NODE_ENV=RTL postcss --config build/postcss.config.js --dir \"dist/css\" --ext \".rtl.css\" \"dist/css/*.css\" \"!dist/css/*.min.css\" \"!dist/css/*.rtl.css\"",
+    "css-minify": "npm-run-all --aggregate-output --parallel css-minify-*",
+    "css-minify-main": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/css/ --batch --batch-suffix \".min\" \"dist/css/*.css\" \"!dist/css/*.min.css\" \"!dist/css/*rtl*.css\"",
+    "css-minify-rtl": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/css/ --batch --batch-suffix \".min\" \"dist/css/*rtl.css\" \"!dist/css/*.min.css\"",
+    "css-prefix": "npm-run-all --aggregate-output --parallel css-prefix-*",
+    "css-prefix-main": "postcss --config build/postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.rtl*.css\" \"!dist/css/*.min.css\"",
+    "dist": "npm-run-all --aggregate-output --parallel css",
+    "build-vite": "vite build -c vite.config.ts",
+    "lint:ts": "eslint -c .eslintrc.cjs --ext .ts src/ts"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "bootstrap.native": "^5.0.11"
+  },
+  "devDependencies": {
+    "@thednp/event-listener": "^2.0.4",
+    "@thednp/shorty": "^2.0.0",
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "autoprefixer": "^10.4.8",
+    "clean-css-cli": "^5.6.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.55.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.16",
+    "postcss-cli": "^10.0.0",
+    "prettier": "^2.7.0",
+    "rtlcss": "^4.0.0",
+    "sass": "^1.52.3",
+    "typescript": "^5.3.2",
+    "vite": "^5.0.5"
+  },
+  "files": [
+    "dist/{css,js}/*.{css,js,map}",
+    "src/{ts,scss}/**/*.{ts,scss}"
+  ]
+}

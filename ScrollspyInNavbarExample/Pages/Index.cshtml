@@ -1,0 +1,16 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+
+
+    @for (int index = 0; index < Model.Sentences.Count; index++)
+    {
+    <div id="scrollspyHeading@(@Model.Sentences[@index].Id)" class="fw-bold fs-4"  style="padding-top:45px;">Section @Model.Sentences[@index].Id</div>
+        <p>@Model.Sentences[@index]</p>
+    }
+
+

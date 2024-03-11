@@ -1,0 +1,110 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Remove="C:\Users\paynek\.nuget\packages\serilogthemeslibrary\1.0.0.1\contentFiles\any\net7.0\readme.md" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="readme.md" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="readme.md" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="SeriLogThemesLibrary" Version="1.0.0.1" />
+		<PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\alert.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\alert.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\base-component.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\base-component.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\button.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\button.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\carousel.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\carousel.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\collapse.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\collapse.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\dom\data.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\dom\data.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\dom\event-handler.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\dom\event-handler.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\dom\manipulator.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\dom\manipulator.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\dom\selector-engine.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\dom\selector-engine.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\dropdown.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\dropdown.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\modal.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\modal.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\offcanvas.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\offcanvas.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\popover.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\popover.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\scrollspy.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\scrollspy.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\tab.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\tab.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\toast.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\toast.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\tooltip.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\tooltip.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\util\backdrop.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\util\backdrop.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\util\component-functions.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\util\component-functions.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\util\config.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\util\config.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\util\focustrap.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\util\focustrap.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\util\index.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\util\index.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\util\sanitizer.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\util\sanitizer.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\util\scrollbar.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\util\scrollbar.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\util\swipe.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\util\swipe.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\util\template-factory.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\dist\util\template-factory.js.map" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\index.esm.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\index.umd.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\alert.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\base-component.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\button.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\carousel.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\collapse.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\dom\data.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\dom\event-handler.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\dom\manipulator.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\dom\selector-engine.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\dropdown.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\modal.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\offcanvas.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\popover.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\scrollspy.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\tab.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\toast.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\tooltip.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\util\backdrop.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\util\component-functions.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\util\config.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\util\focustrap.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\util\index.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\util\sanitizer.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\util\scrollbar.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\util\swipe.js" />
+	  <None Include="wwwroot\lib\fastBootstrap\js\src\util\template-factory.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="wwwroot\images\blankslate\" />
+	</ItemGroup>
+</Project>

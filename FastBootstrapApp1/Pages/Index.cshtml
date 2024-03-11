@@ -1,0 +1,67 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<div class="container">
+    <div class="alert alert-primary" role="alert">
+        <h1 class="fs-5">Welcome</h1>    
+    </div>
+    
+    <div class="row shadow-md w-25 p-6 border-top border-bottom border-danger-subtle border-opacity-50">
+        <div class="col-auto">
+            <img class="avatar rotate-45" src="images/KP1.png" />
+            <button type="button" class="btn btn-danger">Wake Karen</button>
+        </div>
+    </div>
+    
+
+
+    <div class="row mt-4">
+        <form class="was-validated">
+            <div class="mb-3">
+                <label for="validationDefault01" class="form-label">First name</label>
+                <input type="text" class="form-control-sm is-invalid" id="validationDefault01" required />
+            </div>
+            <div>
+                <label for="validationDefault02" class="form-label">Last name</label>
+                <input type="text" class="form-control-sm is-valid" id="validationDefault02" />
+            </div>
+        </form>
+    </div>
+    
+    <div class="row">
+        <div class="blankslate">
+            <img class="blankslate-top-img" src="/images/blankslate/1.png" />
+            <div class="blankslate-body">
+                <h4>You don't have access to this issue</h4>
+                <p>
+                    Make sure the issue exists in this project. If it does, ask a project
+                    admin for permission to see the project's issues.
+                </p>
+            </div>
+            <div class="blankslate-actions">
+                <button class="btn btn-default" type="button">Secondary action</button>
+                <button class="btn btn-primary" type="button">Primary action</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mb-5">
+        <div class="col-auto p-0">
+            <div class="d-block d-md-inline-block text-bg-primary p-2">xs=block md=inline-block</div>
+        </div>
+        <div class="col-auto p-0 m-0">
+            <div class="d-block d-md-inline-block text-bg-dark p-2">xs=block md=inline-block</div>
+        </div>
+        
+    </div>
+    
+    <div class="vstack gap-3 max-w-xs mx-auto">
+        <button type="button transition ease-in-out delay-150 -translate-y-px-hover duration-300 scale-110-hover" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-default">Cancel</button>
+    </div>
+
+</div>

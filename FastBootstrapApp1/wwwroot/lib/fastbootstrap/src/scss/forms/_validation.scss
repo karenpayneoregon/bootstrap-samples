@@ -1,0 +1,50 @@
+@import "bootstrap/scss/forms/validation";
+
+@each $state in map-keys($form-validation-states) {
+  .form-control {
+    @include form-validation-state-selector($state) {
+      @if $enable-validation-icons {
+        @if $state == "valid" {
+          background-image: var(--#{$prefix}form-valid-icon);
+        } @else {
+          background-image: var(--#{$prefix}form-invalid-icon);
+        }
+      }
+
+      &:focus {
+        border-color: var(--#{$prefix}input-focus-border-color);
+      }
+    }
+  }
+
+  .form-check-input {
+    @include form-validation-state-selector($state) {
+      @if $state== "valid" {
+        border-color: var(--#{$prefix}form-check-checked-border-color);
+
+        &:checked {
+          background-color: var(--#{$prefix}form-check-checked-bg);
+        }
+      }
+
+      ~ .form-check-label {
+        color: var(--#{$prefix}form-check-color);
+      }
+    }
+  }
+
+  .form-select {
+    @include form-validation-state-selector($state) {
+      @if $enable-validation-icons {
+        &:not([multiple]):not([size]),
+        &:not([multiple])[size="1"] {
+          @if $state == "valid" {
+            --#{$prefix}form-select-bg-icon: var(--#{$prefix}form-valid-icon);
+          } @else {
+            --#{$prefix}form-select-bg-icon: var(--#{$prefix}form-invalid-icon);
+          }
+        }
+      }
+    }
+  }
+}

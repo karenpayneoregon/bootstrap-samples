@@ -1,0 +1,10 @@
+@import "bootstrap/scss/pagination";
+
+.pagination {
+  --#{$prefix}pagination-font-weight: #{$pagination-font-weight};
+}
+
+.page-link {
+  border-radius: $pagination-border-radius;
+  font-weight: var(--#{$prefix}pagination-font-weight);
+}

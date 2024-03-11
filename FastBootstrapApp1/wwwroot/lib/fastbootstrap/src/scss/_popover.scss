@@ -1,0 +1,15 @@
+@import "bootstrap/scss/popover";
+
+.popover {
+  --#{$prefix}popover-border-width: 0;
+
+  box-shadow: var(--#{$prefix}popover-box-shadow);
+
+  .popover-arrow {
+    display: none;
+  }
+}
+
+.popover-header {
+  --#{$prefix}popover-border-width: #{$popover-border-width};
+}

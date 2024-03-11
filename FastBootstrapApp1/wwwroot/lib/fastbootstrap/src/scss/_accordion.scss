@@ -1,0 +1,9 @@
+@import "bootstrap/scss/accordion";
+
+.accordion-item {
+  border-bottom: 1px solid $accordion-border-color;
+}
+
+.accordion-button {
+  font-weight: $font-weight-semibold;
+}

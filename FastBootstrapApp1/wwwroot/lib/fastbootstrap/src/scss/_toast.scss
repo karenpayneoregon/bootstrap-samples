@@ -1,0 +1,5 @@
+@import "bootstrap/scss/toasts";
+
+.toast-header {
+  --#{$prefix}toast-border-width: 1px;
+}

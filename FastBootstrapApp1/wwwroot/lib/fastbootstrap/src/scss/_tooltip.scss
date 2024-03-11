@@ -1,0 +1,14 @@
+@import "bootstrap/scss/tooltip";
+.tooltip-arrow {
+  .tooltip & {
+    display: none;
+  }
+
+  .tooltip-arrow-auto & {
+    display: block;
+  }
+}
+
+.tooltip-inner {
+  text-align: left;
+}

@@ -1,0 +1,15 @@
+@import "bootstrap/scss/alert";
+
+.alert {
+  --#{$prefix}alert-font-size: #{$alert-font-size};
+
+  font-size: var(--#{$prefix}alert-font-size);
+}
+
+.alert-dismissible {
+  .btn-close {
+    top: $alert-padding-y;
+    right: $alert-padding-x;
+    padding: 0;
+  }
+}

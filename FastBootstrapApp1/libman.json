@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+
+    {
+      "provider": "jsdelivr",
+      "library": "fastbootstrap@2.1.0",
+      "destination": "wwwroot/lib/fastbootstrap/"
+    }
+  ]
+}

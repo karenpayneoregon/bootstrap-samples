@@ -1,0 +1,55 @@
+.avatar {
+  --#{$prefix}avatar-width: #{$avatar-width};
+  --#{$prefix}avatar-bg: #{$avatar-bg};
+
+  position: relative;
+  width: var(--#{$prefix}avatar-width);
+  height: var(--#{$prefix}avatar-width);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: $avatar-color;
+  line-height: 1;
+  font-size: 14px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--#{$prefix}avatar-bg);
+
+  & > img,
+  & > svg {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.avatar-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $ds-space-050;
+}
+
+.avatar-stack {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  .avatar {
+    overflow: hidden;
+    margin-left: -8px;
+    border: 2px solid white;
+
+    &:last-child > & {
+      margin-left: 0;
+    }
+  }
+}
+
+@each $name, $width in $avatar-values {
+  .avatar-#{$name} {
+    --#{$prefix}avatar-width: #{$width};
+  }
+}

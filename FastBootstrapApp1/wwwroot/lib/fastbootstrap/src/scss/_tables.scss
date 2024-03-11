@@ -1,0 +1,45 @@
+.table {
+  --#{$prefix}table-font-size: 0.875rem;
+
+  border-spacing: 0;
+  font-size: var(--#{$prefix}table-font-size);
+
+  & > thead {
+    &:not(.table-dark) {
+      color: $neutral-300;
+      background-color: $ds-surface;
+    }
+  }
+
+  th {
+    font-weight: $font-weight-medium; // 500
+  }
+
+  td {
+    vertical-align: middle;
+  }
+}
+
+.table-active {
+  --#{$prefix}table-hover-bg: #{$ds-background-selected-hovered};
+}
+
+.table-borderless {
+  > .table-group-divider {
+    border-top-width: $table-border-width * 2;
+  }
+}
+
+.table-hover {
+  > tbody > tr:hover > * {
+    &:first-child {
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+    }
+
+    &:last-child {
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+}

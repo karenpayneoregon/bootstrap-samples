@@ -1,0 +1,40 @@
+.blankslate {
+  --#{$prefix}blankslate-bg: #{$blankslate-bg};
+  --#{$prefix}blankslate-color: #{$blankslate-color};
+  --#{$prefix}blankslate-max-width: #{$blankslate-max-width};
+  --#{$prefix}blankslate-font-size: #{$blankslate-font-size};
+  --#{$prefix}blankslate-margin-y: #{$blankslate-margin-y};
+  --#{$prefix}blankslate-top-img-width: #{$blankslate-top-img-width};
+  --#{$prefix}blankslate-top-img-height: #{$blankslate-top-img-height};
+
+  position: relative;
+  max-width: var(--#{$prefix}blankslate-max-width);
+  margin: var(--#{$prefix}blankslate-margin-y) auto;
+  font-size: var(--#{$prefix}blankslate-font-size);
+  color: var(--#{$prefix}blankslate-color);
+  background-color: var(--#{$prefix}blankslate-bg);
+  text-align: center;
+}
+
+.blankslate-body {
+  margin-bottom: $ds-space-300;
+}
+
+.blankslate-top-img {
+  display: inline-block;
+  max-width: var(--#{$prefix}blankslate-top-img-width);
+  max-height: var(--#{$prefix}blankslate-top-img-height);
+  margin-bottom: $ds-space-300;
+}
+
+.blankslate-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+  gap: $ds-space-100;
+}
+
+.blankslate-narrow {
+  --#{$prefix}blankslate-max-width: #{$blankslate-narrow-max-width};
+}

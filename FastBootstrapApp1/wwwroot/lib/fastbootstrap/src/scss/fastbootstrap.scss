@@ -1,0 +1,64 @@
+/*! FastBootstrap v2.1 (https://fastbootstrap.com) */
+
+@import "bootstrap/scss/functions";
+@import "functions";
+@import "variables-tokens";
+@import "variables";
+@import "variables-dark";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// Basic styles
+@import "root";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/transitions";
+@import "tables";
+
+// Components
+@import "breadcrumb";
+@import "forms";
+@import "button";
+@import "button-group";
+@import "dropdown";
+@import "nav";
+@import "navbar";
+@import "tabs";
+@import "close";
+@import "offcanvas";
+@import "pagination";
+@import "card";
+@import "alert";
+@import "modal";
+@import "placeholders";
+@import "popover";
+@import "progress";
+@import "spinner";
+@import "toast";
+@import "tooltip";
+@import "avatar";
+@import "badge";
+@import "accordion";
+@import "blankslate";
+@import "carousel";
+@import "list-group";
+@import "layout";
+
+// utilities & helpers
+@import "bootstrap/scss/helpers";
+@import "helpers/animation";
+@import "helpers/text-truncation";
+@import "helpers/content";
+@import "helpers/transforms";
+@import "helpers/transitions";
+@import "utilities";
+@import "utilities_extended";
+@import "bootstrap/scss/utilities/api";

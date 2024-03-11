@@ -1,0 +1,55 @@
+﻿@page
+@model BootstrapTableExample.Pages.DemoModel
+@{
+    ViewData["Title"] = "Demo";
+}
+@*
+    https://github.com/talkingdotnet/ASPNETCoreRazorPageDemoApp/tree/ASPNETCoreRazorAjax
+*@
+<div id="dvItems" style="font-size:24px;">
+</div>
+
+
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script type="text/javascript" language="JavaScript">
+        document.addEventListener("DOMContentLoaded", () => {
+            $.ajax({
+                type: "GET",
+                url: "/Demo?handler=List",
+                contentType: "application/json",
+                dataType: "json",
+                success: function (response) {
+                    var dvItems = $("#dvItems");
+                    dvItems.empty();
+                    $.each(response,
+                        function (i, item) {
+                            console.log(formatDate(item.date));
+
+                            $('<li>').append(`${item.id}  ${item.fileName} ${formatDate(item.date)}`).appendTo(dvItems);
+
+
+                        });
+                },
+                failure: function (response) {
+                    alert(response);
+                }
+            });
+        });
+
+
+        function formatDate(value) {
+            let date = new Date(value);
+            const day = date.toLocaleString('default', { day: '2-digit' });
+            const month = date.toLocaleString('default', { month: 'numeric' });
+            const year = date.toLocaleString('default', { year: 'numeric' });
+            return `${month}/${day}/${year}`;
+
+        }
+
+    </script>
+}

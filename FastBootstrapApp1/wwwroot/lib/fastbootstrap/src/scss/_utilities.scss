@@ -1,0 +1,66 @@
+/**
+* Override the Bootstrap utilities CSS
+*/
+$utilities: map-merge(
+  $utilities,
+  (
+    "order": (
+      responsive: true,
+      property: order,
+      values: (
+        first: -9999,
+        0: 0,
+        1: 1,
+        2: 2,
+        3: 3,
+        4: 4,
+        5: 5,
+        6: 6,
+        last: 9999,
+      ),
+    ),
+    "border-width": (
+      css-var: true,
+      css-variable-name: border-width,
+      class: border,
+      values: $border-widths,
+    ),
+    "border": (
+      property: border,
+      values: (
+        null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) rgba-css-var("border-color", "border"),
+        0: 0,
+      ),
+    ),
+    "border-top": (
+      property: border-top,
+      values: (
+        null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) rgba-css-var("border-color", "border"),
+        0: 0,
+      ),
+    ),
+    "border-end": (
+      property: border-right,
+      class: border-end,
+      values: (
+        null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) rgba-css-var("border-color", "border"),
+        0: 0,
+      ),
+    ),
+    "border-bottom": (
+      property: border-bottom,
+      values: (
+        null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) rgba-css-var("border-color", "border"),
+        0: 0,
+      ),
+    ),
+    "border-start": (
+      property: border-left,
+      class: border-start,
+      values: (
+        null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) rgba-css-var("border-color", "border"),
+        0: 0,
+      ),
+    ),
+  )
+);

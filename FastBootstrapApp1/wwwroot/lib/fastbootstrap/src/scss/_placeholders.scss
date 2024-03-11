@@ -1,0 +1,20 @@
+@import "bootstrap/scss/placeholders";
+
+.placeholder {
+  --#{$prefix}placeholder-bg: #{$placeholder-bg};
+
+  background-color: var(--#{$prefix}placeholder-bg);
+}
+
+
+@keyframes animate-placeholder-wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
