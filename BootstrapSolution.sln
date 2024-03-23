@@ -89,7 +89,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootstrapTableExample", "Bo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScrollspyInNavbarExample", "ScrollspyInNavbarExample\ScrollspyInNavbarExample.csproj", "{199BBA15-566B-45FD-8E4B-B1060E46BFE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastBootstrapApp1", "FastBootstrapApp1\FastBootstrapApp1.csproj", "{9B2F0725-502D-4877-A761-4649CEEED981}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastBootstrapApp1", "FastBootstrapApp1\FastBootstrapApp1.csproj", "{9B2F0725-502D-4877-A761-4649CEEED981}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
