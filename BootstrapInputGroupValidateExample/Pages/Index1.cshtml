@@ -1,4 +1,5 @@
 ﻿@page
+@using BootstrapInputGroupValidateExample.Classes
 @model BootstrapInputGroupValidateExample.Pages.Index1Model
 @{
 }
@@ -12,16 +13,18 @@
 
 </style>
 
+<script src="lib/payne-debugger/debugHelper.min.js"></script>
+
 
 <div class="container-fluid">
-    <h1><span>WorkSource Center</span> Central Office</h1>
+    <h1 id="header1"><span>WorkSource Center</span> Central Office</h1>
 </div>
 
 
-<div class="container bg-white" style="margin-top: 1em;">
+<div class="container bg-white border border-warning" style="margin-top: 1em;">
 
     <div>
-        <h2><span>Registration - Personal Information</span></h2>
+        <h2 id="header2"><span>Registration - Personal Information</span></h2>
     </div>
 
     <hr class="hr1" />
@@ -42,7 +45,7 @@
 
     </div>
 
-    <form class="row g-3 mt-1 needs-validation" method="post" novalidate>
+    <form id="currentForm" class="row g-3 mt-1 needs-validation" method="post" novalidate>
 
         <div class="col-md-4">
             <label for="FirstName" class="form-label">First name</label>
@@ -68,7 +71,9 @@
 
         <div class="row mt-2">
             <div class="col-lg-2">
-                <label for="suffix" class="form-label">Suffix</label>
+
+                <label id="suffix_label" for="suffix" class="form-label">Suffix</label>
+
                 <select id="suffix" class="form-select">
                     <option selected>Select</option>
                     <option>I</option>
@@ -76,33 +81,38 @@
                     <option>III</option>
                     <option>IV</option>
                 </select>
+
             </div>
         </div>
 
         <hr class="hr1" />
 
         <div class="col-lg-2">
-            <label for="ssn" class="form-label">SSN:</label>
-            <input type="text" class="form-control border-0 ps-0" id="ssn" disabled readonly value="XXX-XX-XXXX">
+
+            <label id="ssn_label" for="ssn" class="form-label">SSN:</label>
+            <input type="text" class="form-control border-0 ps-0" id="ssn" disabled readonly asp-for="SocialSecurityNumber">
+
         </div>
 
         <hr class="hr1" />
 
         <div class="row mt-2">
+
             <div class="col-lg-2">
-                <label for="birthdate" class="form-label">Birth Date (MM/DD/YYYY):</label>
+                <label id="birthdate_label" for="birthdate" class="form-label">Birth Date (MM/DD/YYYY):</label>
                 <input type="date" class="form-control border-0 ps-0" id="birthdate" value="2018-07-22">
             </div>
 
             <div class="col-lg-2">
-                <label for="birthdate_confirm" class="form-label">Confirm Birth Date (MM/DD/YYYY):</label>
+                <label id="birthdate_confirm_label" for="birthdate_confirm" class="form-label">Confirm Birth Date (MM/DD/YYYY):</label>
                 <input type="date" class="form-control border-0 ps-0" id="birthdate_confirm" value="2018-07-22">
             </div>
+
         </div>
 
         <hr class="hr1" />
 
-        <fieldset class="border border-dark p-3 ms-2 mt-4" style="width: 28em;">
+        <fieldset id="genderFieldSet" class="border border-dark p-3 ms-2 mt-4" style="width: 28em;">
 
             <legend class="float-none w-auto px-1" id="genderLegend">
                 Gender
@@ -139,7 +149,10 @@
                        id="other"
                        value="X">
 
-                <label class="form-check-label" for="other">&nbsp;&nbsp;Choose Not to Disclose</label>
+                <label class="form-check-label"
+                       for="other">
+                    &nbsp;&nbsp;Choose Not to Disclose
+                </label>
 
             </div>
 
@@ -148,18 +161,17 @@
         </fieldset>
 
         <div class="row mt-5 fs-4 d-flex justify-content-center">
-            <div class="col-auto">
-                WorkSource Oregon will not refuse to provide services to a customer that declines to provide their Social Security Number (SSN).
+            <div id="message1" class="col-auto">
+                <p>WorkSource Oregon will not refuse to provide services to a customer that declines to provide their Social Security Number (SSN).</p>
             </div>
-            
+
         </div>
-        
+
         <div class="row fs-4 d-flex justify-content-center">
-            
         </div>
 
 
-        
+
         <div class="container-fluid d-flex justify-content-end mt-4 mb-5">
 
             <button type="button"
@@ -181,26 +193,38 @@
             </div>
         </div>
         <div class="row d-flex justify-content-center fs-3">
-            <div class="col-auto">
+            <div id="message2" class="col-auto">
                 All information collected is confidential and may be used for federal reporting purposes.
             </div>
         </div>
         <div class="row justify-content-center mt-2 mb-2">
             <div class="col-auto">
-                <img src="https://www11.emp.state.or.us/graphics/jpg/wso_logo_121x40.jpg" width="189" height="65">
+                <img src="https://www11.emp.state.or.us/graphics/jpg/wso_logo_121x40.jpg"
+                     id="work_source_oregon_logo"
+                     width="189"
+                     height="65"
+                     alt="Worksource Oregon logo">
             </div>
         </div>
-        
+
 
     </form>
 
 </div>
 
-<div id="bottomSlogan" class="container-fluid d-flex justify-content-end" style="">
+<div id="bottomSlogan" class="container-fluid d-flex justify-content-end">
     Where Employers & Job Seekers Connect
 </div>
 
 <script>
+
+    /*
+     * Client side validation for inputs marked as required.
+     * If one or more inputs are invalid, the form will not submit/post.
+     *
+     * Works for multiple forms.
+     *
+     */
     (() => {
         'use strict';
 
@@ -209,13 +233,30 @@
         Array.from(forms).forEach(form => {
             form.addEventListener('submit',
                 event => {
+
                     if (!form.checkValidity()) {
                         event.preventDefault();
                         event.stopPropagation();
                     }
+
                     form.classList.add('was-validated');
+
                 },
                 false);
         });
     })()
+
+    /*
+    * Karen code
+    * CTRL+ALT+1 toggles adding/removing debugger.css
+    */
+    document.addEventListener('keydown', function (event) {
+
+        if (event.key === '1' && event.altKey && event.ctrlKey) {
+            $debugHelper.toggle();
+        }
+
+    });
+
+
 </script>

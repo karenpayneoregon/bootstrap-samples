@@ -18,6 +18,14 @@
 		<Folder Include="assets\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Include="wwwroot\lib\payne-debugger\debugger.css.map" />
+	  <None Include="wwwroot\lib\payne-debugger\debugHelper.js" />
+	  <None Include="wwwroot\lib\payne-debugger\debugHelper.min.js" />
+	  <None Include="wwwroot\lib\payne-debugger\debugHelper.min.js.map" />
+	  <None Include="wwwroot\lib\payne-debugger\readme.md" />
+	</ItemGroup>
+
 
 
 	<ItemGroup>

@@ -91,6 +91,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScrollspyInNavbarExample", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastBootstrapApp1", "FastBootstrapApp1\FastBootstrapApp1.csproj", "{9B2F0725-502D-4877-A761-4649CEEED981}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginFormsApp", "LoginFormsApp\LoginFormsApp.csproj", "{DDCB4D84-A7B6-4E17-AE74-8B97164D62A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -173,6 +175,10 @@ Global
 		{9B2F0725-502D-4877-A761-4649CEEED981}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B2F0725-502D-4877-A761-4649CEEED981}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B2F0725-502D-4877-A761-4649CEEED981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDCB4D84-A7B6-4E17-AE74-8B97164D62A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDCB4D84-A7B6-4E17-AE74-8B97164D62A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDCB4D84-A7B6-4E17-AE74-8B97164D62A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDCB4D84-A7B6-4E17-AE74-8B97164D62A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -184,6 +190,7 @@ Global
 		{9A023211-4122-46BE-B18D-D4D585BA37B2} = {F8E94B9D-2139-463C-8143-DB40CB0B5DBE}
 		{4E6D4B7C-AA8D-4028-9CCE-4B091C97F8B6} = {A7D3512F-51FF-449C-83E4-76C248528D36}
 		{199BBA15-566B-45FD-8E4B-B1060E46BFE7} = {A7D3512F-51FF-449C-83E4-76C248528D36}
+		{DDCB4D84-A7B6-4E17-AE74-8B97164D62A4} = {A7D3512F-51FF-449C-83E4-76C248528D36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0318FB3-B59C-40D8-960F-3AA6B46573A5}
