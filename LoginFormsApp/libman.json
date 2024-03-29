@@ -11,6 +11,22 @@
         "js/bootstrap.bundle.min.js",
         "js/bootstrap.bundle.min.js.map"
       ]
+    },
+    {
+      "library": "bootstrap-icons@1.11.3",
+      "destination": "wwwroot/lib/bootstrap-icons/",
+      "files": [
+        "bootstrap-icons.svg",
+        "font/fonts/bootstrap-icons.woff",
+        "font/fonts/bootstrap-icons.woff2",
+        "font/bootstrap-icons.css",
+        "font/bootstrap-icons.json",
+        "font/bootstrap-icons.min.css",
+        "icons/eye-slash.svg",
+        "icons/eye.svg",
+        "icons/eye-fill.svg",
+        "icons/eye-slash-fill.svg"
+      ]
     }
   ]
 }
