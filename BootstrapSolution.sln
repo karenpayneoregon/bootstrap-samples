@@ -91,7 +91,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScrollspyInNavbarExample", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastBootstrapApp1", "FastBootstrapApp1\FastBootstrapApp1.csproj", "{9B2F0725-502D-4877-A761-4649CEEED981}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginFormsApp", "LoginFormsApp\LoginFormsApp.csproj", "{DDCB4D84-A7B6-4E17-AE74-8B97164D62A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoginFormsApp", "LoginFormsApp\LoginFormsApp.csproj", "{DDCB4D84-A7B6-4E17-AE74-8B97164D62A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

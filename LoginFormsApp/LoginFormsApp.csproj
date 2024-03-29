@@ -17,6 +17,21 @@
 	<ItemGroup>
 	  <Content Include="readme.md" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="wwwroot\lib\bootstrap-show-password-toggle\css\show-password-toggle.css.map" />
+	  <None Include="wwwroot\lib\bootstrap-show-password-toggle\css\show-password-toggle.min.css.map" />
+	  <None Include="wwwroot\lib\bootstrap-show-password-toggle\js\show-password-toggle.js" />
+	  <None Include="wwwroot\lib\bootstrap-show-password-toggle\js\show-password-toggle.min.js" />
+	  <None Include="wwwroot\lib\bootstrap-show-password-toggle\LICENSE" />
+	  <None Include="wwwroot\lib\bootstrap-show-password-toggle\README.md" />
+	  <None Include="wwwroot\lib\bootstrap-show-password-toggle\scss\show-password-toggle.scss" />
+	  <None Include="wwwroot\lib\payne-debugger\debugger.css.map" />
+	  <None Include="wwwroot\lib\payne-debugger\debugHelper.js" />
+	  <None Include="wwwroot\lib\payne-debugger\debugHelper.min.js" />
+	  <None Include="wwwroot\lib\payne-debugger\debugHelper.min.js.map" />
+	  <None Include="wwwroot\lib\payne-debugger\readme.md" />
+	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="SeriLogThemesLibrary" Version="1.0.0.1" />
 		<PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
