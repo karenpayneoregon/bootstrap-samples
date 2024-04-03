@@ -5,79 +5,7 @@
     Layout = "_Layout1"; ;
 }
 
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
-        font-size: 1rem;
-        line-height: 1.7;
-        
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-
-    .container1 {
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        max-width: 300px;
-        margin: 10px auto;
-        padding: 1rem;
-    }
-
-    h1 {
-        padding: 5px 0;
-        font-size: 1.2rem;
-        color: #111;
-        text-align: center;
-	
-    }
-
-    input {
-        padding: 10px;
-        font-size: 14px;
-        border-radius: 5px;
-        outline: none;
-        width: 100%;
-        border: solid 1px #ccc;
-    }
-
-    form i {
-        margin-left: -30px;
-        cursor: pointer;
-    }
-
-    button {
-        box-sizing: border-box;
-        width: 100%;
-        padding: 3%;
-        background: #007bff;
-        border: none;
-        color: #fff;
-        font-size: 14px;
-        border-radius: 5px;
-    }
-
-    button:hover {
-        background: #0069d9;
-        cursor: pointer;
-    }
-    .submit{
-        margin-top:10px;
-    }
-    input:focus { 
-        outline:none;
-        border-color:#9ecaed;
-        box-shadow:0 0 10px #9ecaed;
-    }
-</style>
+<link rel="stylesheet" href="css/eye1.css" asp-append-version="true" />
 
 <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="lib/bootstrap-icons/font/bootstrap-icons.min.css"/>
@@ -94,9 +22,9 @@
         <p>
             <label for="password">Password:</label>
             <input type="password" name="password" id="password"/>
-            <i class="bi bi-eye-slash" id="togglePassword"></i>
+            <i class="bi bi-eye-slash" id="togglePassword" aria-label="show hide password"></i>
         </p>
-        <button type="submit" id="submit" class="submit">Log In</button>
+        <button type="submit"  id="submit" class="submit btn btn-primary">Log In</button>
     </form>
 </div>
 
@@ -114,7 +42,6 @@
         this.classList.toggle("bi-eye");
     });
 
-// prevent form submit
     const form = document.querySelector("form");
     form.addEventListener('submit',function(e){
         e.preventDefault();
