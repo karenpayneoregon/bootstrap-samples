@@ -25,13 +25,14 @@
                             <div class="">
                                 <label class="form-label" for="userName">User name</label>
                                 <div class="input-group mb-3">
-                                    <input class="form-control" id="userName" class="mt-1" type="text" name="userName" value="billybob" required/>
+                                    <input class="form-control" id="userName" class="mt-1" type="text" name="userName" value="billybob" required />
                                 </div>
                             </div>
+
                             <div class="">
                                 <label class="form-label" for="password">Password</label>
                                 <div class="input-group">
-                                    <input class="form-control password w-75" id="password" class="mt-1" type="password" name="password" value="secret!" required/>
+                                    <input class="form-control password w-75" id="password" class="mt-1" type="password" name="password" value="secret!" required />
                                     <span class="input-group-text togglePassword" id="">
                                         <i data-feather="eye" style="cursor: pointer"></i>
                                     </span>
@@ -51,16 +52,23 @@
         </div>
     </div>
 
-   
+
 </div>
 
 @section Scripts
 {
     <script src="lib/feather.min.js"></script>
     <script>
+
+        document.getElementById("mi-modal").addEventListener("hidden.bs.modal", function (event) {
+            if ($(document.activeElement)[0].classList.contains('btn-close')) {
+                // decide what to do when the modal is closed with the X
+            }
+        });
+
         var modalConfirm = function (callback) {
 
-            $("#btn-confirm").on("click", function () {
+            document.getElementById("btn-confirm").addEventListener("click", function () {
                 $("#mi-modal").modal('show');
             });
 
@@ -76,6 +84,7 @@
         };
 
         modalConfirm(function (confirm) {
+
             if (confirm) {
                 console.log(document.getElementById("userName").value);
                 console.log(document.getElementById("password").value);
@@ -87,9 +96,6 @@
 
         });
 
-        $("#mi-modal").on("hidden.bs.modal", function () {
-            console.log('cancelled via close X button');
-        });
 
         feather.replace({ 'aria-hidden': 'true' });
 
@@ -97,12 +103,12 @@
             e.preventDefault();
             var type = $(this).parent().parent().find(".password").attr("type");
             console.log(type);
-            if(type === "password"){
+            if (type === "password") {
                 $("svg.feather.feather-eye").replaceWith(feather.icons["eye-off"].toSvg());
-                $(this).parent().parent().find(".password").attr("type","text");
-            }else if(type === "text"){
+                $(this).parent().parent().find(".password").attr("type", "text");
+            } else if (type === "text") {
                 $("svg.feather.feather-eye-off").replaceWith(feather.icons["eye"].toSvg());
-                $(this).parent().parent().find(".password").attr("type","password");
+                $(this).parent().parent().find(".password").attr("type", "password");
             }
         });
 
