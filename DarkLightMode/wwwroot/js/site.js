@@ -9,8 +9,8 @@
 
     for (var index = 0; index < buttons.length; index++) {
 
-        buttons[index].classList.remove('btn-primary');
-        buttons[index].classList.remove('btn-secondary');
+
+        buttons[index].classList.remove(...["btn-primary", "btn-secondary"]);
 
         if (currentTheme === 'dark') {
             buttons[index].classList.add('btn-secondary');
@@ -19,8 +19,7 @@
         }
     }
 
-    document.getElementById('nav_header_text').classList.remove('text-black');
-    document.getElementById('nav_header_text').classList.remove('text-white');
+    document.getElementById('nav_header_text').classList.remove(...["text-black", "text-white"]);
 
     if (currentTheme === 'dark') {
         document.getElementById('nav_header_text').classList.add('text-white');
