@@ -2,7 +2,6 @@
 
     const htmlElement = document.documentElement;
     const switchElement = document.getElementById('darkModeSwitch');
-
     const currentTheme = localStorage.getItem('bsTheme') || 'dark';
 
     htmlElement.setAttribute('data-bs-theme', currentTheme);
