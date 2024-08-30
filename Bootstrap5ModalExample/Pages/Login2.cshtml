@@ -23,7 +23,7 @@
                 </div>
                 
                 <div class="modal-body">
-                    <form role="form" autocomplete="off">
+                    <form role="form" id="loginForm" method="post" autocomplete="off">
 
                         <div class="">
                             <label class="form-label" for="userName">User name</label>
@@ -63,16 +63,23 @@
                             <div id="pinHelp" class="form-text mt-2">Press <kbd>alt</kbd> + <kbd>v</kbd> to toggle pin visible </div>
 
                         </div>
-                        
+
+                        <input type="hidden" asp-for="Pin" id="pinValue" />
+                        <input type="hidden" asp-for="UserName" id="userNameValue" />
+
+
                     </form>
                 </div>
 
                 <div class="modal-footer">
+
                     <div class="flex-grow-1">
                         <a asp-area="" asp-page="/PinRecorvery" aria-label="Click to recover pin">I don't know my PIN</a>
                     </div>
+
                     <button type="button" class="btn btn-secondary" id="modal-btn-no">Cancel</button>
                     <button id="modal-btn-yes" class="btn btn-primary">Log In</button>
+
                 </div>
 
             </div>
@@ -90,7 +97,7 @@
     <script src="lib/cleave.js"></script>
 
     <script>
-        //document.getElementById('password').click();
+
         var modalConfirm = function (callback) {
 
             $("#btn-confirm").on("click", function () {
@@ -110,13 +117,14 @@
 
         modalConfirm(function (confirm) {
             if (confirm) {
-                console.log(document.getElementById("userName").value);
-                console.log(document.getElementById("password").value);
+                document.getElementById("pinValue").value = document.getElementById("password").value;
+                document.getElementById("userNameValue").value = document.getElementById("userName").value;
+
             } else {
                 console.log('cancelled');
             }
 
-            //document.getElementById("messageForm").submit();
+                document.getElementById("loginForm").submit();
 
         });
 
@@ -139,7 +147,6 @@
                 $(this).parent().parent().find(".password").attr("type", "password");
             }
         });
-
 
 
         $(this).on('keydown', function (event) {
