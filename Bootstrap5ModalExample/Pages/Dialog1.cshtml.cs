@@ -37,4 +37,13 @@ public class Dialog1Model : PageModel
         }
 
     }
+    public void OnGet()
+    {
+        Recipient = "John Doe";
+        Message = 
+            """
+            Now is the winter of our discontent.
+            Made glorious summer by this sun of York;
+            """;
+    }
 }

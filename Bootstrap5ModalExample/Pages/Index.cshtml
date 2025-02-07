@@ -14,10 +14,13 @@
     </div>
 </div>
 
+
 <form method="post" class="w-25">
     <input type="hidden" asp-for="Confirmation" id="confirmationValue" />
     <input type="submit" value="Post" role="button" class="btn btn-primary mt-2 w-100" />
 </form>
+
+<hello-world></hello-world>
 
 <div class="modal fade"
      tabindex="-1" role="dialog"
@@ -40,35 +43,57 @@
             </div>
         </div>
     </div>
-
+    
 </div>
 
 @section Scripts
     {
-    <script>
-        var modalConfirm = function (callback) {
+        <script>
+        // jQuery version which works but the author prefers Javascript version
+            // var modalConfirm = function (callback) {
 
-            $("#btn-confirm").on("click", function () {
-                $("#mi-modal").modal('show');
+            //     $("#btn-confirm").on("click", function () {
+            //         $("#mi-modal").modal('show');
+            //     });
+
+            //     $("#modal-btn-yes").on("click", function () {
+            //         callback(true);
+            //         $("#mi-modal").modal('hide');
+            //     });
+
+            //     $("#modal-btn-no").on("click", function () {
+            //         callback(false);
+            //         $("#mi-modal").modal('hide');
+            //     });
+            // };
+
+            var modalConfirm = function (callback) {
+                var modal = new bootstrap.Modal(document.getElementById("mi-modal"));
+
+                document.getElementById("btn-confirm").addEventListener("click", function () {
+                    modal.show();
+                });
+
+                document.getElementById("modal-btn-yes").addEventListener("click", function () {
+                    callback(true);
+                    modal.hide();
+                });
+
+                document.getElementById("modal-btn-no").addEventListener("click", function () {
+                    callback(false);
+                    modal.hide();
+                });
+            };
+
+
+
+            modalConfirm(function (confirm) {
+                if (confirm) {
+                    document.getElementById("confirmationValue").value = true;
+                } else {
+                    document.getElementById("confirmationValue").value = false;
+                }
             });
 
-            $("#modal-btn-yes").on("click", function () {
-                callback(true);
-                $("#mi-modal").modal('hide');
-            });
-
-            $("#modal-btn-no").on("click", function () {
-                callback(false);
-                $("#mi-modal").modal('hide');
-            });
-        };
-
-        modalConfirm(function (confirm) {
-            if (confirm) {
-                document.getElementById("confirmationValue").value = true;
-            } else {
-                document.getElementById("confirmationValue").value = false;
-            }
-        });
-    </script>
+        </script>
 }
