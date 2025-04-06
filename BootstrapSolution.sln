@@ -113,6 +113,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Centering", "Centering", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CenteringOnPage", "CenteringOnPage\CenteringOnPage.csproj", "{0E7332C6-2278-4B69-97DA-EF2EC2C3AA2F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.3.4", "5.3.4", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{1139E486-A36B-6B58-4965-3753D45010A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -223,6 +227,10 @@ Global
 		{0E7332C6-2278-4B69-97DA-EF2EC2C3AA2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E7332C6-2278-4B69-97DA-EF2EC2C3AA2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E7332C6-2278-4B69-97DA-EF2EC2C3AA2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1139E486-A36B-6B58-4965-3753D45010A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1139E486-A36B-6B58-4965-3753D45010A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1139E486-A36B-6B58-4965-3753D45010A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1139E486-A36B-6B58-4965-3753D45010A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -242,6 +250,7 @@ Global
 		{B0BC9C5B-DE61-489C-AF25-B8F61F16F6D1} = {6BFAB80C-DF9B-451F-9B12-6C47D7084B14}
 		{CB07FF97-0202-483C-9F98-1DBC75E429C3} = {F8E94B9D-2139-463C-8143-DB40CB0B5DBE}
 		{0E7332C6-2278-4B69-97DA-EF2EC2C3AA2F} = {C84C9EC1-34F3-4AC4-88DB-4547FBA2D126}
+		{1139E486-A36B-6B58-4965-3753D45010A4} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0318FB3-B59C-40D8-960F-3AA6B46573A5}

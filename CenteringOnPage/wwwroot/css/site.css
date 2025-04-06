@@ -33,28 +33,35 @@ body {
 html, body {
     height: 100%;
     margin: 0;
-    overflow-y: hidden;
 }
 
+/* Wrapper ensures a full viewport height */
 .wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh; /* Ensures the entire height is used */
 }
 
+/* Main content area - fills available space */
 .content {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px; /* Prevents content from touching edges */
-    overflow-y: auto; /* Allows scrolling if content overflows */
+    text-align: center;
+    padding: 10px;
+    overflow-y: auto; /* Enables scrolling if needed */
 }
 
+.content label {
+    align-self: flex-start; /* Aligns the label to the left */
+    text-align: left; /* Ensures text inside the label is left-aligned */
+    width: 100%; /* Makes the label take full width if necessary */
+}
+/* Sticky Footer */
 .footer {
-    background: #f8f9fa;
-    padding-bottom: 4px;
+    padding: 5px 0;
     text-align: center;
-    height: 50px;
     width: 100%;
+    flex-shrink: 0; /* Prevents footer from shrinking */
 }
