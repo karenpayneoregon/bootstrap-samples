@@ -23,6 +23,7 @@ public class Index1Model : PageModel
     [BindProperty(SupportsGet = true)]
     public int? LastItemId { get; set; }
 
+
     /// <summary>
     /// Handles GET requests for the page and sets the user's response to the confirmation prompt.
     /// </summary>
@@ -65,6 +66,7 @@ public class Index1Model : PageModel
             LastActionName = actionName;
             LastItemId = itemId;
         }
+
 
         // Redirect using PRG pattern
         return RedirectToPage(new

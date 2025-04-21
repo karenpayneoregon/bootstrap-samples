@@ -7,7 +7,7 @@
 
 <div class="mx-auto p-2" style="width: 200px;">
 
-    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmModal">
+    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmModal" id="question_button">
         Delete Customer #42
     </button>
 </div>
@@ -17,9 +17,11 @@
 
 @if (Model.UserResponse.HasValue)
 {
-    <div class="alert alert-info mt-3">
+    <div class="alert alert-info mt-3" id="results">
         Action: <strong>@Model.LastActionName</strong><br />
         Item ID: <strong>@Model.LastItemId</strong><br />
         Response: <strong>@(Model.UserResponse.Value ? "Yes" : "No")</strong>
     </div>
 }
+
+
