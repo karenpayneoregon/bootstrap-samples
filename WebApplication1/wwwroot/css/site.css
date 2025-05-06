@@ -29,3 +29,43 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+
+.btn-lg {
+    width: 7em !important;
+}
+
+.btn-xl {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    width: 25%;
+}
+
+
+.bsb-btn-xl {
+    --bs-btn-padding-y: 0.625rem;
+    --bs-btn-padding-x: 1.25rem;
+    --bs-btn-font-size: calc(1.26rem + 0.12vw);
+    --bs-btn-border-radius: var(--bs-border-radius-lg)
+}
+
+
+@media(min-width:1200px) {
+    .bsb-btn-xl {
+        --bs-btn-font-size: 1.35rem
+                               }
+}
+
+.bsb-btn-2xl {
+    --bs-btn-padding-y: 0.75rem;
+    --bs-btn-padding-x: 1.5rem;
+    --bs-btn-font-size: calc(1.27rem + 0.24vw);
+    --bs-btn-border-radius: var(--bs-border-radius-lg)
+}
+
+@media(min-width:1200px) {
+    .bsb-btn-2xl {
+        --bs-btn-font-size: 1.45rem
+                               }
+}

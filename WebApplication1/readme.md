@@ -21,3 +21,14 @@ At least at time of writing this, the latest version of Bootstrap is `5.3.4` was
 
 ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white) 
 ![.Net](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white) ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91.svg?style=for-the-badge&logo=visual-studio&logoColor=white) ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+
+
+## Button width
+
+`btn-lg` does not work for modals, so I override `btn-lg` in `site.css`. This can cause issues on mobile devices.
+
+```css
+.btn-lg {
+    width: 7em !important;
+}
+```
