@@ -6,11 +6,7 @@
 
 
 </style>
-@* <div class="container" id="main-content">
-    <div class="row justify-content-center ">
-        <button class="btn btn-primary w-25" id="btn-confirm">Send message</button>
-    </div>
-</div> *@
+
 <div class="d-flex align-items-center justify-content-center vh-100" >
     <div class="row justify-content-center ">
         <button class="btn btn-primary btn-lg" id="btn-confirm">Send message</button>
@@ -22,6 +18,7 @@
     <input type="hidden" asp-for="Recipient" id="recipientName" />
     <input type="hidden" asp-for="Message" id="messageText" />
     <input type="hidden" asp-for="Accepted" id="acceptedFlag" />
+    <input type="hidden" asp-for="AcceptedTerms" id="accept-terms" />
 </form>
 
 <div class="modal fade" id="mi-modal" tabindex="-1"
@@ -44,6 +41,10 @@
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">Message:</label>
                         <textarea class="form-control" id="message-text" asp-for="Message"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="accept-terms" class="col-form-label">Accept:</label>
+                        <input type="checkbox" id="accept-terms1"/>
                     </div>
                 </form>
             </div>
@@ -87,6 +88,7 @@
                 document.getElementById("acceptedFlag").value = false;
             }
 
+            document.getElementById("accept-terms").value = document.getElementById("accept-terms1").checked;
             document.getElementById("messageForm").submit();
 
         });

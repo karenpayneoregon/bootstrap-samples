@@ -1,7 +1,7 @@
-using System.Diagnostics.Eventing.Reader;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Serilog;
+using Spectre.Console;
 
 namespace Bootstrap5ModalExample.Pages;
 
@@ -16,8 +16,12 @@ public class Dialog1Model : PageModel
     [BindProperty]
     public bool Accepted { get; set; }
 
+    [BindProperty]
+    public bool AcceptedTerms { get; set; }
+
     public void OnPost()
     {
+        
         if (Accepted)
         {
             if (!string.IsNullOrWhiteSpace(Recipient) && !string.IsNullOrWhiteSpace(Message))
@@ -35,6 +39,8 @@ public class Dialog1Model : PageModel
         {
             Log.Information("Cancelled");
         }
+
+        AnsiConsole.MarkupLine($"[{Color.Cyan1}]Accepted terms:[/] [{Color.Pink1}]{AcceptedTerms}[/]");
 
     }
     public void OnGet()

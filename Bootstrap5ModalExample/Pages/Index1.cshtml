@@ -1,0 +1,30 @@
+﻿@page
+@model Bootstrap5ModalExample.Pages.Index1Model
+@{
+}
+
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">
+    Open dialog
+</button>
+
+
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="contactModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    This is the first paragraph inside the Bootstrap 5 modal body. You can use this area to display important information to the user.
+                </p>
+                <p>
+                    Here is the second paragraph, providing additional details or instructions as needed within the modal dialog.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
