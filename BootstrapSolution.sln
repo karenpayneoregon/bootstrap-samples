@@ -139,6 +139,27 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BootstrapDatePickerColors",
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DialogsCreatedWithChatGPT", "DialogsCreatedWithChatGPT\", "{B6EDB4A6-4A6A-1EEF-C21D-926C86789DC8}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_64313"
+		Debug.AspNetCompiler.PhysicalPath = "DialogsCreatedWithChatGPT\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64313\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_64313"
+		Release.AspNetCompiler.PhysicalPath = "DialogsCreatedWithChatGPT\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64313\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "64313"
+		SlnRelativePath = "DialogsCreatedWithChatGPT\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -257,6 +278,10 @@ Global
 		{F668FCAC-FFAF-2970-FC82-E612F334B19D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F668FCAC-FFAF-2970-FC82-E612F334B19D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{F668FCAC-FFAF-2970-FC82-E612F334B19D}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B6EDB4A6-4A6A-1EEF-C21D-926C86789DC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6EDB4A6-4A6A-1EEF-C21D-926C86789DC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6EDB4A6-4A6A-1EEF-C21D-926C86789DC8}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6EDB4A6-4A6A-1EEF-C21D-926C86789DC8}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -277,6 +302,7 @@ Global
 		{CB07FF97-0202-483C-9F98-1DBC75E429C3} = {F8E94B9D-2139-463C-8143-DB40CB0B5DBE}
 		{0E7332C6-2278-4B69-97DA-EF2EC2C3AA2F} = {C84C9EC1-34F3-4AC4-88DB-4547FBA2D126}
 		{1139E486-A36B-6B58-4965-3753D45010A4} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{B6EDB4A6-4A6A-1EEF-C21D-926C86789DC8} = {3327C805-E3E4-403B-81EC-0FC941F14B55}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0318FB3-B59C-40D8-960F-3AA6B46573A5}

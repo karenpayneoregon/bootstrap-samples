@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>ChatGPT experiment</title>
+
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
+    <script src="lib/debugHelper.js"></script>
+    <link href="Lib/styles/index.css" rel="stylesheet" />
+    <script src="Lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+
+
+    <style>
+        input[type="text"],
+        input[type="email"] {
+            width: 18em;
+        }
+
+        select.form-select {
+            width: 15em;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="nine mt-3">
+        <h1>bootstrap <span> Modal via ChatGPT and minor mods by Karen Payne</span></h1>
+    </div>
+
+    <main>
+
+        <div class="container">
+            <div class="d-flex justify-content-center">
+
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userFormModal">
+                    Open Form
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Modal -->
+    <div class="modal fade"
+         id="userFormModal"
+         data-bs-backdrop="static"
+         tabindex="-1"
+         aria-labelledby="userFormModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="userFormModalLabel">User Information</h2>
+                    <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+                </div>
+                <div class="modal-body">
+                    <form id="userForm" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Personal Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="streetAddress" class="form-label">Street Address</label>
+                            <input type="text" class="form-control" id="streetAddress" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="city" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="state" class="form-label">State</label>
+                            <select class="form-select" id="state" required></select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="country" class="form-label">Country</label>
+                            <select class="form-select" id="country" required></select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="postalCode" class="form-label">Postal Code</label>
+                            <input type="text" class="form-control" id="postalCode" required>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" onclick="cancelForm()">Cancel</button>
+                            <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /*
+             * Provides the ability to add outlines to every single element on a page
+             * Usage: Pass true to toggle for development environment, false for other environments
+             * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+            */
+            document.addEventListener('keydown', function (event) {
+
+                if (event.key === '1' && event.altKey && event.ctrlKey) {
+                    // this is for development environment
+                    $debugHelper.toggle(true);
+                }
+
+            });
+
+        });
+
+    </script>
+    <script>
+        function validateLoginForm(formIdentifier) {
+            if (formIdentifier) {
+                formIdentifier.addEventListener('submit', (event) => {
+                    if (!formIdentifier.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    formIdentifier.classList.add('was-validated');
+                }, false);
+            }
+        }
+
+        function submitForm() {
+            const form = document.getElementById("userForm");
+
+            // Trigger validation
+            if (!form.checkValidity()) {
+                form.classList.add('was-validated');
+                return;
+            }
+
+            const formData = {
+                firstName: document.getElementById("firstName").value,
+                lastName: document.getElementById("lastName").value,
+                email: document.getElementById("email").value,
+                streetAddress: document.getElementById("streetAddress").value,
+                city: document.getElementById("city").value,
+                state: document.getElementById("state").value,
+                country: document.getElementById("country").value,
+                postalCode: document.getElementById("postalCode").value
+            };
+
+            fetch("https://example.com/api/submit",
+                { // Replace with your API URL
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => response.json())
+                .then(() => {
+                    alert("Form submitted successfully!");
+
+                    // Reset form
+                    form.reset();
+                    form.classList.remove('was-validated');
+
+                    // Close modal properly
+                    let modalElement = document.getElementById("userFormModal");
+                    let modalInstance = bootstrap.Modal.getInstance(modalElement);
+
+                    if (modalInstance) {
+                        modalInstance.hide();
+                    } else {
+                        let newModalInstance = new bootstrap.Modal(modalElement);
+                        newModalInstance.hide();
+                    }
+                })
+                .catch(() => {
+
+                    /*
+                     * Since the post url is not real, this will always fail.
+                     */
+                    alert("Error submitting form.\nBecause of bogus post URL.");
+
+                    let modalElement = document.getElementById("userFormModal");
+                    let modalInstance = bootstrap.Modal.getInstance(modalElement);
+
+                    if (modalInstance) {
+                        modalInstance.hide();
+                    } else {
+                        let newModalInstance = new bootstrap.Modal(modalElement);
+                        newModalInstance.hide();
+                    }
+
+                    // Reset form to mimic a post
+                    document.getElementById('userForm').reset();
+                }
+                );
+        }
+
+        function cancelForm() {
+            // Handle cancel action
+            console.log("User canceled the form.");
+            const form = document.getElementById("userForm");
+            form.reset();
+            form.classList.remove('was-validated');
+
+            let modalElement = document.getElementById("userFormModal");
+            let modalInstance = bootstrap.Modal.getInstance(modalElement);
+
+            if (modalInstance) {
+                modalInstance.hide();
+            } else {
+                let newModalInstance = new bootstrap.Modal(modalElement);
+                newModalInstance.hide();
+            }
+
+        }
+
+        const states = [
+            { code: "AL", name: "Alabama" },
+            { code: "AK", name: "Alaska" },
+            { code: "AZ", name: "Arizona" },
+            { code: "AR", name: "Arkansas" },
+            { code: "CA", name: "California" },
+            { code: "CO", name: "Colorado" },
+            { code: "CT", name: "Connecticut" },
+            { code: "DE", name: "Delaware" },
+            { code: "FL", name: "Florida" },
+            { code: "GA", name: "Georgia" },
+            { code: "HI", name: "Hawaii" },
+            { code: "ID", name: "Idaho" },
+            { code: "IL", name: "Illinois" },
+            { code: "IN", name: "Indiana" },
+            { code: "IA", name: "Iowa" },
+            { code: "KS", name: "Kansas" },
+            { code: "KY", name: "Kentucky" },
+            { code: "LA", name: "Louisiana" },
+            { code: "OR", name: "Oregon" },
+            { code: "WA", name: "Washington" }
+        ];
+
+        const countries = ["Australia", "Canada", "France", "Germany", "India", "Italy", "Japan", "Mexico", "United Kingdom", "United States"];
+
+        function populateSelect(selectId, items, isObject = false) {
+            const select = document.getElementById(selectId);
+            select.innerHTML = '<option value="">Select ' + (selectId === "state" ? "State" : "Country") + '</option>';
+            items.forEach(item => {
+                let value = isObject ? item.code : item;
+                let text = isObject ? item.name : item;
+                let option = new Option(text, value);
+                select.add(option);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // Populate state and country selects
+            populateSelect("state", states, true);
+            populateSelect("country", countries);
+
+            // Initialize validation
+            validateLoginForm(document.getElementById("userForm"));
+        });
+
+    </script>
+
+    <script>
+        function validateLoginForm(formIdentifier) {
+
+            if (formIdentifier) {
+                formIdentifier.addEventListener('submit', (event) => {
+                    if (!formIdentifier.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+
+                    formIdentifier.classList.add('was-validated');
+                }, false);
+            }
+        }
+    </script>
+</body>
+</html>
