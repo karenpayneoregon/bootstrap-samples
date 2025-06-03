@@ -25,6 +25,7 @@
 
 </head>
 <body>
+
     <div class="nine mt-3">
         <h1>bootstrap 5.3 modal <span> with JavaScript to populate</span></h1>
     </div>
@@ -32,7 +33,7 @@
     <main>
         <div class="container text-center">
             <!-- Normally would use an event listener here -->
-            <button class="btn btn-success"
+            <button class="btn btn-outline-success"
                     onclick="showPerson('Karen Payne', '(555) 123-4567', 'karen@example.com')">
 
                 <svg class="icon"><use href="#icon-window"></use></svg>Demo
@@ -55,6 +56,7 @@
                     <h1 class="modal-title fs-5" id="personModalLabel">Person Details</h1>
 
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
                 </div>
 
                 <!-- Body – two-column layout, left labels right-aligned -->
@@ -74,7 +76,7 @@
                             Phone:
                         </div>
                         <div class="col-8">
-                            <label id="lblPhone" class="form-label mb-0"></label>
+                            <label id="lblPhone"  class="form-label mb-0"></label>
                         </div>
                     </div>
 
@@ -100,7 +102,7 @@
     </div>
 
     <!-- Icon sprite: include once - best to go with a 'I' class -->
-    <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <!-- Window icon -->
         <symbol id="icon-window" viewBox="0 0 16 16" fill="currentColor">
             <path d="M2.5 4a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m2-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m1 .5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1" />
