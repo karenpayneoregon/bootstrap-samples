@@ -184,6 +184,25 @@ text-end handles the right alignment—nothing fancy, nothing brittle.
 Values remain in separate <label>s for easy population via showPerson(); no JavaScript changes needed.
 
 
+---
+
+To center the alert horizontally, you can wrap it in a flex container or apply utility classes directly if you're using Bootstrap 4 or 5. Here's the simplest way using Bootstrap utility classes:
+
+```html
+<div class="d-flex justify-content-center">
+    <div id="autoCloseAlert" class="alert alert-success alert-dismissible w-50 fade show" role="alert">
+        Changes saved.
+    </div>
+</div>
+```
+
+### Explanation:
+
+* `d-flex` makes the outer container a flex container.
+* `justify-content-center` centers the child element horizontally.
+* `w-50` keeps the alert at 50% width; adjust as needed.
+
+This approach is clean and doesn’t require custom CSS. Let me know if you're not using Bootstrap or if the alert needs vertical centering too.
 
 
 

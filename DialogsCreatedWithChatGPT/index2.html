@@ -21,6 +21,13 @@
             vertical-align: -.125em; /* baseline alignment */
             margin-right: 0.35em; /* tweak as needed */
         }
+
+        .alert {
+            margin-bottom: 1px;
+            height: 30px;
+            line-height:30px;
+            padding:0px 15px;
+        }
     </style>
 </head>
 <body>
@@ -29,6 +36,13 @@
     </div>
 
     <main>
+        <div class="d-flex justify-content-center">
+            <div id="autoCloseAlert" class="alert alert-success alert-dismissible mb-5 text-center shadow w-50 fade show" role="alert">
+                Changes saved.
+            </div>
+        </div>
+
+
         <div class="container text-center">
             <!-- Added full-text for screen-reader users; decorative SVG is aria-hidden -->
             <button type="button"
@@ -65,7 +79,7 @@
                 <!-- Header with title and X -->
                 <div class="modal-header">
                     <!-- h2 ensures correct heading hierarchy inside the dialog -->
-                    <h2 class="modal-title fs-5" id="personModalLabel">Person details</h2>
+                    <h2 class="modal-title fs-5 text-start" id="personModalLabel">Person details</h2>
 
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -143,6 +157,15 @@
                 modalElement.querySelector('.modal-header button').focus();
             }, { once: true });
         }
+
+        // Auto close the alert after 5 seconds (5000 ms)
+        setTimeout(function () {
+            const alertElement = document.getElementById('autoCloseAlert');
+            if (alertElement) {
+                const bsAlert = bootstrap.Alert.getOrCreateInstance(alertElement);
+                bsAlert.close();
+            }
+        }, 5000);
     </script>
 </body>
 </html>
