@@ -8,7 +8,7 @@
 
 <div class="container">
 
-    <div class="row">
+@*     <div class="row">
 
         <div class="col">
             <div class="card shadow rounded-1">
@@ -20,14 +20,21 @@
             </div>
         </div>
         
-    </div>
+    </div> *@
 
     <div class="container">
         
-        <button class="btn btn-primary"     type="button" data-bs-toggle = "offcanvas" data-bs-target = "#offcanvasLeft">Open left</button>
+        @*         <button class="btn btn-primary"     type="button" data-bs-toggle = "offcanvas" data-bs-target = "#offcanvasLeft">Open left</button>
         <button class="btn btn-primary m-3" type="button" data-bs-toggle = "offcanvas" data-bs-target = "#offcanvasRight">Open Right</button>
         <button class="btn btn-primary m-3" type="button" data-bs-toggle = "offcanvas" data-bs-target = "#offcanvasBottom">Open Bottom</button>
+ *@        
         
+        <div class="d-flex justify-content-center mt-3">
+            <button class="btn btn-primary m-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft">Open Left</button>
+            <button class="btn btn-primary m-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">Open Right</button>
+            <button class="btn btn-primary m-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom">Open Bottom</button>
+        </div>
+
         @*
             Lots of text for demoing off-canvas body scrolling for left side opening
         *@

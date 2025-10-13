@@ -66,6 +66,13 @@
                 <span>Demo 2</span>
 
             </button>
+
+            <button type="button"
+                    class="btn btn-warning"
+                    onclick="showAutoCloseAlert()">
+                Show Alert
+            </button>
+
         </div>
     </main>
 
@@ -162,10 +169,27 @@
         setTimeout(function () {
             const alertElement = document.getElementById('autoCloseAlert');
             if (alertElement) {
-                const bsAlert = bootstrap.Alert.getOrCreateInstance(alertElement);
-                bsAlert.close();
+                alertElement.classList.remove('show');
+                alertElement.style.display = 'none';
             }
         }, 5000);
+
+
+        function showAutoCloseAlert() {
+            const alertElement = document.getElementById('autoCloseAlert');
+            if (alertElement) {
+                alertElement.style.display = 'block';
+                alertElement.classList.add('show');
+
+                // Restart the auto-close timer
+                setTimeout(function () {
+                    alertElement.classList.remove('show');
+                    alertElement.style.display = 'none';
+                }, 5000);
+            }
+        }
+
+
     </script>
 </body>
 </html>

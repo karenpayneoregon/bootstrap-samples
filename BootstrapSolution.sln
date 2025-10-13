@@ -160,6 +160,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DialogsCreatedWithChatGPT",
 		SlnRelativePath = "DialogsCreatedWithChatGPT\"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrap5ToastExample1", "Bootstrap5ToastExample1\Bootstrap5ToastExample1.csproj", "{6F2C1710-F2A0-44FF-BA08-533A261BBC68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -282,6 +284,10 @@ Global
 		{B6EDB4A6-4A6A-1EEF-C21D-926C86789DC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6EDB4A6-4A6A-1EEF-C21D-926C86789DC8}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{B6EDB4A6-4A6A-1EEF-C21D-926C86789DC8}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{6F2C1710-F2A0-44FF-BA08-533A261BBC68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F2C1710-F2A0-44FF-BA08-533A261BBC68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F2C1710-F2A0-44FF-BA08-533A261BBC68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F2C1710-F2A0-44FF-BA08-533A261BBC68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
