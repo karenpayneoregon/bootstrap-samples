@@ -1,9 +1,13 @@
 ﻿@page
 @model Bootstrap5ToastExample1.Pages.IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Modal in page";
 }
-
-<button id="showToastBtn" type="button" class="btn btn-primary">Show toast</button>
-
+<h1 class="text-center mb-4">@ViewData["Title"]</h1>
+<div class="text-center">
+    <button id="showToastBtn" type="button" class="btn btn-primary mb-4">Show toast</button>
+    <p>
+        This page has the modal in the page while other pages use a modal from a partial page.
+    </p>
+</div>
 <partial name="_Toast" model="Model.Toast" />

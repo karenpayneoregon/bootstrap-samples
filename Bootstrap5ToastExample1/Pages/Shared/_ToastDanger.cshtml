@@ -1,0 +1,28 @@
+﻿@model Bootstrap5ToastExample1.Models.ToastViewModel
+
+<div aria-live="polite" aria-atomic="true" class="position-relative">
+
+    <div class="toast-container  position-fixed top-50 start-50 translate-middle p-3 mb-5">
+
+        <div id="appToast"
+             class="toast text-bg-danger"
+             role="alert"
+             aria-live="assertive"
+             aria-atomic="true"
+             data-bs-autohide="@Model.AutoHide.ToString().ToLower()"
+             data-bs-delay="@Model.DelayMs">
+            <div class="toast-header">
+                <img src="images/Explaination.ico" class="rounded me-2" alt="">
+                <strong class="me-auto">@Model.Title</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                @Model.Message
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>

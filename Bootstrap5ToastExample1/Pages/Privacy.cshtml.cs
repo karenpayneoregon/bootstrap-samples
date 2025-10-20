@@ -1,5 +1,4 @@
 ﻿using Bootstrap5ToastExample1.Models;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Bootstrap5ToastExample1.Pages;
