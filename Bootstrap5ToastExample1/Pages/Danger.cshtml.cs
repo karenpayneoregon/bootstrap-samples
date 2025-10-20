@@ -10,7 +10,7 @@ public class DangerModel : PageModel
 
     public void OnGet()
     {
-        Toast.Title = "Alert";
+        Toast.Title = "Error";
         Toast.Message = "Failed to update record!!!";
         Toast.AutoHide = false;
         Toast.DelayMs = 4000;
