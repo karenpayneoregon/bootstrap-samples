@@ -1,11 +1,28 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+﻿//document.addEventListener('DOMContentLoaded', () => {
+
+//    document.querySelectorAll('.nav-link').forEach(link => {
+
+//        link.classList.remove('active');
+
+//        if (link.getAttribute('href').toLowerCase() === location.pathname.toLowerCase()) {
+//            link.classList.add('active');
+//        }
+//    });
+//});
+
+document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.nav-link').forEach(link => {
 
-        link.classList.remove('active');
+        link.classList.remove('border-bottom');
+        link.classList.remove('border-top');
 
         if (link.getAttribute('href').toLowerCase() === location.pathname.toLowerCase()) {
-            link.classList.add('active');
+            link.classList.add('border-dark');
+            link.classList.add('border-bottom');
+            link.classList.add('border-top');
+        } else {
+            link.classList.add('text-dark');
         }
     });
 });

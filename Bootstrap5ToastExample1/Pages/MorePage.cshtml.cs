@@ -1,7 +1,5 @@
 using Bootstrap5ToastExample1.Models;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.ComponentModel.DataAnnotations;
 
 namespace Bootstrap5ToastExample1.Pages;
 
