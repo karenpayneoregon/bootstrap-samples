@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Help Modal Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+<body class="p-4">
+
+    <!-- Page content -->
+    <h1 class="mb-3">Example Page</h1>
+
+    <p>
+        <a href="#helpModal"
+           data-bs-toggle="modal"
+           class="link-primary">
+            Open Help
+        </a>
+    </p>
+
+    <!-- Modal -->
+    <div class="modal fade"
+         id="helpModal"
+         tabindex="-1"
+         aria-labelledby="helpModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="helpModalLabel">
+                        Job Search Tips
+                    </h2>
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row g-3 align-items-start">
+
+                        <!-- Left column: links -->
+                        <div class="col-4">
+                            <a href="#" class="link-primary d-block text-end">Job Search Help</a>
+                            <a href="#" class="link-primary d-block mt-2 text-end">My Job Basket Help</a>
+                        </div>
+
+                        <!-- Right column: text -->
+                        <div class="col-8">
+                            <div>
+                                For help finding jobs, including examples.
+                            </div>
+                            <div class="mt-2">
+                                How to use the "My Jobs" basket.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+</html>

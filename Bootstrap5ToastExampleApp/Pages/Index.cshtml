@@ -1,0 +1,64 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Bootstrap Toast Demo";
+}
+
+<div class="container mt-5">
+
+    <h1 class="mb-4 fs-4 text-center">Bootstrap 5 Toast from C#</h1>
+
+    <main>
+        <form method="post" asp-page-handler="ShowToast" class="text-center">
+            <button type="submit" class="btn btn-danger">
+                Show error Toast
+            </button>
+        </form>
+    </main>
+
+</div>
+
+@if (!string.IsNullOrWhiteSpace(Model.ToastMessage))
+{
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="serverToast"
+             class="toast text-bg-danger border-0"
+             role="alert"
+             aria-live="assertive"
+             data-bs-delay="@Model.ToastDelay"
+             aria-atomic="true">
+
+            <div class="toast-header">
+                <strong class="me-auto">@Model.ToastTitle</strong>
+                <small>@DateTime.Now.ToShortTimeString()</small>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"></button>
+            </div>
+
+            <div class="toast-body">
+                @Model.ToastMessage
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @if (!string.IsNullOrWhiteSpace(Model.ToastMessage))
+    {
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const toastElement = document.getElementById("serverToast");
+
+                if (toastElement) {
+                    const toast = new bootstrap.Toast(toastElement, {
+                        autohide: true
+                    });
+
+                    toast.show();
+                }
+            });
+        </script>
+    }
+}

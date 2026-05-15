@@ -164,6 +164,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrap5ToastExample1", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Toast", "Toast", "{FFBE9DBC-D027-8734-A985-95A7B43CF4CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrap5ToastExampleApp", "Bootstrap5ToastExampleApp\Bootstrap5ToastExampleApp.csproj", "{F31FA156-9A3D-4373-8A3E-B16FC22051AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -290,6 +292,10 @@ Global
 		{6F2C1710-F2A0-44FF-BA08-533A261BBC68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F2C1710-F2A0-44FF-BA08-533A261BBC68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F2C1710-F2A0-44FF-BA08-533A261BBC68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F31FA156-9A3D-4373-8A3E-B16FC22051AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F31FA156-9A3D-4373-8A3E-B16FC22051AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F31FA156-9A3D-4373-8A3E-B16FC22051AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F31FA156-9A3D-4373-8A3E-B16FC22051AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -313,6 +319,7 @@ Global
 		{1139E486-A36B-6B58-4965-3753D45010A4} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{B6EDB4A6-4A6A-1EEF-C21D-926C86789DC8} = {3327C805-E3E4-403B-81EC-0FC941F14B55}
 		{6F2C1710-F2A0-44FF-BA08-533A261BBC68} = {FFBE9DBC-D027-8734-A985-95A7B43CF4CF}
+		{F31FA156-9A3D-4373-8A3E-B16FC22051AA} = {FFBE9DBC-D027-8734-A985-95A7B43CF4CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0318FB3-B59C-40D8-960F-3AA6B46573A5}
