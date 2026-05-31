@@ -36,6 +36,9 @@
             foreach (var container in Model.PopContainer)
             {
                 <div class="row mb-5">
+                    <div class="col-6">
+                        
+                    </div>
                     <div class="col-md-2">
                         <button
                             type="button"
@@ -50,7 +53,7 @@
                             @container.Text
                         </button>
                     </div>
-                
+
                 </div>
 
                 identifier++;
@@ -60,20 +63,28 @@
         }
 
         <div class="row">
+            <div class="col-6">
+                        
+            </div>
             <div class="col-md-2">
 
                 <button
-                    type="button"
+                    type="button" 
+                    data-bs-trigger="focus"
                     class="btn btn-lg btn-danger w-100"
-                    id="specialPopOver" data-toggle="popover">
+                    id="specialPopOver" 
+                    data-toggle="popover">
                     Styled
                 </button>
             </div>
         </div>
 
         <div class="row mt-4">
+            <div class="col-6">
+                        
+            </div>
             <div class="col-md-2">
-                <input class="form-control" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="focus" title="Instructions" data-bs-content="Enter your first and last name" />
+                <input class="form-control" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="focus" title="Instructions" data-bs-content="Enter your first and last name"/>
             </div>
         </div>
     </div>
