@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.4.33403.182
+# Visual Studio Version 18
+VisualStudioVersion = 18.8.12105.206 oobstable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5OffCanvasExample", "Bootstrap5OffCanvasExample\Bootstrap5OffCanvasExample.csproj", "{9402D70E-A9C1-4727-A757-B22DC9F5FDA2}"
 EndProject
@@ -141,7 +141,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BootstrapDatePickerColors",
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DialogsCreatedWithChatGPT", "DialogsCreatedWithChatGPT\", "{B6EDB4A6-4A6A-1EEF-C21D-926C86789DC8}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8.1"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_64313"
 		Debug.AspNetCompiler.PhysicalPath = "DialogsCreatedWithChatGPT\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64313\"
