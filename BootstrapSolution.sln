@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.8.12105.206 oobstable
+VisualStudioVersion = 18.8.12105.206
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5OffCanvasExample", "Bootstrap5OffCanvasExample\Bootstrap5OffCanvasExample.csproj", "{9402D70E-A9C1-4727-A757-B22DC9F5FDA2}"
 EndProject
@@ -141,7 +141,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BootstrapDatePickerColors",
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DialogsCreatedWithChatGPT", "DialogsCreatedWithChatGPT\", "{B6EDB4A6-4A6A-1EEF-C21D-926C86789DC8}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8.1"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_64313"
 		Debug.AspNetCompiler.PhysicalPath = "DialogsCreatedWithChatGPT\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64313\"
@@ -165,6 +165,30 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Toast", "Toast", "{FFBE9DBC-D027-8734-A985-95A7B43CF4CF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrap5ToastExampleApp", "Bootstrap5ToastExampleApp\Bootstrap5ToastExampleApp.csproj", "{F31FA156-9A3D-4373-8A3E-B16FC22051AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.00", "6.00", "{65EE5202-53AB-4532-87E7-4680B0F73ABD}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "StepperSample", "StepperSample\", "{ED5E595B-1FAB-0539-AA66-0A815D3BE138}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_59729"
+		Debug.AspNetCompiler.PhysicalPath = "StepperSample\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59729\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_59729"
+		Release.AspNetCompiler.PhysicalPath = "StepperSample\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59729\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "59729"
+		SlnRelativePath = "StepperSample\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -296,6 +320,10 @@ Global
 		{F31FA156-9A3D-4373-8A3E-B16FC22051AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F31FA156-9A3D-4373-8A3E-B16FC22051AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F31FA156-9A3D-4373-8A3E-B16FC22051AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED5E595B-1FAB-0539-AA66-0A815D3BE138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED5E595B-1FAB-0539-AA66-0A815D3BE138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED5E595B-1FAB-0539-AA66-0A815D3BE138}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED5E595B-1FAB-0539-AA66-0A815D3BE138}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -320,6 +348,7 @@ Global
 		{B6EDB4A6-4A6A-1EEF-C21D-926C86789DC8} = {3327C805-E3E4-403B-81EC-0FC941F14B55}
 		{6F2C1710-F2A0-44FF-BA08-533A261BBC68} = {FFBE9DBC-D027-8734-A985-95A7B43CF4CF}
 		{F31FA156-9A3D-4373-8A3E-B16FC22051AA} = {FFBE9DBC-D027-8734-A985-95A7B43CF4CF}
+		{ED5E595B-1FAB-0539-AA66-0A815D3BE138} = {65EE5202-53AB-4532-87E7-4680B0F73ABD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0318FB3-B59C-40D8-960F-3AA6B46573A5}
