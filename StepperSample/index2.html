@@ -25,13 +25,21 @@
     <main>
 
         <div class="container">
-            <button type="button" class="btn-subtle btn-sm theme-success mb-3" id="btnAccordionToggleAll" aria-expanded="false">Expand all</button>
 
-            <div class="accordion accordion-gap theme-primary w-50" id="accordionExpandCollapse">
+            <button type="button"
+                    class="btn-subtle btn-sm theme-primary mb-3"
+                    id="btnAccordionToggleAll"
+                    aria-expanded="false">
+                Expand all
+            </button>
+
+            <div class="accordion accordion-gap theme-primary w-50"
+                 id="accordionExpandCollapse">
+
                 <details class="accordion-item" name="accordionExample">
                     <summary class="accordion-header">
                         Accordion Item #1
-                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m2 5 6 6 6-6" /></svg>
+                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m2 5 6 6 6-6"/></svg>
                     </summary>
                     <div class="accordion-body">
                         <strong>This is the first item’s accordion body.</strong> It is shown by default because the <code>open</code> attribute is present. The native <code>&lt;details&gt;</code> element handles all the show/hide logic without any JavaScript. You can put any HTML content within the <code>.accordion-body</code>.
@@ -40,7 +48,7 @@
                 <details class="accordion-item" name="accordionExample">
                     <summary class="accordion-header">
                         Accordion Item #2
-                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m2 5 6 6 6-6" /></svg>
+                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m2 5 6 6 6-6"/></svg>
                     </summary>
                     <div class="accordion-body">
                         <strong>This is the second item’s accordion body.</strong> The <code>name</code> attribute groups this with other accordion items. When you open this item, any other open item in the same group will close automatically.
@@ -49,7 +57,7 @@
                 <details class="accordion-item" name="accordionExample">
                     <summary class="accordion-header">
                         Accordion Item #3
-                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m2 5 6 6 6-6" /></svg>
+                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m2 5 6 6 6-6"/></svg>
                     </summary>
                     <div class="accordion-body">
                         <strong>This is the third item’s accordion body.</strong> This exclusive accordion behavior is built into the browser—no Bootstrap JavaScript required. Just use matching <code>name</code> attributes on your <code>&lt;details&gt;</code> elements.
@@ -105,6 +113,7 @@
                     toggleBtn.setAttribute('aria-expanded', String(expand));
                     toggleBtn.textContent = expand ? 'Collapse all' : 'Expand all';
                 });
+
         }
 
     </script>
