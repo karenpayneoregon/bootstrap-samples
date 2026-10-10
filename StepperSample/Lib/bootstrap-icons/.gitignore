@@ -1,0 +1,11 @@
+.DS_Store
+/.cache/
+/_site/
+/docs/static/pagefind/
+/node_modules/
+
+# Editor folders
+/.vscode/
+
+# Release zip files
+bootstrap-icons-*.zip

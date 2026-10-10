@@ -1,0 +1,84 @@
+{
+  "name": "bootstrap-icons",
+  "version": "1.13.2",
+  "description": "Official open source SVG icon library for Bootstrap",
+  "author": "mdo",
+  "license": "MIT",
+  "homepage": "https://icons.getbootstrap.com/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twbs/icons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/twbs/icons/issues"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/twbs"
+    },
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/bootstrap"
+    }
+  ],
+  "keywords": [
+    "bootstrap",
+    "icons",
+    "svg",
+    "font",
+    "sprite",
+    "woff",
+    "woff2"
+  ],
+  "style": "font/bootstrap-icons.css",
+  "sass": "font/bootstrap-icons.scss",
+  "types": "font/bootstrap-icons.ts",
+  "files": [
+    "icons/*.svg",
+    "bootstrap-icons.svg",
+    "font",
+    "!.DS_Store"
+  ],
+  "scripts": {
+    "start": "npm run docs-serve",
+    "docs-serve": "npm --prefix astro run dev --",
+    "docs-preview": "npm --prefix astro run preview --",
+    "docs-check": "npm --prefix astro run check",
+    "docs-build": "npm --prefix astro run build",
+    "docs-test": "npm --prefix astro run test",
+    "release-check": "npm run icons-zip && node build/check-release-artifacts.mjs",
+    "pages": "node build/build-pages.mjs",
+    "icons": "npm-run-all icons-main --aggregate-output --parallel icons-sprite icons-font",
+    "icons-main": "node build/build-svgs.mjs",
+    "icons-zip": "cross-env-shell \"rm -rf bootstrap-icons-$npm_package_version bootstrap-icons-$npm_package_version.zip && mkdir bootstrap-icons-$npm_package_version && cp -r icons/. bootstrap-icons-$npm_package_version && cp bootstrap-icons.svg bootstrap-icons-$npm_package_version && cp -r font/. bootstrap-icons-$npm_package_version && zip -qr9 bootstrap-icons-$npm_package_version.zip bootstrap-icons-$npm_package_version && rm -rf bootstrap-icons-$npm_package_version\"",
+    "icons-sprite": "svg-sprite --config svg-sprite.json --log=info \"icons/*.svg\"",
+    "icons-font": "npm-run-all icons-font-*",
+    "icons-font-main": "fantasticon",
+    "icons-font-min": "cleancss -O1 --format breakWith=lf --with-rebase --output font/bootstrap-icons.min.css font/bootstrap-icons.css",
+    "release": "npm-run-all icons docs-build icons-zip",
+    "release-version": "node build/bump-version.mjs",
+    "netlify": "npm --prefix astro ci && npm-run-all icons docs-build",
+    "test:eslint": "eslint --cache --cache-location .cache/.eslintcache .",
+    "test:lockfile-lint": "lockfile-lint --allowed-hosts npm --allowed-schemes https: --empty-hostname false --type npm --path package-lock.json",
+    "test:check-icons": "node build/check-icons.mjs",
+    "test": "npm-run-all --parallel --aggregate-output --continue-on-error test:*"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@twbs/fantasticon": "^3.1.0",
+    "clean-css-cli": "^5.6.3",
+    "cross-env": "^10.1.0",
+    "eslint": "^10.8.0",
+    "globals": "^17.7.0",
+    "lockfile-lint": "^5.0.0",
+    "npm-run-all2": "^9.0.2",
+    "picocolors": "^1.1.1",
+    "svg-sprite": "^3.0.0-rc3",
+    "svgo": "^3.3.4",
+    "vnu-jar": "25.11.3"
+  },
+  "allowScripts": {
+    "ttf2woff2@5.0.0": true
+  }
+}
